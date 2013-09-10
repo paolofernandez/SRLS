@@ -1,0 +1,77 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tomo_libro: 1
+  numero: 1
+  fecha_matrimonio: 2013-09-10
+  celebrante: MyString
+  nombre_esposo: MyString
+  edad_esposo: 1
+  profesion_esposo: MyString
+  tipo_hijo_esposo: MyString
+  padre_esposo: MyString
+  madre_esposo: MyString
+  lugar_nacimiento_esposo: MyString
+  fecha_nacimiento_esposo: 2013-09-10
+  parroquia_bautizo_esposo: MyString
+  fecha_bautizo_esposo: 2013-09-10
+  nombre_esposa: MyString
+  edad_esposa: 1
+  profesion_esposa: MyString
+  tipo_hijo_esposa: MyString
+  padre_esposa: MyString
+  madre_esposa: MyString
+  lugar_nacimiento_esposa: MyString
+  fecha_nacimiento_esposa: 2013-09-10
+  parroquia_bautizo_esposa: MyString
+  fecha_bautizo_esposa: 2013-09-10
+  feligreses: MyString
+  primer_testigo: MyString
+  segundo_testigo: MyString
+  encargado: MyString
+  oficialia: MyString
+  num_partida_libreta_familiar: 1
+  bendicion_nupcial_de: MyString
+  en_el: MyString
+  en_fecha: 2013-09-10
+  validado: false
+  user: 
+  marriege_book: 
+
+two:
+  tomo_libro: 1
+  numero: 1
+  fecha_matrimonio: 2013-09-10
+  celebrante: MyString
+  nombre_esposo: MyString
+  edad_esposo: 1
+  profesion_esposo: MyString
+  tipo_hijo_esposo: MyString
+  padre_esposo: MyString
+  madre_esposo: MyString
+  lugar_nacimiento_esposo: MyString
+  fecha_nacimiento_esposo: 2013-09-10
+  parroquia_bautizo_esposo: MyString
+  fecha_bautizo_esposo: 2013-09-10
+  nombre_esposa: MyString
+  edad_esposa: 1
+  profesion_esposa: MyString
+  tipo_hijo_esposa: MyString
+  padre_esposa: MyString
+  madre_esposa: MyString
+  lugar_nacimiento_esposa: MyString
+  fecha_nacimiento_esposa: 2013-09-10
+  parroquia_bautizo_esposa: MyString
+  fecha_bautizo_esposa: 2013-09-10
+  feligreses: MyString
+  primer_testigo: MyString
+  segundo_testigo: MyString
+  encargado: MyString
+  oficialia: MyString
+  num_partida_libreta_familiar: 1
+  bendicion_nupcial_de: MyString
+  en_el: MyString
+  en_fecha: 2013-09-10
+  validado: false
+  user: 
+  marriege_book: 

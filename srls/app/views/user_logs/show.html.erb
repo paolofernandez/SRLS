@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Entrada:</b>
+  <%= @user_log.entrada %>
+</p>
+
+<p>
+  <b>Salida:</b>
+  <%= @user_log.salida %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @user_log.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_log_path(@user_log) %> |
+<%= link_to 'Back', user_logs_path %>

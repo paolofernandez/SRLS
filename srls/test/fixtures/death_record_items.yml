@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tomo_libro: MyString
+  numero: 1
+  nombre: MyString
+  fecha: 2013-09-10
+  edad: 1
+  motivo_muerte: MyString
+  tipo_hijo: MyString
+  padre: MyString
+  madre: MyString
+  lugar_sepultura: MyString
+  celebrante: MyString
+  validado: false
+  user: 
+  death_record_book: 
+
+two:
+  tomo_libro: MyString
+  numero: 1
+  nombre: MyString
+  fecha: 2013-09-10
+  edad: 1
+  motivo_muerte: MyString
+  tipo_hijo: MyString
+  padre: MyString
+  madre: MyString
+  lugar_sepultura: MyString
+  celebrante: MyString
+  validado: false
+  user: 
+  death_record_book: 

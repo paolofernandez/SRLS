@@ -1,0 +1,57 @@
+<h1>Listing baptism_items</h1>
+
+<table>
+  <tr>
+    <th>Tomo libro</th>
+    <th>Numero</th>
+    <th>Nombre</th>
+    <th>Fecha bautizo</th>
+    <th>Celebrante</th>
+    <th>Lugar nacimiento</th>
+    <th>Fecha nacimiento</th>
+    <th>Tipo hijo</th>
+    <th>Padre</th>
+    <th>Madre</th>
+    <th>Feligreses</th>
+    <th>Padrino</th>
+    <th>Madrina</th>
+    <th>Oficialia</th>
+    <th>Encargado</th>
+    <th>Validado</th>
+    <th>User</th>
+    <th>Baptism book</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @baptism_items.each do |baptism_item| %>
+  <tr>
+    <td><%= baptism_item.tomo_libro %></td>
+    <td><%= baptism_item.numero %></td>
+    <td><%= baptism_item.nombre %></td>
+    <td><%= baptism_item.fecha_bautizo %></td>
+    <td><%= baptism_item.celebrante %></td>
+    <td><%= baptism_item.lugar_nacimiento %></td>
+    <td><%= baptism_item.fecha_nacimiento %></td>
+    <td><%= baptism_item.tipo_hijo %></td>
+    <td><%= baptism_item.padre %></td>
+    <td><%= baptism_item.madre %></td>
+    <td><%= baptism_item.feligreses %></td>
+    <td><%= baptism_item.padrino %></td>
+    <td><%= baptism_item.madrina %></td>
+    <td><%= baptism_item.oficialia %></td>
+    <td><%= baptism_item.encargado %></td>
+    <td><%= baptism_item.validado %></td>
+    <td><%= baptism_item.user %></td>
+    <td><%= baptism_item.baptism_book %></td>
+    <td><%= link_to 'Show', baptism_item %></td>
+    <td><%= link_to 'Edit', edit_baptism_item_path(baptism_item) %></td>
+    <td><%= link_to 'Destroy', baptism_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Baptism item', new_baptism_item_path %>

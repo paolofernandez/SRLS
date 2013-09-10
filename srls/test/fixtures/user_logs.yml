@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  entrada: 2013-09-10 12:04:27
+  salida: 2013-09-10 12:04:27
+  user: 
+
+two:
+  entrada: 2013-09-10 12:04:27
+  salida: 2013-09-10 12:04:27
+  user: 

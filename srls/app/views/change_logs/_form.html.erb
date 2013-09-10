@@ -1,0 +1,33 @@
+<%= form_for(@change_log) do |f| %>
+  <% if @change_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@change_log.errors.count, "error") %> prohibited this change_log from being saved:</h2>
+
+      <ul>
+      <% @change_log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hora %><br />
+    <%= f.datetime_select :hora %>
+  </div>
+  <div class="field">
+    <%= f.label :tabla %><br />
+    <%= f.text_field :tabla %>
+  </div>
+  <div class="field">
+    <%= f.label :id_objeto %><br />
+    <%= f.number_field :id_objeto %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

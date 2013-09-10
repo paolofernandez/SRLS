@@ -1,0 +1,2 @@
+module ConfirmationBooksHelper
+end

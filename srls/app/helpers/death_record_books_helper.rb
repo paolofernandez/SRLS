@@ -1,0 +1,2 @@
+module DeathRecordBooksHelper
+end

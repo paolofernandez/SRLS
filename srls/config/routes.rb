@@ -1,4 +1,39 @@
 Srls::Application.routes.draw do
+  resources :change_logs
+
+
+  resources :user_logs
+
+
+  resources :marriege_items
+
+
+  resources :death_record_items
+
+
+  resources :marriege_books
+
+
+  resources :death_record_books
+
+
+  resources :baptism_items
+
+
+  resources :baptism_books
+
+
+  resources :confirmation_items
+
+
+  resources :confirmation_books
+
+
+  resources :churches
+
+
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

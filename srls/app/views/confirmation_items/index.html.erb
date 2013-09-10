@@ -1,0 +1,53 @@
+<h1>Listing confirmation_items</h1>
+
+<table>
+  <tr>
+    <th>Tomo libro</th>
+    <th>Numero</th>
+    <th>Nombre</th>
+    <th>Edad</th>
+    <th>Padre</th>
+    <th>Madre</th>
+    <th>Padrino</th>
+    <th>Madrina</th>
+    <th>Parroquia confirmacion</th>
+    <th>Fecha confirmacion</th>
+    <th>Parroquia bautizo</th>
+    <th>Fecha bautizo</th>
+    <th>Celebrante</th>
+    <th>Validado</th>
+    <th>User</th>
+    <th>Confirmation book</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @confirmation_items.each do |confirmation_item| %>
+  <tr>
+    <td><%= confirmation_item.tomo_libro %></td>
+    <td><%= confirmation_item.numero %></td>
+    <td><%= confirmation_item.nombre %></td>
+    <td><%= confirmation_item.edad %></td>
+    <td><%= confirmation_item.padre %></td>
+    <td><%= confirmation_item.madre %></td>
+    <td><%= confirmation_item.padrino %></td>
+    <td><%= confirmation_item.madrina %></td>
+    <td><%= confirmation_item.parroquia_confirmacion %></td>
+    <td><%= confirmation_item.fecha_confirmacion %></td>
+    <td><%= confirmation_item.parroquia_bautizo %></td>
+    <td><%= confirmation_item.fecha_bautizo %></td>
+    <td><%= confirmation_item.celebrante %></td>
+    <td><%= confirmation_item.validado %></td>
+    <td><%= confirmation_item.user %></td>
+    <td><%= confirmation_item.confirmation_book %></td>
+    <td><%= link_to 'Show', confirmation_item %></td>
+    <td><%= link_to 'Edit', edit_confirmation_item_path(confirmation_item) %></td>
+    <td><%= link_to 'Destroy', confirmation_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Confirmation item', new_confirmation_item_path %>

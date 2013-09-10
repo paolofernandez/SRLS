@@ -1,0 +1,35 @@
+<h1>Listing death_record_books</h1>
+
+<table>
+  <tr>
+    <th>Codigo</th>
+    <th>Numero</th>
+    <th>Parroquia</th>
+    <th>Paginas</th>
+    <th>Partidas pagina</th>
+    <th>Validado</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @death_record_books.each do |death_record_book| %>
+  <tr>
+    <td><%= death_record_book.codigo %></td>
+    <td><%= death_record_book.numero %></td>
+    <td><%= death_record_book.parroquia %></td>
+    <td><%= death_record_book.paginas %></td>
+    <td><%= death_record_book.partidas_pagina %></td>
+    <td><%= death_record_book.validado %></td>
+    <td><%= death_record_book.user %></td>
+    <td><%= link_to 'Show', death_record_book %></td>
+    <td><%= link_to 'Edit', edit_death_record_book_path(death_record_book) %></td>
+    <td><%= link_to 'Destroy', death_record_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Death record book', new_death_record_book_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  codigo: MyString
+  numero: 1
+  parroquia: MyString
+  paginas: 1
+  partidas_pagina: 1
+  validado: false
+  user: 
+
+two:
+  codigo: MyString
+  numero: 1
+  parroquia: MyString
+  paginas: 1
+  partidas_pagina: 1
+  validado: false
+  user: 

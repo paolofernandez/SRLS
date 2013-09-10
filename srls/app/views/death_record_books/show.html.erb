@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @death_record_book.codigo %>
+</p>
+
+<p>
+  <b>Numero:</b>
+  <%= @death_record_book.numero %>
+</p>
+
+<p>
+  <b>Parroquia:</b>
+  <%= @death_record_book.parroquia %>
+</p>
+
+<p>
+  <b>Paginas:</b>
+  <%= @death_record_book.paginas %>
+</p>
+
+<p>
+  <b>Partidas pagina:</b>
+  <%= @death_record_book.partidas_pagina %>
+</p>
+
+<p>
+  <b>Validado:</b>
+  <%= @death_record_book.validado %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @death_record_book.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_death_record_book_path(@death_record_book) %> |
+<%= link_to 'Back', death_record_books_path %>

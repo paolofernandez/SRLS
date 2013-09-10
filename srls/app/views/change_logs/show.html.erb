@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Hora:</b>
+  <%= @change_log.hora %>
+</p>
+
+<p>
+  <b>Tabla:</b>
+  <%= @change_log.tabla %>
+</p>
+
+<p>
+  <b>Id objeto:</b>
+  <%= @change_log.id_objeto %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @change_log.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_change_log_path(@change_log) %> |
+<%= link_to 'Back', change_logs_path %>

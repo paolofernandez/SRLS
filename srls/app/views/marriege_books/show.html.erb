@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @marriege_book.codigo %>
+</p>
+
+<p>
+  <b>Numero:</b>
+  <%= @marriege_book.numero %>
+</p>
+
+<p>
+  <b>Parroquia:</b>
+  <%= @marriege_book.parroquia %>
+</p>
+
+<p>
+  <b>Paginas:</b>
+  <%= @marriege_book.paginas %>
+</p>
+
+<p>
+  <b>Partidas pagina:</b>
+  <%= @marriege_book.partidas_pagina %>
+</p>
+
+<p>
+  <b>Validado:</b>
+  <%= @marriege_book.validado %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @marriege_book.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_marriege_book_path(@marriege_book) %> |
+<%= link_to 'Back', marriege_books_path %>

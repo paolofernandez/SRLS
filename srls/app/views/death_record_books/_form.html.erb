@@ -1,0 +1,45 @@
+<%= form_for(@death_record_book) do |f| %>
+  <% if @death_record_book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@death_record_book.errors.count, "error") %> prohibited this death_record_book from being saved:</h2>
+
+      <ul>
+      <% @death_record_book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codigo %><br />
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br />
+    <%= f.number_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :parroquia %><br />
+    <%= f.text_field :parroquia %>
+  </div>
+  <div class="field">
+    <%= f.label :paginas %><br />
+    <%= f.number_field :paginas %>
+  </div>
+  <div class="field">
+    <%= f.label :partidas_pagina %><br />
+    <%= f.number_field :partidas_pagina %>
+  </div>
+  <div class="field">
+    <%= f.label :validado %><br />
+    <%= f.check_box :validado %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

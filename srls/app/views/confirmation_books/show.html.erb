@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @confirmation_book.codigo %>
+</p>
+
+<p>
+  <b>Numero:</b>
+  <%= @confirmation_book.numero %>
+</p>
+
+<p>
+  <b>Paginas:</b>
+  <%= @confirmation_book.paginas %>
+</p>
+
+<p>
+  <b>Partidas pagina:</b>
+  <%= @confirmation_book.partidas_pagina %>
+</p>
+
+<p>
+  <b>Validado:</b>
+  <%= @confirmation_book.validado %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @confirmation_book.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_confirmation_book_path(@confirmation_book) %> |
+<%= link_to 'Back', confirmation_books_path %>

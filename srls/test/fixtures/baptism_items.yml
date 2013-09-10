@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tomo_libro: 1
+  numero: 1
+  nombre: MyString
+  fecha_bautizo: 2013-09-10
+  celebrante: MyString
+  lugar_nacimiento: MyString
+  fecha_nacimiento: MyString
+  tipo_hijo: MyString
+  padre: MyString
+  madre: MyString
+  feligreses: MyString
+  padrino: MyString
+  madrina: MyString
+  oficialia: MyString
+  encargado: MyString
+  validado: false
+  user: 
+  baptism_book: 
+
+two:
+  tomo_libro: 1
+  numero: 1
+  nombre: MyString
+  fecha_bautizo: 2013-09-10
+  celebrante: MyString
+  lugar_nacimiento: MyString
+  fecha_nacimiento: MyString
+  tipo_hijo: MyString
+  padre: MyString
+  madre: MyString
+  feligreses: MyString
+  padrino: MyString
+  madrina: MyString
+  oficialia: MyString
+  encargado: MyString
+  validado: false
+  user: 
+  baptism_book: 
