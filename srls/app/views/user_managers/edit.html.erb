@@ -1,0 +1,54 @@
+<br>
+<br>
+<br>
+<% if current_user != nil %>
+	<% if current_user.role == 1 %>
+
+<h1>Editar rol</h1>
+
+<form action="/users_admin/changeRole/<%=@user.id%>" method="GET">
+Id: <%=@user.id%>
+<br>
+<br>Email: <%=@user.email%></br>
+<br>
+Rol:
+<select name="role">
+	<% if @user.role == 1%>
+	<td> <option selected value=1>Administrador</option> </td>
+	<% else %>
+		<% if @user.role == 2%>
+		<td> <option selected value=2>Funcionario</option> </td>
+		<% else %>
+			<% if @user.role == 3%>
+				<td> <option selected value=3>Cliente</option> </td>
+			<% else %>
+				<% if @user.role == 5%>
+					<td> <option selected value=5>Gerente</option> </td>
+				<%end %>
+			<%end %>
+		<%end%>
+	<%end%>
+<option value=1>Administrador</option>
+<option value=2>Funcionario</option>
+<option value=3>Cliente</option>
+<option value=5>Gerente</option>
+</select>
+<br>
+<br>
+
+<input type="submit" value="Guardar">
+
+</form>
+
+<br>
+<a href="/users_admin">Back</a>
+
+
+	<%else%>
+		<br>
+		Usted No tiene permitido ingresar a esta pagina
+	<%end%>
+<%else%>
+	<br>
+	Usted No tiene permitido ingresar a esta pagina
+<%end%>

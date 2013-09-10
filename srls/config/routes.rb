@@ -1,4 +1,6 @@
 Srls::Application.routes.draw do
+  resources :user_managers
+
   resources :change_logs
 
   resources :user_logs
@@ -23,7 +25,7 @@ Srls::Application.routes.draw do
 
   devise_for :users
   
-  root :to => 'user_logs#index'
+  root :to => 'user_managers#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
