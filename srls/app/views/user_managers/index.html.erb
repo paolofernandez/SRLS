@@ -27,10 +27,10 @@
 	<td> Administrador </td>
 	<% else %>
 		<% if user.rol == 2%>
-		<td> Funcionario </td>
+		<td> Redactor </td>
 		<% else %>
 			<% if user.rol == 3%>
-			<td> Cliente </td>
+			<td> Validador </td>
 			<%end%>
 		<%end%>
 	<%end%>

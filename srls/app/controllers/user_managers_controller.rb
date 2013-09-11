@@ -34,15 +34,15 @@ class UserManagersController < ApplicationController
   end
   def changeRole
     @user = User.find(params[:id])
-    role = (params[:role]).to_i
-    #role = User.new(params[:user]).role
-    if @user.role == 2 && role !=2
+    rol = (params[:rol]).to_i
+    #rol = User.new(params[:user]).rol
+    if @user.rol == 2 && rol !=2
       functionary = FuncionaryRestaurant.where(:user_id => params[:id])
       functionary.each do |aux|
         aux.destroy
       end
     end
-    @user.role = role
+    @user.rol = rol
     @user.save
     redirect_to :action => 'index'
   end
