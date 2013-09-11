@@ -1,8 +1,9 @@
 <br>
 <br>
 <br>
+
 <% if current_user != nil %>
-	<% if current_user.role == 1 %>
+	<% if current_user.rol == 1 %>
 		
 <h1>Lista de Usuarios</h1>
 
@@ -18,36 +19,38 @@
 </tr>
 <% @users.each do |user| %>
 	<tr>
-	<td> <%=user.id=%> </td>
+	<td> <%=user.id%> </td>
 	</td>
 	<td> <%= user.email %> </td>
 	</td>
-	<% if user.role == 1%>
+	<% if user.rol == 1%>
 	<td> Administrador </td>
 	<% else %>
-		<% if user.role == 2%>
+		<% if user.rol == 2%>
 		<td> Funcionario </td>
 		<% else %>
-			<% if user.role == 3%>
+			<% if user.rol == 3%>
 			<td> Cliente </td>
 			<%end%>
 		<%end%>
 	<%end%>
 	</td>
-	<td> <a href="/users_admin/edit/<%=user.id%>" > Editar Rol </a> </td>
-	<td> <a href="/users_admin/edit_password/<%=user.id%>" > Editar Password </a> </td>
-    <td> <a href="/users_admin/delete/<%=user.id%>" > Eliminar </a> </td>
+	<td> <a href="/user_managers/edit/<%=user.id%>" > Editar Rol </a> </td>
+	<td> <a href="/user_managers/edit_password/<%=user.id%>" > Editar Password </a> </td>
+    <td> <a href="/user_managers/delete/<%=user.id%>" > Eliminar </a> </td>
 	</tr>
 <% end %>
 </table>
+<br>
+<a href="/user_managers/new" > Registrar Nuevo Usuario </a> 
 <br>
 <br>
 
 	<%else%>
 		<br>
-		Usted No tiene permitido ingresar a esta pagina
+		Usted NO tiene permitido ingresar a esta pagina
 	<%end%>
 <%else%>
 	<br>
-	Usted No tiene permitido ingresar a esta pagina
+	Usted NO tiene permitido ingresar a esta pagina
 <%end%>

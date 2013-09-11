@@ -4,22 +4,28 @@
 	<% if current_user.rol == 1 %>
 		
 
-<h1>Editar password</h1>
+<h1>Nuevo Usuario</h1>
 <br>
 <h3>Verifique que el password coincida</h3>
 <br>
-<form action="/user_managers/change_password/<%=@user.id%>" method="GET">
-Id: <%=@user.id%>
+<form action="/user_managers/create" method="GET">
+Email: <input name="email" type="text">
 <br>
-<br>Email: <%=@user.email%></br>
 <br>
-Nuevo Password: <input name="password" type="password">
+Password: <input name="password" type="password">
 <br>
 <br>
 Confirmar Password: <input name="confirm" type="password">
 <br>
 <br>
-
+Rol:
+<select name="rol">
+<option value=1>Administrador</option>
+<option value=2>Redactor</option>
+<option value=3>Validador</option>
+</select>
+<br>
+<br>
 <input type="submit" value="Guardar">
 
 </form>

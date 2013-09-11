@@ -1,28 +1,26 @@
 Srls::Application.routes.draw do
+  
+  match 'user_managers' => 'user_managers#index'
+  match 'user_managers/delete/:id' => 'user_managers#delete'
+  match 'user_managers/new' => 'user_managers#new'
+  match 'user_managers/create' => 'user_managers#create'
+  match 'user_managers/edit/:id' => 'user_managers#edit'
+  match 'user_managers/changeRole/:id' => 'user_managers#changeRole'
+  match 'user_managers/edit_password/:id' => 'user_managers#edit_password'
+  match 'user_managers/change_password/:id' => 'user_managers#change_password'
+  
   resources :user_managers
-
   resources :change_logs
-
   resources :user_logs
-
   resources :marriege_items
-
   resources :death_record_items
-
   resources :marriege_books
-
   resources :death_record_books
-
   resources :baptism_items
-
   resources :baptism_books
-
   resources :confirmation_items
-
   resources :confirmation_books
-
   resources :churches
-
   devise_for :users
   
   root :to => 'user_managers#index'
