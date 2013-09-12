@@ -14,8 +14,8 @@
     Ingreso al sistema como <%= current_user.email %>. No eres tu?
     <%= link_to "Cerrar Sesion", destroy_user_session_path, :method => :delete %>
   <% else %>
-    <%= link_to "Ingresar", new_user_session_path %>
-    <!--<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>-->
+    <!--<%= link_to "Iniciar Sesion", new_user_session_path %>-->
+    <%= link_to "Registrarse", new_user_registration_path %> or <%= link_to "Iniciar Sesion", new_user_session_path %>
   <% end %>
 </div>
 
