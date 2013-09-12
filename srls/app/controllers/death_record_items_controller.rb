@@ -3,7 +3,7 @@ class DeathRecordItemsController < ApplicationController
   # GET /death_record_items.json
   def index
     @death_record_items = DeathRecordItem.all
-
+    @death_record_items = DeathRecordItem.order(params[:sort])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @death_record_items }

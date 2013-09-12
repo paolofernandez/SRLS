@@ -4,7 +4,7 @@
   <tr>
     <th>Tomo libro</th>
     <th>Numero</th>
-    <th>Nombre</th>
+    <th><%=link_to "Nombre", :sort => "Nombre" %></th>
     <th>Fecha bautizo</th>
     <th>Celebrante</th>
     <th>Lugar nacimiento</th>
@@ -17,8 +17,8 @@
     <th>Madrina</th>
     <th>Oficialia</th>
     <th>Encargado</th>
-    <th>Validado</th>
-    <th>User</th>
+    <!--th>Validado</th-->
+    <!--th>User</th-->
     <th>Baptism book</th>
     <th></th>
     <th></th>
@@ -42,8 +42,8 @@
     <td><%= baptism_item.madrina %></td>
     <td><%= baptism_item.oficialia %></td>
     <td><%= baptism_item.encargado %></td>
-    <td><%= baptism_item.validado %></td>
-    <td><%= baptism_item.user %></td>
+    <!--td><%= baptism_item.validado %></td-->
+    <!--td><%= baptism_item.user %></td-->
     <td><%= baptism_item.baptism_book %></td>
     <td><%= link_to 'Show', baptism_item %></td>
     <td><%= link_to 'Edit', edit_baptism_item_path(baptism_item) %></td>

@@ -3,7 +3,7 @@ class MarriegeBooksController < ApplicationController
   # GET /marriege_books.json
   def index
     @marriege_books = MarriegeBook.all
-
+    @marriege_books = MarriegeBook.order(params[:sort])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @marriege_books }

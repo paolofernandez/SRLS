@@ -3,6 +3,7 @@ class UserManagersController < ApplicationController
   # GET /user_managers.json
   def index
     @users = User.all
+    @users = User.order(params[:sort])
   end
   def new
     @user = User.new
@@ -11,6 +12,10 @@ class UserManagersController < ApplicationController
       format.json { render json: @baptism_book }
     end
   end
+
+def home
+end
+
   def create
     @user = User.new
     @user.email = params[:email]

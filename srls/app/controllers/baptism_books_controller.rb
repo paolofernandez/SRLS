@@ -3,7 +3,7 @@ class BaptismBooksController < ApplicationController
   # GET /baptism_books.json
   def index
     @baptism_books = BaptismBook.all
-
+    @baptism_books = BaptismBook.order(params[:sort])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @baptism_books }

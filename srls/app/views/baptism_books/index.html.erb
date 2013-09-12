@@ -2,16 +2,17 @@
 
 <table>
   <tr>
-    <th>Codigo</th>
+    <th><%=link_to "Codigo", :sort => "Codigo" %></th>
     <th>Numero</th>
     <th>Paginas</th>
-    <th>Partidas pagina</th>
-    <th>Validado</th>
-    <th>User</th>
-    <th></th>
+    <th>Partidas Pagina></th>
+    <!--th>Validado</th>
+    <th>User</th-->
+    <th><%=link_to "Parroquia", :sort => "Parroquia" %></th>
     <th></th>
     <th></th>
   </tr>
+  
 
 <% @baptism_books.each do |baptism_book| %>
   <tr>
@@ -19,9 +20,10 @@
     <td><%= baptism_book.numero %></td>
     <td><%= baptism_book.paginas %></td>
     <td><%= baptism_book.partidas_pagina %></td>
-    <td><%= baptism_book.validado %></td>
-    <td><%= baptism_book.user %></td>
-    <td><%= link_to 'Show', baptism_book %></td>
+    <!--td><%= baptism_book.validado %></td>
+    <td><%= baptism_book.user %></td-->
+    <td><%= baptism_book.parroquia %></td>
+    <!--td><%= link_to 'Show', baptism_book %></td-->
     <td><%= link_to 'Edit', edit_baptism_book_path(baptism_book) %></td>
     <td><%= link_to 'Destroy', baptism_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
