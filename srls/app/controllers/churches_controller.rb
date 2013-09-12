@@ -3,7 +3,7 @@ class ChurchesController < ApplicationController
   # GET /churches.json
   def index
     @churches = Church.all
-
+    @churches = Church.order(params[:sort])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @churches }

@@ -3,7 +3,7 @@ class ConfirmationBooksController < ApplicationController
   # GET /confirmation_books.json
   def index
     @confirmation_books = ConfirmationBook.all
-
+    @confirmation_books = ConfirmationBook.order(params[:sort])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @confirmation_books }

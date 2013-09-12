@@ -3,7 +3,7 @@ class ConfirmationItemsController < ApplicationController
   # GET /confirmation_items.json
   def index
     @confirmation_items = ConfirmationItem.all
-
+    @confirmation_items = ConfirmationItem.order(params[:sort])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @confirmation_items }

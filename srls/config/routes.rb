@@ -23,7 +23,7 @@ Srls::Application.routes.draw do
   resources :churches
   devise_for :users
   
-  root :to => 'user_managers#index'
+  root :to => 'user_managers#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

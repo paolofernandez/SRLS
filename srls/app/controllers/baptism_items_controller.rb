@@ -3,7 +3,7 @@ class BaptismItemsController < ApplicationController
   # GET /baptism_items.json
   def index
     @baptism_items = BaptismItem.all
-
+    @baptism_items = BaptismItem.order(params[:sort])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @baptism_items }

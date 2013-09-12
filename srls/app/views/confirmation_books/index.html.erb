@@ -1,13 +1,14 @@
-<h1>Listing confirmation_books</h1>
-
+<h1>Libros de confirmación</h1>
+<%= link_to 'Crear Nuevo Libro', new_confirmation_book_path %>
+<CENTER>
 <table>
   <tr>
     <th>Codigo</th>
     <th>Numero</th>
     <th>Paginas</th>
     <th>Partidas pagina</th>
-    <th>Validado</th>
-    <th>User</th>
+    <!--th>Validado</th-->
+    <!--th>User</th-->
     <th></th>
     <th></th>
     <th></th>
@@ -19,15 +20,12 @@
     <td><%= confirmation_book.numero %></td>
     <td><%= confirmation_book.paginas %></td>
     <td><%= confirmation_book.partidas_pagina %></td>
-    <td><%= confirmation_book.validado %></td>
-    <td><%= confirmation_book.user %></td>
-    <td><%= link_to 'Show', confirmation_book %></td>
-    <td><%= link_to 'Edit', edit_confirmation_book_path(confirmation_book) %></td>
-    <td><%= link_to 'Destroy', confirmation_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <!--td><%= confirmation_book.validado %></td-->
+    <!--td><%= confirmation_book.user %></td-->
+    <td><%= link_to 'Ver', confirmation_book %></td>
+    <!--td><%= link_to 'Editar', edit_confirmation_book_path(confirmation_book) %></td-->
+    <!--td><%= link_to 'Eliminar', confirmation_book, method: :delete, data: { confirm: 'Seguro?' } %></td-->
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Confirmation book', new_confirmation_book_path %>
+</CENTER>

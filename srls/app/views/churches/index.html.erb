@@ -1,12 +1,12 @@
-<h1>Listing churches</h1>
-
+<h1>Todas las parroquias</h1>
+<%= link_to 'Nueva Parroquia', new_church_path %>
+<CENTER>
 <table>
   <tr>
-    <th>Nombre</th>
-    <th>Zona</th>
-    <th>Vicaria</th>
-    <th>Codigo</th>
-    <th></th>
+    <th><%=link_to "Nombre", :sort => "Nombre" %></th>
+    <th>   </th>
+    <th>   </th>
+    <th><%=link_to "Vicaria", :sort => "Vicaria"%></th>
     <th></th>
     <th></th>
   </tr>
@@ -14,16 +14,13 @@
 <% @churches.each do |church| %>
   <tr>
     <td><%= church.nombre %></td>
-    <td><%= church.zona %></td>
+    <td>   </td>
+    <td>   </td>
     <td><%= church.vicaria %></td>
-    <td><%= church.codigo %></td>
-    <td><%= link_to 'Show', church %></td>
-    <td><%= link_to 'Edit', edit_church_path(church) %></td>
-    <td><%= link_to 'Destroy', church, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <!--td><%= link_to 'Mostrar', church %></td-->
+    <td><%= link_to 'Editar', edit_church_path(church) %></td>
+    <td><%= link_to 'Eliminar', church, method: :delete, data: { confirm: 'Seguro de eliminar la parroquia?' } %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Church', new_church_path %>
+</CENTER>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910221326) do
+ActiveRecord::Schema.define(:version => 20130912140100) do
 
   create_table "baptism_books", :force => true do |t|
     t.string   "codigo"
@@ -67,9 +67,7 @@ ActiveRecord::Schema.define(:version => 20130910221326) do
 
   create_table "churches", :force => true do |t|
     t.string   "nombre"
-    t.string   "zona"
     t.string   "vicaria"
-    t.string   "codigo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
