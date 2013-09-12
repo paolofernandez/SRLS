@@ -35,14 +35,17 @@
 		<%end%>
 	<%end%>
 	</td>
-	<td> <a href="/user_managers/edit/<%=user.id%>" > Editar Rol </a> </td>
-	<td> <a href="/user_managers/edit_password/<%=user.id%>" > Editar Password </a> </td>
+	<!--<td> <a href="/user_managers/show/<%=user.id%>" > Ver informacion de usuario |  </a> </td>-->
+	<td> <a href="/user_managers/edit/<%=user.id%>" > Editar Rol |  </a> </td>
+	<td> <a href="/user_managers/edit_password/<%=user.id%>" > Editar Password |  </a> </td>
     <td> <a href="/user_managers/delete/<%=user.id%>" > Eliminar </a> </td>
 	</tr>
 <% end %>
 </table>
 <br>
 <a href="/user_managers/new" > Registrar Nuevo Usuario </a> 
+<br>
+<a href="/user_logs" > Ver Log de Usuarios </a> 
 <br>
 <br>
 

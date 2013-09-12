@@ -1,6 +1,5 @@
 Srls::Application.routes.draw do
   
-  match 'user_managers' => 'user_managers#index'
   match 'user_managers/delete/:id' => 'user_managers#delete'
   match 'user_managers/new' => 'user_managers#new'
   match 'user_managers/create' => 'user_managers#create'

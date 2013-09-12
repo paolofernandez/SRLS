@@ -1,10 +1,10 @@
-<h1>Listing user_logs</h1>
+<h1>Listando Logs de Usuario</h1>
 
 <table>
   <tr>
-    <th>Entrada</th>
-    <th>Salida</th>
-    <th>User</th>
+  	<th>Usuario</th>
+    <th>Hora Entrada</th>
+    <th>Hora Salida</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,16 +12,12 @@
 
 <% @user_logs.each do |user_log| %>
   <tr>
+  	<td><%= user_log.user.email%></td>
     <td><%= user_log.entrada %></td>
     <td><%= user_log.salida %></td>
-    <td><%= user_log.user %></td>
-    <td><%= link_to 'Show', user_log %></td>
-    <td><%= link_to 'Edit', edit_user_log_path(user_log) %></td>
-    <td><%= link_to 'Destroy', user_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New User log', new_user_log_path %>
+<%= link_to 'Lista de Usuarios', user_managers_path %>

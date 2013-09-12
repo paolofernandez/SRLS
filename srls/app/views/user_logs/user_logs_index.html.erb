@@ -1,0 +1,21 @@
+<h1>Listando Logs de <%= user.emal %></h1>
+
+<table>
+  <tr>
+  	<th>Hora Entrada</th>
+    <th>Hora Salida</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user.user_logs.each do |user_log| %>
+  <tr>
+    <td><%= user_log.entrada %></td>
+    <td><%= user_log.salida %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Lista de Usuarios', user_managers_path %>
