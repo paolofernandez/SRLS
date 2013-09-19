@@ -1,5 +1,6 @@
-<h1>Listing marriege_books</h1>
-
+<h1>Libros de Matrimonio</h1>
+<%= link_to 'Crear Nuevo Libro', new_marriege_book_path %>
+<CENTER>
 <table>
   <tr>
     <th>Codigo</th>
@@ -7,8 +8,8 @@
     <th>Parroquia</th>
     <th>Paginas</th>
     <th>Partidas pagina</th>
-    <th>Validado</th>
-    <th>User</th>
+    <!--th>Validado</th>
+    <th>User</th-->
     <th></th>
     <th></th>
     <th></th>
@@ -21,15 +22,12 @@
     <td><%= marriege_book.parroquia %></td>
     <td><%= marriege_book.paginas %></td>
     <td><%= marriege_book.partidas_pagina %></td>
-    <td><%= marriege_book.validado %></td>
-    <td><%= marriege_book.user %></td>
+    <!--td><%= marriege_book.validado %></td>
+    <td><%= marriege_book.user %></td-->
     <td><%= link_to 'Show', marriege_book %></td>
     <td><%= link_to 'Edit', edit_marriege_book_path(marriege_book) %></td>
     <td><%= link_to 'Destroy', marriege_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Marriege book', new_marriege_book_path %>
+</CENTER>
