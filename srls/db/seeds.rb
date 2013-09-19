@@ -5,9 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-users = User.create([{email: 'admini@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 1 },
-    {email: 'transcriptor@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 2 },
-    {email: 'valdiador@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 3 }])
+users = User.create([{email: 'admini1@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 1 },
+      {email: 'trans1@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 2 },
+      {email: 'vali1@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 3 }])
+
+users2 = User.create([{email: 'admini@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 1 },
+      {email: 'trans@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 2 },
+      {email: 'vali@gmail.com', password: 'secret', password_confirmation: 'secret', rol: 3 }])
 
 vicariaCentro = Church.create([{nombre: 'Divina Providencia - Hospicio', vicaria: 'Vicaria Centro'},
  {nombre: 'Santo Domingo', vicaria: 'Vicaria Centro'},{nombre: 'S. Ignacio de Loyola', vicaria: 'Vicaria Centro'},
