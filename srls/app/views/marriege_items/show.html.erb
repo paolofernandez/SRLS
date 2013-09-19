@@ -11,6 +11,12 @@
 </p>
 
 <p>
+  <b>Pagina:</b>
+  <%= @marriege_item.pagina %>
+</p>
+
+
+<p>
   <b>Fecha matrimonio:</b>
   <%= @marriege_item.fecha_matrimonio %>
 </p>
@@ -165,7 +171,7 @@
   <%= @marriege_item.en_fecha %>
 </p>
 
-<p>
+<!--p>
   <b>Validado:</b>
   <%= @marriege_item.validado %>
 </p>
@@ -173,7 +179,7 @@
 <p>
   <b>User:</b>
   <%= @marriege_item.user %>
-</p>
+</p-->
 
 <p>
   <b>Marriege book:</b>
@@ -181,5 +187,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_marriege_item_path(@marriege_item) %> |
-<%= link_to 'Back', marriege_items_path %>
+<!--%= link_to 'Editar', edit_marriege_item_path(@marriege_item) %> |-->
+<%= link_to 'Volver', marriege_items_path %>

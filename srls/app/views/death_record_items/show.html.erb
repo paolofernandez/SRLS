@@ -11,6 +11,12 @@
 </p>
 
 <p>
+  <b>Pagina:</b>
+  <%= @death_record_item.pagina %>
+</p>
+
+
+<p>
   <b>Nombre:</b>
   <%= @death_record_item.nombre %>
 </p>
@@ -55,7 +61,7 @@
   <%= @death_record_item.celebrante %>
 </p>
 
-<p>
+<!--p>
   <b>Validado:</b>
   <%= @death_record_item.validado %>
 </p>
@@ -63,7 +69,7 @@
 <p>
   <b>User:</b>
   <%= @death_record_item.user %>
-</p>
+</p-->
 
 <p>
   <b>Death record book:</b>
@@ -71,5 +77,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_death_record_item_path(@death_record_item) %> |
-<%= link_to 'Back', death_record_items_path %>
+<!--%= link_to 'Editar', edit_death_record_item_path(@death_record_item) %> |-->
+<%= link_to 'Volver', death_record_items_path %>

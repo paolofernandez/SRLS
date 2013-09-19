@@ -4,7 +4,10 @@
   <b>Tomo libro:</b>
   <%= @baptism_item.tomo_libro %>
 </p>
-
+<p>
+  <b>Pagina:</b>
+  <%= @baptism_item.pagina %>
+</p>
 <p>
   <b>Numero:</b>
   <%= @baptism_item.numero %>
@@ -75,7 +78,7 @@
   <%= @baptism_item.encargado %>
 </p>
 
-<p>
+<!--p>
   <b>Validado:</b>
   <%= @baptism_item.validado %>
 </p>
@@ -83,7 +86,7 @@
 <p>
   <b>User:</b>
   <%= @baptism_item.user %>
-</p>
+</p-->
 
 <p>
   <b>Baptism book:</b>
@@ -91,5 +94,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_baptism_item_path(@baptism_item) %> |
-<%= link_to 'Back', baptism_items_path %>
+<!--%= link_to 'Editar', edit_baptism_item_path(@baptism_item) %> |-->
+<%= link_to 'Volver', baptism_items_path %>
