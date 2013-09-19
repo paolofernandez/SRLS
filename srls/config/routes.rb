@@ -7,11 +7,10 @@ Srls::Application.routes.draw do
   match 'user_managers/changeRole/:id' => 'user_managers#changeRole'
   match 'user_managers/edit_password/:id' => 'user_managers#edit_password'
   match 'user_managers/change_password/:id' => 'user_managers#change_password'
-  #match 'user_logs' => 'user_logs#index'
   
   resources :user_managers
   resources :change_logs
-  devise_for :user_logs, :methods => { :index => "user_logs/index" }
+  resources :user_logs
   resources :marriege_items
   resources :death_record_items
   resources :marriege_books
