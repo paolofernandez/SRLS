@@ -1,9 +1,11 @@
-<h1>Listing death_record_items</h1>
-
+<h1>Partidas de Defuncion</h1>
+<%= link_to 'Nueva Partida de Defuncion', new_death_record_item_path %>
+<CENTER>
 <table>
   <tr>
     <th>Tomo libro</th>
     <th>Numero</th>
+    <th>Pagina</th>
     <th>Nombre</th>
     <th>Fecha</th>
     <th>Edad</th>
@@ -25,6 +27,7 @@
   <tr>
     <td><%= death_record_item.tomo_libro %></td>
     <td><%= death_record_item.numero %></td>
+    <td><%= death_record_item.pagina %></td>
     <td><%= death_record_item.nombre %></td>
     <td><%= death_record_item.fecha %></td>
     <td><%= death_record_item.edad %></td>
@@ -34,16 +37,16 @@
     <td><%= death_record_item.madre %></td>
     <td><%= death_record_item.lugar_sepultura %></td>
     <td><%= death_record_item.celebrante %></td>
-    <td><%= death_record_item.validado %></td>
-    <td><%= death_record_item.user %></td>
+    <!--td><%= death_record_item.validado %></td>
+    <td><%= death_record_item.user %></td-->
     <td><%= death_record_item.death_record_book %></td>
-    <td><%= link_to 'Show', death_record_item %></td>
-    <td><%= link_to 'Edit', edit_death_record_item_path(death_record_item) %></td>
-    <td><%= link_to 'Destroy', death_record_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Ver', death_record_item %></td>
+    <td><%= link_to 'Editar', edit_death_record_item_path(death_record_item) %></td>
+    <td><%= link_to 'Eliminar', death_record_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
+</CENTER>
 
-<%= link_to 'New Death record item', new_death_record_item_path %>

@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <b>Pagina:</b>
+  <%= @confirmation_item.pagina %>
+</p>
+
+<p>
   <b>Nombre:</b>
   <%= @confirmation_item.nombre %>
 </p>
@@ -65,7 +70,7 @@
   <%= @confirmation_item.celebrante %>
 </p>
 
-<p>
+<!--p>
   <b>Validado:</b>
   <%= @confirmation_item.validado %>
 </p>
@@ -73,7 +78,7 @@
 <p>
   <b>User:</b>
   <%= @confirmation_item.user %>
-</p>
+</p-->
 
 <p>
   <b>Confirmation book:</b>
@@ -81,5 +86,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_confirmation_item_path(@confirmation_item) %> |
-<%= link_to 'Back', confirmation_items_path %>
+<!--%= link_to 'Editar', edit_confirmation_item_path(@confirmation_item) %> |-->
+<%= link_to 'Volver', confirmation_items_path %>
