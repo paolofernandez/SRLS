@@ -21,9 +21,11 @@ class UserLogsController < ApplicationController
   
   def cerrar_sesion
     mis_logs = UserLog.where(:user_id => current_user.id, :entrada => current_user.current_sign_in_at)
-    if mis_logs[0].salida == nil
-      mis_logs[0].salida = DateTime.now
-      mis_logs[0].save
+    if mis_logs != nil && mis_logs != []
+      if mis_logs[0].salida == nil
+        mis_logs[0].salida = DateTime.now
+        mis_logs[0].save
+      end
     end
     redirect_to destroy_user_session_path, :method => :delete
   end

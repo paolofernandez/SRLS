@@ -1,5 +1,11 @@
-<h1>Listando Logs de <%= user.emal %></h1>
-
+<h1>Listando Logs de <%= @user.email %></h1>
+<br>
+<% if @user.status%>
+	<h3>Estado: Activo</h3>
+<%else%>
+	<h3>Estado: Inactivo</h3>
+<%end%>
+<br>
 <table>
   <tr>
   	<th>Hora Entrada</th>

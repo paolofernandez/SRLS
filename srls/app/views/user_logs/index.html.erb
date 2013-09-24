@@ -3,6 +3,7 @@
 <table>
   <tr>
   	<th>Usuario</th>
+  	<th>Estado</th>
     <th>Hora Entrada</th>
     <th>Hora Salida</th>
     <th></th>
@@ -13,6 +14,11 @@
 <% @user_logs.each do |user_log| %>
   <tr>
   	<td><%= user_log.user.email%></td>
+  	<% if user_log.user.status%>
+  		<td>Activo</td>
+  	<%else%>
+  		<td>Inactivo</td>
+  	<%end%>
     <td><%= user_log.entrada %></td>
     <td><%= user_log.salida %></td>
   </tr>

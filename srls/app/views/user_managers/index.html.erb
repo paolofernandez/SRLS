@@ -7,6 +7,14 @@
 		
 <h1>Lista de Usuarios</h1>
 
+<br>	
+<form method="GET" action="/user_managers/search">
+	BUSCAR USUARIO:   
+	<input type="text" name="email">
+	<input type="submit" value="Buscar">
+</form>
+<br>	
+
 <br>
 <table>
 <tr>
@@ -21,7 +29,7 @@
 	<tr>
 	<td> <%=user.id%> </td>
 	</td>
-	<td> <%= user.email %> </td>
+	<td><a href="/user_logs/user_logs_index/<%=user.id%>">  <%= user.email %> </a></td>
 	</td>
 	<% if user.rol == 1%>
 	<td> Administrador </td>

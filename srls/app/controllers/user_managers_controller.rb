@@ -2,9 +2,25 @@ class UserManagersController < ApplicationController
   # GET /user_managers
   # GET /user_managers.json
   def index
-    @users = User.all
+    @users = User.where(:status => true)
     @users = User.order(params[:sort])
   end
+  
+  def search
+    @users=Array.new
+    aux = User.where(:status => true)
+    if params[:email]!=""
+      aux.each do |user|
+        if user.email.downcase.include?(params[:email].downcase)
+          @users.push(user)
+        end
+      end
+    else
+      @users = aux
+    end
+    render 'index'
+  end
+  
   def new
     @user = User.new
     respond_to do |format|
@@ -13,8 +29,8 @@ class UserManagersController < ApplicationController
     end
   end
 
-def home
-end
+  def home
+  end
 
   def create
     @user = User.new
@@ -31,7 +47,8 @@ end
   end  
   def delete
     @user = User.find(params[:id])
-    @user.destroy
+    @user.status = false
+    @user.save
     redirect_to :action => 'index'
   end
   def edit
@@ -42,7 +59,7 @@ end
     rol = (params[:rol]).to_i
     #rol = User.new(params[:user]).rol
     if @user.rol == 2 && rol !=2
-      functionary = FuncionaryRestaurant.where(:user_id => params[:id])
+      functionary = Funcionaryuser.where(:user_id => params[:id])
       functionary.each do |aux|
         aux.destroy
       end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924134234) do
+ActiveRecord::Schema.define(:version => 20130924200856) do
 
   create_table "baptism_books", :force => true do |t|
     t.string   "codigo"
@@ -206,11 +206,6 @@ ActiveRecord::Schema.define(:version => 20130924134234) do
   add_index "marriege_items", ["marriege_book_id"], :name => "index_marriege_items_on_marriege_book_id"
   add_index "marriege_items", ["user_id"], :name => "index_marriege_items_on_user_id"
 
-  create_table "sessions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "user_logs", :force => true do |t|
     t.datetime "entrada"
     t.datetime "salida"
@@ -227,8 +222,8 @@ ActiveRecord::Schema.define(:version => 20130924134234) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",   :null => false
+    t.string   "encrypted_password",     :default => "",   :null => false
     t.integer  "rol",                    :default => 1
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -238,8 +233,9 @@ ActiveRecord::Schema.define(:version => 20130924134234) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.boolean  "status",                 :default => true
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

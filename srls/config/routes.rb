@@ -8,6 +8,8 @@ Srls::Application.routes.draw do
   match 'user_managers/edit_password/:id' => 'user_managers#edit_password'
   match 'user_managers/change_password/:id' => 'user_managers#change_password'
   match 'user_logs/cerrar_sesion' => 'user_logs#cerrar_sesion'
+  get 'user_managers/search' => 'user_managers#search'
+  match 'user_logs/user_logs_index/:id' => 'user_logs#user_logs_index'
   
   resources :user_managers
   resources :change_logs
