@@ -12,7 +12,8 @@
 <div id="user_nav">
   <% if user_signed_in? %>
     Ingreso al sistema como <%= current_user.email %>. No eres tu?
-    <%= link_to "Cerrar Sesion", destroy_user_session_path, :method => :delete %>
+    <!--<%= link_to "Cerrar Sesion   |   ", destroy_user_session_path, :method => :delete %>-->
+    <A HREF="/user_logs/cerrar_sesion">Cerrar Sesion</A>
     <br><A HREF="/baptism_books">Libros De Bautizo</A>
     <A HREF="/confirmation_books">          Libros De Confirmacion</A>  
     <A HREF="/marriege_books">          Libros De Matrimonio</A>
