@@ -8,6 +8,7 @@ Srls::Application.routes.draw do
   match 'user_managers/edit_password/:id' => 'user_managers#edit_password'
   match 'user_managers/change_password/:id' => 'user_managers#change_password'
   
+  resources :sessions
   resources :user_managers
   resources :change_logs
   resources :user_logs
@@ -20,7 +21,7 @@ Srls::Application.routes.draw do
   resources :confirmation_items
   resources :confirmation_books
   resources :churches
-  devise_for :users, :controllers => { :sessions => "user_logs" }
+  devise_for :users, :controllers => { :sessions => "sessions" }
   
   root :to => 'user_managers#home'
 
