@@ -30,6 +30,13 @@
   <%= @baptism_book.user %>
 </p-->
 
+<h2>Paginas</h2>
+<%= render @baptism_book.baptism_items %>
+ 
+<h2>Agregar Pagina:</h2>
+<%= render "baptism_itemscomments/form" %>
+
+
 
 <!--%= link_to 'Editar', edit_baptism_book_path(@baptism_book) %> |-->
 <%= link_to 'Volver', baptism_books_path %>

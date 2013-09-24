@@ -1,4 +1,28 @@
 class BaptismItemsController < ApplicationController
+
+  # POST /baptism_items
+  # POST /baptism_items.json
+  def create
+    @baptism_book = baptism_book.find(params[:baptism_book_id])
+    @baptism_item = @baptism_book.baptism_items.create(params[:baptism_item])
+    redirect_to baptism_book_path(@baptism_book)
+  end
+
+  # DELETE /baptism_items/1
+  # DELETE /baptism_items/1.json
+  
+def destroy
+    @baptism_book = baptism_book.find(params[:baptism_book_id])
+    @baptism_item = @baptism_book.baptism_items.find(params[:id])
+    @baptism_item.destroy
+    redirect_to baptism_book_path(@baptism_book)
+  end
+
+
+
+
+
+
   # GET /baptism_items
   # GET /baptism_items.json
   def index
@@ -37,21 +61,7 @@ class BaptismItemsController < ApplicationController
     @baptism_item = BaptismItem.find(params[:id])
   end
 
-  # POST /baptism_items
-  # POST /baptism_items.json
-  def create
-    @baptism_item = BaptismItem.new(params[:baptism_item])
-
-    respond_to do |format|
-      if @baptism_item.save
-        format.html { redirect_to @baptism_item, notice: 'Baptism item was successfully created.' }
-        format.json { render json: @baptism_item, status: :created, location: @baptism_item }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @baptism_item.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+ 
 
   # PUT /baptism_items/1
   # PUT /baptism_items/1.json
@@ -69,15 +79,5 @@ class BaptismItemsController < ApplicationController
     end
   end
 
-  # DELETE /baptism_items/1
-  # DELETE /baptism_items/1.json
-  def destroy
-    @baptism_item = BaptismItem.find(params[:id])
-    @baptism_item.destroy
-
-    respond_to do |format|
-      format.html { redirect_to baptism_items_url }
-      format.json { head :no_content }
-    end
-  end
+  
 end
