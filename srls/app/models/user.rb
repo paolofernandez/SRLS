@@ -19,4 +19,23 @@ class User < ActiveRecord::Base
   has_many :death_record_items
   has_many :marriege_books
   has_many :marriege_items
+  
+  after_save do
+    if self.current_sign_in_at != nil
+      mis_logs = UserLog.where(:user_id => self.id, :entrada => self.current_sign_in_at)
+      if mis_logs == nil || mis_logs == []
+        log = UserLog.create(:entrada => current_sign_in_at)
+        log.user = self
+        log.save
+      end
+    else
+      mis_logs = UserLog.where(:user_id => self.id, :entrada => self.last_sign_in_at)
+      if mis_logs != nil && mis_logs != []
+        if mis_logs[0].salida == nil
+          mis_logs[0].salida = DateTime.now
+          mis_logs[0].save
+        end
+      end
+    end
+  end
 end
