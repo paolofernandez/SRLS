@@ -41,7 +41,8 @@ class DeathRecordBooksController < ApplicationController
   # POST /death_record_books.json
   def create
     @death_record_book = DeathRecordBook.new(params[:death_record_book])
-
+    @death_record_book.user = current_user
+    @death_record_book.validado = false
     respond_to do |format|
       if @death_record_book.save
         format.html { redirect_to @death_record_book, notice: 'Death record book was successfully created.' }

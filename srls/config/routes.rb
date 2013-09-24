@@ -18,8 +18,11 @@ Srls::Application.routes.draw do
   resources :death_record_items
   resources :marriege_books
   resources :death_record_books
-  resources :baptism_items
-  resources :baptism_books
+  
+  resources :baptism_books do
+    resources :baptism_items
+  end
+  
   resources :confirmation_items
   resources :confirmation_books
   resources :churches

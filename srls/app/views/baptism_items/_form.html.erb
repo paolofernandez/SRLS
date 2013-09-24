@@ -1,15 +1,4 @@
-<%= form_for(@baptism_item) do |f| %>
-  <% if @baptism_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@baptism_item.errors.count, "error") %> prohibited this baptism_item from being saved:</h2>
-
-      <ul>
-      <% @baptism_item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([@baptism_book, @baptism_book.baptism_items.build]) do |f| %>
 
   <div class="field">
     <%= f.label :tomo_libro %><br />
@@ -17,7 +6,7 @@
   </div>
   <div class="field">
     <%= f.label :numero %><br />
-    <%= f.number_field :numero %>
+    <%= f.text_field :numero %>
   </div>
   <div class="field">
     <%= f.label :nombre %><br />
@@ -37,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_nacimiento %><br />
-    <%= f.text_field :fecha_nacimiento %>
+    <%= f.date_select :fecha_nacimiento %>
   </div>
   <div class="field">
     <%= f.label :tipo_hijo %><br />
@@ -75,7 +64,7 @@
     <%= f.label :pagina %><br />
     <%= f.text_field :pagina %>
   </div>
-  <div class="field">
+  <!--div class="field">
     <%= f.label :validado %><br />
     <%= f.check_box :validado %>
   </div>
@@ -86,7 +75,7 @@
   <div class="field">
     <%= f.label :baptism_book %><br />
     <%= f.text_field :baptism_book %>
-  </div>
+  </div-->
    
   <div class="actions">
     <%= f.submit %>

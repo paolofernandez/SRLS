@@ -41,7 +41,8 @@ class MarriegeItemsController < ApplicationController
   # POST /marriege_items.json
   def create
     @marriege_item = MarriegeItem.new(params[:marriege_item])
-
+    @marriege_item.user = current_user
+    @marriege_item.validado = false
     respond_to do |format|
       if @marriege_item.save
         format.html { redirect_to @marriege_item, notice: 'Marriege item was successfully created.' }

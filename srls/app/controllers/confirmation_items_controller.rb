@@ -41,7 +41,8 @@ class ConfirmationItemsController < ApplicationController
   # POST /confirmation_items.json
   def create
     @confirmation_item = ConfirmationItem.new(params[:confirmation_item])
-
+    @confirmation_item.user = current_user
+    @confirmation_item.validado = false
     respond_to do |format|
       if @confirmation_item.save
         format.html { redirect_to @confirmation_item, notice: 'Confirmation item was successfully created.' }
