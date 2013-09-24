@@ -41,7 +41,8 @@ class DeathRecordItemsController < ApplicationController
   # POST /death_record_items.json
   def create
     @death_record_item = DeathRecordItem.new(params[:death_record_item])
-
+    @death_record_item.user = current_user
+    @death_record_item.validado = false
     respond_to do |format|
       if @death_record_item.save
         format.html { redirect_to @death_record_item, notice: 'Death record item was successfully created.' }

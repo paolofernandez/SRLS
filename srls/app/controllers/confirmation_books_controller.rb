@@ -41,7 +41,8 @@ class ConfirmationBooksController < ApplicationController
   # POST /confirmation_books.json
   def create
     @confirmation_book = ConfirmationBook.new(params[:confirmation_book])
-
+    @confirmation_book.user = current_user
+    @confirmation_book.validado = false
     respond_to do |format|
       if @confirmation_book.save
         format.html { redirect_to @confirmation_book, notice: 'Confirmation book was successfully created.' }

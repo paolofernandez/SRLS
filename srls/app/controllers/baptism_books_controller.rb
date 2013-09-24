@@ -41,7 +41,8 @@ class BaptismBooksController < ApplicationController
   # POST /baptism_books.json
   def create
     @baptism_book = BaptismBook.new(params[:baptism_book])
-
+    @baptism_book.user = current_user
+    @baptism_book.validado = false
     respond_to do |format|
       if @baptism_book.save
         format.html { redirect_to @baptism_book, notice: 'Baptism book was successfully created.' }

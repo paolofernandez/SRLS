@@ -41,7 +41,8 @@ class MarriegeBooksController < ApplicationController
   # POST /marriege_books.json
   def create
     @marriege_book = MarriegeBook.new(params[:marriege_book])
-
+    @marriege_book.user = current_user
+    @marriege_book.validado = false
     respond_to do |format|
       if @marriege_book.save
         format.html { redirect_to @marriege_book, notice: 'Marriege book was successfully created.' }
