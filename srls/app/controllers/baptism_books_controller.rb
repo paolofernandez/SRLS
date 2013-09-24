@@ -69,6 +69,11 @@ class BaptismBooksController < ApplicationController
     end
   end
 
+  def list
+  sort_by = params[:sort_by] 
+  sort_by ||= " name"
+  end # for default sort @users = User.find(:user_search_query, ::order => sort_by
+
   # DELETE /baptism_books/1
   # DELETE /baptism_books/1.json
   def destroy

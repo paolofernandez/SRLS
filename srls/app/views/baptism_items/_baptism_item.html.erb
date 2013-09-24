@@ -1,52 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Codigo:</b>
-  <%= @baptism_book.codigo %>
-</p>
-
-<p>
-  <b>Numero:</b>
-  <%= @baptism_book.numero %>
-</p>
-
-<p>
-  <b>Paginas:</b>
-  <%= @baptism_book.paginas %>
-</p>
-
-<p>
-  <b>Partidas pagina:</b>
-  <%= @baptism_book.partidas_pagina %>
-</p>
-
-<p>
-  <b>Parroquia:</b>
-  <%= @baptism_book.parroquia %>
-</p>
 
 
-<!--p>
-  <b>Validado:</b>
-  <%= @baptism_book.validado %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @baptism_book.user %>
-</p-->
-
-<h2>Paginas</h2>
-<!--%= render @baptism_book.baptism_items %-->
-<CENTER>
-<TABLE>
+ <TABLE>
   <tr>
     <th>Tomo libro</th>
     <th>Numero</th>
     <th>Pagina</th>
-    <th><a href="?sort_by=Nombre">Nombre</a></th><!--%=link_to "Nombre", :sort => "Nombre" %></th-->
+    <th><%=link_to "Nombre", :sort => "Nombre" %></th>
     <th>Fecha bautizo</th>
-        <th>Celebrante</th>
+    <th>Celebrante</th>
     <th>Lugar nacimiento</th>
     <th>Fecha nacimiento</th>
     <th>Tipo hijo</th>
@@ -86,12 +47,5 @@
   </tr>
 <% end %>
 </table>
-</CENTER>
- 
-<h2>Agregar Pagina:</h2>
-<%= render "baptism_items/form" %>
 
 
-
-<!--%= link_to 'Editar', edit_baptism_book_path(@baptism_book) %> |-->
-<%= link_to 'Volver', baptism_books_path %>
