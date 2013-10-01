@@ -75,8 +75,8 @@
     <td><%= confirmation_item.user %></td-->
     <!--td><%= confirmation_item.confirmation_book %></td-->
     <td><%= link_to 'Ver', confirmation_item %></td>
-    <!--td><%= link_to 'Editar', edit_confirmation_item_path(confirmation_item) %></td>
-    <td><%= link_to 'Eliminar', confirmation_item, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
+    <td><%= link_to 'Editar', edit_confirmation_item_path(confirmation_item) %></td>
+    <!--td><%= link_to 'Eliminar', confirmation_item, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
   </tr>
 <% end %>
 </table>
@@ -86,5 +86,5 @@
 
 
 
-<!--%= link_to 'Editar', edit_confirmation_book_path(@confirmation_book) %> |-->
+<%= link_to 'Editar', edit_confirmation_book_path(@confirmation_book) %> |>
 <%= link_to 'Volver', confirmation_books_path %>

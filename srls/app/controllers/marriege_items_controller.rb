@@ -8,6 +8,26 @@ class MarriegeItemsController < ApplicationController
     redirect_to marriege_book_path(@marriege_book)
   end
 
+
+  # GET /marriege_items/1/edit
+  def edit
+    @marriege_item = MarriegeItem.find(params[:id])
+  end
+
+  def update
+    @marriege_item = MarriegeItem.find(params[:id])
+
+    respond_to do |format|
+      if @marriege_item.update_attributes(params[:marriege_item])
+        format.html { redirect_to @marriege_item, notice: 'Marriege book was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @marriege_item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # DELETE /confirmation_items/1
   # DELETE /confirmation_items/1.json
   

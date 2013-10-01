@@ -12,6 +12,26 @@ class BaptismItemsController < ApplicationController
     redirect_to baptism_book_path(@baptism_book)
   end
 
+# GET /baptism_items/1/edit
+  def edit
+    @baptism_item = BaptismItem.find(params[:id])
+  end
+
+  def update
+    @baptism_item = BaptismItem.find(params[:id])
+
+    respond_to do |format|
+      if @baptism_item.update_attributes(params[:baptism_item])
+        format.html { redirect_to @baptism_item, notice: 'Marriege book was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @baptism_item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   # DELETE /baptism_items/1
   # DELETE /baptism_items/1.json
   

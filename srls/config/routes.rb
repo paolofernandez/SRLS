@@ -10,14 +10,16 @@ Srls::Application.routes.draw do
   match 'user_logs/cerrar_sesion' => 'user_logs#cerrar_sesion'
   get 'user_managers/search' => 'user_managers#search'
   match 'user_logs/user_logs_index/:id' => 'user_logs#user_logs_index'
+  get 'confirmation_items/:id' => 'confirmation_items#show'
+  get 'confirmation_items/:id/edit' => 'confirmation_items#edit'
   
   resources :user_managers
   resources :change_logs
   resources :user_logs
- # resources :marriege_items
-  #resources :death_record_items
-  #resources :marriege_books
- # resources :death_record_books
+  resources :marriege_items
+  resources :death_record_items
+  resources :marriege_books
+  resources :death_record_books
   
   resources :baptism_books do
     resources :baptism_items
@@ -34,6 +36,8 @@ Srls::Application.routes.draw do
 
   #resources :confirmation_items
   #resources :confirmation_books
+  resources :baptism_books
+  resources :baptism_items
   resources :churches
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end 
   
