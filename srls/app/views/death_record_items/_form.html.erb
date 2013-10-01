@@ -1,16 +1,4 @@
-<%= form_for(@death_record_item) do |f| %>
-  <% if @death_record_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@death_record_item.errors.count, "error") %> prohibited this death_record_item from being saved:</h2>
-
-      <ul>
-      <% @death_record_item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_for([@death_record_book, @death_record_book.death_record_items.build]) do |f| %>
   <div class="field">
     <%= f.label :tomo_libro %><br />
     <%= f.text_field :tomo_libro %>
@@ -66,12 +54,12 @@
   <div class="field">
     <%= f.label :user %><br />
     <%= f.text_field :user %>
-  </div-->
+  </div>
   <div class="field">
     <%= f.label :death_record_book %><br />
     <%= f.text_field :death_record_book %>
-  </div>
+  </div-->
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear Partida de Defuncion" %>
   </div>
 <% end %>

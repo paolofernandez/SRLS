@@ -14,17 +14,26 @@ Srls::Application.routes.draw do
   resources :user_managers
   resources :change_logs
   resources :user_logs
-  resources :marriege_items
-  resources :death_record_items
-  resources :marriege_books
-  resources :death_record_books
+ # resources :marriege_items
+  #resources :death_record_items
+  #resources :marriege_books
+ # resources :death_record_books
   
   resources :baptism_books do
     resources :baptism_items
+  end  
+  resources :marriege_books do
+    resources :marriege_items
+  end  
+  resources :confirmation_books do
+    resources :confirmation_items
   end
-  
-  resources :confirmation_items
-  resources :confirmation_books
+   resources :death_record_books do
+    resources :death_record_items
+  end
+
+  #resources :confirmation_items
+  #resources :confirmation_books
   resources :churches
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end 
   

@@ -36,7 +36,7 @@
   <%= @baptism_book.user %>
 </p-->
 
-<h2>Paginas</h2>
+<h2>Partidas:</h2>
 <!--%= render @baptism_book.baptism_items %-->
 <CENTER>
 <TABLE>
@@ -44,9 +44,9 @@
     <th>Tomo libro</th>
     <th>Numero</th>
     <th>Pagina</th>
-    <th><a href="?sort_by=Nombre">Nombre</a></th><!--%=link_to "Nombre", :sort => "Nombre" %></th-->
+    <th><%=link_to "Nombre", :sort => "Nombre" %></th>
     <th>Fecha bautizo</th>
-        <th>Celebrante</th>
+    <th>Celebrante</th>
     <th>Lugar nacimiento</th>
     <th>Fecha nacimiento</th>
     <th>Tipo hijo</th>
@@ -88,7 +88,7 @@
 </table>
 </CENTER>
  
-<h2>Agregar Pagina:</h2>
+<h2>Agregar Partida:</h2>
 <%= render "baptism_items/form" %>
 
 

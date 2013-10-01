@@ -1,15 +1,5 @@
-<%= form_for(@marriege_item) do |f| %>
-  <% if @marriege_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@marriege_item.errors.count, "error") %> prohibited this marriege_item from being saved:</h2>
+  <%= form_for([@marriege_book, @marriege_book.marriege_items.build]) do |f| %>
 
-      <ul>
-      <% @marriege_item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :tomo_libro %><br />
@@ -160,6 +150,6 @@
     <%= f.text_field :marriege_book %>
   </div-->
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear Partida de Matrimonio"%>
   </div>
 <% end %>

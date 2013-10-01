@@ -34,7 +34,98 @@
   <b>User:</b>
   <%= @marriege_book.user %>
 </p-->
+<h2>Partidas:</h2>
+<table>
+  <tr>
+    <th>Tomo libro</th>
+    <th>Numero</th>
+    <th>Pagina</th>
+    <th>Fecha matrimonio</th>
+    <th>Celebrante</th>
+    <th>Nombre esposo</th>
+    <th>Edad esposo</th>
+    <th>Profesion esposo</th>
+    <th>Tipo hijo esposo</th>
+    <th>Padre esposo</th>
+    <th>Madre esposo</th>
+    <th>Lugar nacimiento esposo</th>
+    <th>Fecha nacimiento esposo</th>
+    <th>Parroquia bautizo esposo</th>
+    <th>Fecha bautizo esposo</th>
+    <th>Nombre esposa</th>
+    <th>Edad esposa</th>
+    <th>Profesion esposa</th>
+    <th>Tipo hijo esposa</th>
+    <th>Padre esposa</th>
+    <th>Madre esposa</th>
+    <th>Lugar nacimiento esposa</th>
+    <th>Fecha nacimiento esposa</th>
+    <th>Parroquia bautizo esposa</th>
+    <th>Fecha bautizo esposa</th>
+    <th>Feligreses</th>
+    <th>Primer testigo</th>
+    <th>Segundo testigo</th>
+    <th>Encargado</th>
+    <th>Oficialia</th>
+    <th>Num partida libreta familiar</th>
+    <th>Bendicion nupcial de</th>
+    <th>En el</th>
+    <th>En fecha</th>
+    <!--th>Validado</th>
+    <th>User</th-->
+    <!--th>Marriege book</th-->
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
+<% @marriege_book.marriege_items.each do |marriege_item| %>
+  <tr>
+    <td><%= marriege_item.tomo_libro %></td>
+    <td><%= marriege_item.numero %></td>
+    <td><%= marriege_item.pagina %></td>
+    <td><%= marriege_item.fecha_matrimonio %></td>
+    <td><%= marriege_item.celebrante %></td>
+    <td><%= marriege_item.nombre_esposo %></td>
+    <td><%= marriege_item.edad_esposo %></td>
+    <td><%= marriege_item.profesion_esposo %></td>
+    <td><%= marriege_item.tipo_hijo_esposo %></td>
+    <td><%= marriege_item.padre_esposo %></td>
+    <td><%= marriege_item.madre_esposo %></td>
+    <td><%= marriege_item.lugar_nacimiento_esposo %></td>
+    <td><%= marriege_item.fecha_nacimiento_esposo %></td>
+    <td><%= marriege_item.parroquia_bautizo_esposo %></td>
+    <td><%= marriege_item.fecha_bautizo_esposo %></td>
+    <td><%= marriege_item.nombre_esposa %></td>
+    <td><%= marriege_item.edad_esposa %></td>
+    <td><%= marriege_item.profesion_esposa %></td>
+    <td><%= marriege_item.tipo_hijo_esposa %></td>
+    <td><%= marriege_item.padre_esposa %></td>
+    <td><%= marriege_item.madre_esposa %></td>
+    <td><%= marriege_item.lugar_nacimiento_esposa %></td>
+    <td><%= marriege_item.fecha_nacimiento_esposa %></td>
+    <td><%= marriege_item.parroquia_bautizo_esposa %></td>
+    <td><%= marriege_item.fecha_bautizo_esposa %></td>
+    <td><%= marriege_item.feligreses %></td>
+    <td><%= marriege_item.primer_testigo %></td>
+    <td><%= marriege_item.segundo_testigo %></td>
+    <td><%= marriege_item.encargado %></td>
+    <td><%= marriege_item.oficialia %></td>
+    <td><%= marriege_item.num_partida_libreta_familiar %></td>
+    <td><%= marriege_item.bendicion_nupcial_de %></td>
+    <td><%= marriege_item.en_el %></td>
+    <td><%= marriege_item.en_fecha %></td>
+    <!--td><%= marriege_item.validado %></td>
+    <td><%= marriege_item.user %></td-->
+    <!--td><%= marriege_item.marriege_book %></td-->
+    <td><%= link_to 'Ver', marriege_item %></td>
+    <!--td><%= link_to 'Editar', edit_marriege_item_path(marriege_item) %></td>
+    <td><%= link_to 'Eliminar', marriege_item, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
+  </tr>
+<% end %>
+</table>
+<h2>Agregar Partida:</h2>
+<%= render "marriege_items/form" %>
 
 <!--%= link_to 'Editar', edit_marriege_book_path(@marriege_book) %> |-->
 <%= link_to 'Volver', marriege_books_path %>

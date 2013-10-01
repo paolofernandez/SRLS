@@ -206,6 +206,11 @@ ActiveRecord::Schema.define(:version => 20130924200856) do
   add_index "marriege_items", ["marriege_book_id"], :name => "index_marriege_items_on_marriege_book_id"
   add_index "marriege_items", ["user_id"], :name => "index_marriege_items_on_user_id"
 
+  create_table "sessions", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "user_logs", :force => true do |t|
     t.datetime "entrada"
     t.datetime "salida"
