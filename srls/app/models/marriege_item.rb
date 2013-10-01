@@ -12,4 +12,27 @@ class MarriegeItem < ActiveRecord::Base
       :nombre_esposa, :nombre_esposo, :numero, :parroquia_bautizo_esposo, :tomo_libro, :presence=>true
   validates :numero, :uniqueness => { :scope => :marriege_book_id }
   validates :fecha_matrimonio, :uniqueness => { :scope => :nombre_esposo, :scope => :nombre_esposa }
+  
+  before_save do
+    if self.id != nil && self.id != 0
+      old = MarriegeItem.find(self.id)
+      ind = 0
+      object = UpdatedDataTable.new
+      object.source_table = "Partida de Matrimonio"
+      object.id_datum = self.id
+      object.user = current_user
+      object.save
+      object.attributes.each do |datum|
+        if datum.class.to_s != "Array"
+          if datum != old.attributes[ind]
+            data = UpdatedDataTableItem.new
+            data.item = ind.to_s
+            data.old_data = old.attributes[ind].to_s
+            data.new_data = datum.to_s
+          end
+        end
+        ind++
+      end
+    end
+  end
 end

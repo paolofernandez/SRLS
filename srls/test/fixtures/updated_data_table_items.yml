@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item: MyString
+  old_data: MyString
+  new_data: MyString
+  updated_data_table: 
+
+two:
+  item: MyString
+  old_data: MyString
+  new_data: MyString
+  updated_data_table: 

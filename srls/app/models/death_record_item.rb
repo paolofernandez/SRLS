@@ -6,4 +6,27 @@ class DeathRecordItem < ActiveRecord::Base
   validates :celebrante, :edad, :fecha, :motivo_muerte, :nombre, :numero, :pagina, :tomo_libro, :presence=>true
   validates :numero, :uniqueness => { :scope => :death_record_book_id }
   validates :fecha, :uniqueness => { :scope => :nombre }
+  
+  before_save do
+    if self.id != nil && self.id != 0
+      old = DeathRecordItem.find(self.id)
+      ind = 0
+      object = UpdatedDataTable.new
+      object.source_table = "Partida de Defuncion"
+      object.id_datum = self.id
+      object.user = current_user
+      object.save
+      object.attributes.each do |datum|
+        if datum.class.to_s != "Array"
+          if datum != old.attributes[ind]
+            data = UpdatedDataTableItem.new
+            data.item = ind.to_s
+            data.old_data = old.attributes[ind].to_s
+            data.new_data = datum.to_s
+          end
+        end
+        ind++
+      end
+    end
+  end
 end
