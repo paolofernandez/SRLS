@@ -1,17 +1,4 @@
-<%= form_for(@confirmation_item) do |f| %>
-  <% if @confirmation_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@confirmation_item.errors.count, "error") %> prohibited this confirmation_item from being saved:</h2>
-
-      <ul>
-      <% @confirmation_item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<!--%= form_for([@confirmation_book, @confirmation_book.confirmation_items.build]) do |f| %-->
+<%= form_for([@confirmation_book, @confirmation_book.confirmation_items.build]) do |f| %>
 
   <div class="field">
     <%= f.label :tomo_libro %><br />

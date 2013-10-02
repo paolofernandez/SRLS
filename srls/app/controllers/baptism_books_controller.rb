@@ -58,7 +58,8 @@ class BaptismBooksController < ApplicationController
   # PUT /baptism_books/1.json
   def update
     @baptism_book = BaptismBook.find(params[:id])
-
+    @baptism_book.user = current_user
+    
     respond_to do |format|
       if @baptism_book.update_attributes(params[:baptism_book])
         format.html { redirect_to @baptism_book, notice: 'Baptism book was successfully updated.' }

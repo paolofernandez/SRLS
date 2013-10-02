@@ -16,7 +16,7 @@ class MarriegeItemsController < ApplicationController
 
   def update
     @marriege_item = MarriegeItem.find(params[:id])
-
+    @marriege_item.user = current_user
     respond_to do |format|
       if @marriege_item.update_attributes(params[:marriege_item])
         format.html { redirect_to @marriege_item, notice: 'Marriege book was successfully updated.' }

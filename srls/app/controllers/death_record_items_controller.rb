@@ -17,7 +17,7 @@ class DeathRecordItemsController < ApplicationController
 
   def update
     @death_record_item = DeathRecordItem.find(params[:id])
-
+    @death_record_item.user = current_user
     respond_to do |format|
       if @death_record_item.update_attributes(params[:death_record_item])
         format.html { redirect_to @death_record_item, notice: 'Marriege book was successfully updated.' }

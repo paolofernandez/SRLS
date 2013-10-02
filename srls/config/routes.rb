@@ -34,7 +34,7 @@ Srls::Application.routes.draw do
     resources :death_record_items
   end
 
-  #resources :confirmation_items
+  resources :confirmation_items
   #resources :confirmation_books
   resources :baptism_books
   resources :baptism_items

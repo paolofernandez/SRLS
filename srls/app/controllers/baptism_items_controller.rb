@@ -19,7 +19,7 @@ class BaptismItemsController < ApplicationController
 
   def update
     @baptism_item = BaptismItem.find(params[:id])
-
+    @baptism_item.user = current_user
     respond_to do |format|
       if @baptism_item.update_attributes(params[:baptism_item])
         format.html { redirect_to @baptism_item, notice: 'Marriege book was successfully updated.' }

@@ -13,7 +13,7 @@ class BaptismBook < ActiveRecord::Base
       object = UpdatedDataTable.new
       object.source_table = "Libro de Bautizo"
       object.id_datum = self.id
-      object.user = current_user
+      object.user = self.user
       object.save
       object.attributes.each do |datum|
         if datum.class.to_s != "Array"
@@ -24,7 +24,7 @@ class BaptismBook < ActiveRecord::Base
             data.new_data = datum.to_s
           end
         end
-        ind++
+        ind+=1
       end
     end
   end

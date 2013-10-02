@@ -14,7 +14,7 @@ class DeathRecordBooksController < ApplicationController
   # GET /death_record_books/1.json
   def show
     @death_record_book = DeathRecordBook.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @death_record_book }
@@ -58,7 +58,7 @@ class DeathRecordBooksController < ApplicationController
   # PUT /death_record_books/1.json
   def update
     @death_record_book = DeathRecordBook.find(params[:id])
-
+    @death_record_book.user = current_user
     respond_to do |format|
       if @death_record_book.update_attributes(params[:death_record_book])
         format.html { redirect_to @death_record_book, notice: 'Death record book was successfully updated.' }

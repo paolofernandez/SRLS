@@ -1,6 +1,10 @@
 class ConfirmationItemsController < ApplicationController
     # POST /confirmation_items
   # POST /confirmation_items.json
+  def index
+    @confirmation_book = ConfirmationBook.find(params[:confirmation_book_id])
+  end
+  
   def create
     @confirmation_book = ConfirmationBook.find(params[:confirmation_book_id])
     @confirmation_item = @confirmation_book.confirmation_items.create(params[:confirmation_item])
@@ -26,7 +30,7 @@ class ConfirmationItemsController < ApplicationController
 
   def update
     @confirmation_item = ConfirmationItem.find(params[:id])
-
+    @confirmation_item.user = current_user
     respond_to do |format|
       if @confirmation_item.update_attributes(params[:confirmation_item])
         format.html { redirect_to @confirmation_item, notice: 'Confirmation Item was successfully updated.' }

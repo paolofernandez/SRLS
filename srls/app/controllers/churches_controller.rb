@@ -41,7 +41,7 @@ class ChurchesController < ApplicationController
   # POST /churches.json
   def create
     @church = Church.new(params[:church])
-
+    @church.user = current_user
     respond_to do |format|
       if @church.save
         format.html { redirect_to @church, notice: 'Church was successfully created.' }

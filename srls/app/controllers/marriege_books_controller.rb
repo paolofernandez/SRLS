@@ -58,7 +58,7 @@ class MarriegeBooksController < ApplicationController
   # PUT /marriege_books/1.json
   def update
     @marriege_book = MarriegeBook.find(params[:id])
-
+    @marriege_book.user = current_user
     respond_to do |format|
       if @marriege_book.update_attributes(params[:marriege_book])
         format.html { redirect_to @marriege_book, notice: 'Marriege book was successfully updated.' }

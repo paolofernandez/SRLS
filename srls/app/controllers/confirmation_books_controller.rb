@@ -58,7 +58,7 @@ class ConfirmationBooksController < ApplicationController
   # PUT /confirmation_books/1.json
   def update
     @confirmation_book = ConfirmationBook.find(params[:id])
-
+    @confirmation_book.user = current_user
     respond_to do |format|
       if @confirmation_book.update_attributes(params[:confirmation_book])
         format.html { redirect_to @confirmation_book, notice: 'Confirmation book was successfully updated.' }
