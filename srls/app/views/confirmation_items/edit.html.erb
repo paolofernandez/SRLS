@@ -89,4 +89,5 @@
 
 
 <%= link_to 'Ver', @confirmation_item %> |
-<%= link_to 'Volver', confirmation_items_path %>
+<a href = "/confirmation_books/<%= @confirmation_item.confirmation_book.id %>/confirmation_items"> Volver </a>
+<!--<%= link_to 'Volver', confirmation_items_path %>-->

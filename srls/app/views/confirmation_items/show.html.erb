@@ -82,9 +82,9 @@
 
 <p>
   <b>Confirmation book:</b>
-  <%= @confirmation_item.confirmation_book %>
+  <%= @confirmation_item.confirmation_book.codigo %>
 </p>
 
 
 <!--%= link_to 'Editar', edit_confirmation_item_path(@confirmation_item) %> |-->
-<%= link_to 'Volver', confirmation_items_path %>
+<a href = "/confirmation_books/<%= @confirmation_item.confirmation_book.id %>/confirmation_items"> Volver </a>
