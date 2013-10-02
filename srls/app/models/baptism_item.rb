@@ -10,7 +10,7 @@ class BaptismItem < ActiveRecord::Base
   
   before_save do
     if self.id != nil && self.id != 0
-      old = BaptisimItem.find(self.id)
+      old = BaptismItem.find(self.id)
       ind = 0
       object = UpdatedDataTable.new
       object.source_table = "Partida de Bautizo"

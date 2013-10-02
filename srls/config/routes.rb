@@ -11,7 +11,7 @@ Srls::Application.routes.draw do
   get 'user_managers/search' => 'user_managers#search'
   match 'user_logs/user_logs_index/:id' => 'user_logs#user_logs_index'
   get 'confirmation_items/:id' => 'confirmation_items#show'
-  get 'confirmation_items/:id' => 'confirmation_items#index'
+ # get 'confirmation_items/:id' => 'confirmation_items#index'
   get 'confirmation_items/:id/edit' => 'confirmation_items#edit'
   
   resources :user_managers
@@ -35,8 +35,8 @@ Srls::Application.routes.draw do
     resources :death_record_items
   end
 
-  #resources :confirmation_items
-  #resources :confirmation_books
+  resources :confirmation_items
+  resources :confirmation_books
   resources :baptism_books
   resources :baptism_items
   resources :churches
