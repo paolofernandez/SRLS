@@ -11,7 +11,6 @@ Srls::Application.routes.draw do
   get 'user_managers/search' => 'user_managers#search'
   match 'user_logs/user_logs_index/:id' => 'user_logs#user_logs_index'
   get 'confirmation_items/:id' => 'confirmation_items#show'
-  get 'confirmation_items/:id' => 'confirmation_items#index'
   get 'confirmation_items/:id/edit' => 'confirmation_items#edit'
   
   resources :user_managers
