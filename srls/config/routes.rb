@@ -12,6 +12,9 @@ Srls::Application.routes.draw do
   match 'user_logs/user_logs_index/:id' => 'user_logs#user_logs_index'
   get 'confirmation_items/:id' => 'confirmation_items#show'
   get 'confirmation_items/:id/edit' => 'confirmation_items#edit'
+  get 'user_logs/changes_index' => 'user_logs#changes_index'
+  get 'user_logs/user_changes_index/:id' => 'user_logs#user_changes_index'
+  get 'user_logs/show_change_information/:id' => 'user_logs#show_change_information'
   
   resources :user_managers
   resources :change_logs

@@ -1,0 +1,31 @@
+<h1>Informacion de Modificacion de Datos</h1>
+<br>
+<h2> Usuario: <%= @change.user.email %> </h2>
+<% if @change.user.status%>
+	Estado: Activo
+<%else%>
+	Estado: Inactivo
+<%end%>
+<br>
+<h3>Fecha: <%= @change.created_at %></h3>
+Tabla del Dato: <%= @change.source_table %> <br>
+Id del Dato: <%= @change.id_datum %> <br>
+Campos modificados:<br>
+<table>
+  <tr>
+  	<th>Posicion en tabla</th>
+  	<th>Dato Antiguo</th>
+    <th>Nuevo Dato</th>
+  </tr>
+<% @change.updated_data_table_items.each do |data| %>
+  <tr>
+  	<td><%= data.item%></td>
+  	<td><%= data.old_data%></td>
+    <td><%= data.new_data %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<a href='/user_logs/change_index'> Historial de Modificaciones</a>
+<br />
+<%= link_to 'Lista de Usuarios', user_managers_path %>

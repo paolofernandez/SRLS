@@ -1,0 +1,31 @@
+<h1> Listando Cambios del usuario <%= @user.email %> </h1>
+<br>
+<% if @user.status%>
+	<h3> Estado: Activo </h3>
+<%else%>
+	<h3> Estado: Inactivo </h3>
+<%end%>
+<br>
+<table>
+  <tr>
+  	<th>Fecha</th>
+  	<th>Tabla del Dato</th>
+    <th>Id del Dato</th>
+    <th>Usuario</th>
+    <th></th>
+  </tr>
+
+<% @user.updated_data_tables.each do |data| %>
+  <tr>
+  	<td><%= data.created_at%></td>
+  	<td><%= data.source_table%></td>
+    <td><%= data.id_datum %></td>
+    <td><%= data.user.email %></td>
+    <td><a href="user_logs/updated_table_data/<%= data.id %>"> Ver </a>
+  </tr>
+<% end %>
+</table>
+<br />
+<a href='/user_logs/changes_index'> Historial de Modificaciones </a>
+<br />
+<%= link_to 'Lista de Usuarios', user_managers_path %>

@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :marriege_books
   has_many :marriege_items
   has_many :user_logs
+  has_many :updated_data_tables
   
   after_save do
     if self.current_sign_in_at != nil

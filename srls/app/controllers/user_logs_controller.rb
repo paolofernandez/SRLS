@@ -14,8 +14,8 @@ class UserLogsController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @user_logs }
+      format.html # user_logs_index.html.erb
+      format.json { render json: @user }
     end
   end
   
@@ -28,5 +28,32 @@ class UserLogsController < ApplicationController
       end
     end
     redirect_to destroy_user_session_path, :method => :delete
+  end
+  
+  def changes_index
+    @changes = UpdatedDataTable.all
+
+    respond_to do |format|
+      format.html # changes_index.html.erb
+      format.json { render json: @changes }
+    end
+  end
+  
+  def user_changes_index
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html # user_changes_index.html.erb
+      format.json { render json: @user }
+    end
+  end
+
+  def show_change_information
+    @change = UpdatedDataTableItem.find(params[:id])
+
+    respond_to do |format|
+      format.html # show_change_information.html.erb
+      format.json { render json: @change }
+    end
   end
 end
