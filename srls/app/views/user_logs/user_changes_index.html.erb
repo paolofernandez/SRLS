@@ -21,11 +21,11 @@
   	<td><%= data.source_table%></td>
     <td><%= data.id_datum %></td>
     <td><%= data.user.email %></td>
-    <td><a href="user_logs/updated_table_data/<%= data.id %>"> Ver </a>
+    <td><a href="/user_logs/show_change_information/<%= data.id %>"> Ver </a>
   </tr>
 <% end %>
 </table>
 <br />
-<a href='/user_logs/changes_index'> Historial de Modificaciones </a>
+<a href="/user_logs/changes_index" > Log de Modificaciones </a> 
 <br />
 <%= link_to 'Lista de Usuarios', user_managers_path %>

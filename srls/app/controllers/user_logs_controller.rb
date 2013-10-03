@@ -49,7 +49,7 @@ class UserLogsController < ApplicationController
   end
 
   def show_change_information
-    @change = UpdatedDataTableItem.find(params[:id])
+    @change = UpdatedDataTable.find(params[:id])
 
     respond_to do |format|
       format.html # show_change_information.html.erb
