@@ -1,0 +1,19 @@
+<h1>Listando Cambios realizados por <%= @changes.user.email %></h1>
+<br>
+<% if @changes.user.status%>
+	<h3>Estado: Activo</h3>
+<%else%>
+	<h3>Estado: Inactivo</h3>
+<%end%>
+<br>
+<br>
+<h3>Fecha: <%= @changes.created_at %></h3>
+Tabla del Dato: <%= @changes.source_table %> <br>
+Id del Dato: <%= @changes.id_datum %> <br>
+<% @changes.updated_data_table_items.each do |data| %>
+	
+
+<% end %>
+
+<br />
+<%= link_to 'Lista de Usuarios', user_managers_path %>

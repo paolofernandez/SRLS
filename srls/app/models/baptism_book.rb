@@ -8,7 +8,7 @@ class BaptismBook < ActiveRecord::Base
   
   before_save do
     if self.id != nil && self.id != 0
-      old = BaptisimBook.find(self.id)
+      old = BaptismBook.find(self.id)
       ind = 0
       object = UpdatedDataTable.new
       object.source_table = "Libro de Bautizo"
