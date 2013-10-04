@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
 <p>
   <b>Codigo:</b>
@@ -83,6 +83,9 @@
     <td><%= baptism_item.encargado %></td>
     <!--td><%= baptism_item.validado %></td-->
     <!--td><%= baptism_item.user %></td-->
+     <td><%= link_to 'Ver', baptism_item %></td>
+    <td><%= link_to 'Editar', edit_baptism_item_path(baptism_item) %></td>
+ 
   </tr>
 <% end %>
 </table>

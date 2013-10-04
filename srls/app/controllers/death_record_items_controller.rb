@@ -10,6 +10,15 @@ class DeathRecordItemsController < ApplicationController
     redirect_to death_record_book_path(@death_record_book)
   end
 
+  def show
+    @death_record_item = DeathRecordItem.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @death_record_item}
+    end
+  end
+
   # GET /death_record_items/1/edit
   def edit
     @death_record_item = DeathRecordItem.find(params[:id])

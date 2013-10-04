@@ -92,7 +92,4 @@
   <b>Baptism book:</b>
   <%= @baptism_item.baptism_book %>
 </p>
-
-
-<%= link_to 'Editar', edit_baptism_item_path(@baptism_item) %> |>
-<%= link_to 'Volver', baptism_items_path %>
+<a href = "/baptism_books/<%= @baptism_item.baptism_book.id %>"> Volver </a>

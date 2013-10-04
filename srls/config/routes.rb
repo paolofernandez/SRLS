@@ -13,7 +13,18 @@ Srls::Application.routes.draw do
   get 'confirmation_items/:id' => 'confirmation_items#show'
  # get 'confirmation_items/:id' => 'confirmation_items#index'
   get 'confirmation_items/:id/edit' => 'confirmation_items#edit'
+
+
+  get 'baptism_items/:id' => 'baptism_items#show'
+  get 'baptism_items/:id/edit' => 'baptism_items#edit'
   
+  get 'marriege_items/:id' => 'marriege_items#show'
+  get 'marriege_items/:id/edit' => 'marriege_items#edit'
+
+   get 'death_record_items/:id' => 'death_record_items#show'
+  get 'death_record_items/:id/edit' => 'death_record_items#edit'
+
+
   resources :user_managers
   resources :change_logs
   resources :user_logs
@@ -37,8 +48,9 @@ Srls::Application.routes.draw do
 
   resources :confirmation_items
   resources :confirmation_books
-  resources :baptism_books
   resources :baptism_items
+  resources :baptism_books
+  
   resources :churches
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end 
   
