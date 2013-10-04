@@ -24,12 +24,14 @@
 <th> </th>
 <th> </th>
 <th> </th>
+<th> </th>
+<th> </th>
 </tr>
 <% @users.each do |user| %>
 	<tr>
 	<td> <%=user.id%> </td>
 	</td>
-	<td><a href="/user_logs/user_logs_index/<%=user.id%>">  <%= user.email %> </a></td>
+	<td> <%= user.email %> </td>
 	</td>
 	<% if user.rol == 1%>
 	<td> Administrador </td>
@@ -44,6 +46,8 @@
 	<%end%>
 	</td>
 	<!--<td> <a href="/user_managers/show/<%=user.id%>" > Ver informacion de usuario |  </a> </td>-->
+	<td><a href="/user_logs/user_logs_index/<%=user.id%>"> Ver Sesiones </a> </td>
+	<td><a href="/user_logs/user_changes_index/<%=user.id%>"> Ver Modificaciones </a> </td>
 	<td> <a href="/user_managers/edit/<%=user.id%>" > Editar Rol |  </a> </td>
 	<td> <a href="/user_managers/edit_password/<%=user.id%>" > Editar Password |  </a> </td>
     <td> <a href="/user_managers/delete/<%=user.id%>" > Eliminar </a> </td>
@@ -54,6 +58,8 @@
 <a href="/user_managers/new"> Registrar Nuevo Usuario </a> 
 <br>
 <a href="/user_logs" > Ver Log de Usuarios </a> 
+<br>
+<a href="/user_logs/changes_index" > Ver Log de Modificaciones </a> 
 <br>
 <a href="/churches/new"> Crear Nueva Parroquia </a>
 <br>

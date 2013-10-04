@@ -1,0 +1,23 @@
+<h1> Listando Cambios </h1>
+<br>
+<table>
+  <tr>
+  	<th>Fecha</th>
+  	<th>Tabla del Dato</th>
+    <th>Id del Dato</th>
+    <th>Usuario</th>
+    <th></th>
+  </tr>
+
+<% @changes.each do |data| %>
+  <tr>
+  	<td><%= data.created_at%></td>
+  	<td><%= data.source_table%></td>
+    <td><%= data.id_datum %></td>
+    <td><%= data.user.email %></td>
+    <td><a href="/user_logs/show_change_information/<%= data.id %>"> Ver </a>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'Lista de Usuarios', user_managers_path %>

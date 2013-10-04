@@ -23,6 +23,7 @@ class DeathRecordItem < ActiveRecord::Base
             data.item = ind.to_s
             data.old_data = old.attributes[ind].to_s
             data.new_data = datum.to_s
+            data.save
           end
         end
         ind+=1
