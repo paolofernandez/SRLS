@@ -14,6 +14,15 @@ class MarriegeItemsController < ApplicationController
     @marriege_item = MarriegeItem.find(params[:id])
   end
 
+     def show
+    @marriege_item = MarriegeItem.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @marriege_item}
+    end
+  end
+
   def update
     @marriege_item = MarriegeItem.find(params[:id])
     @marriege_item.user = current_user

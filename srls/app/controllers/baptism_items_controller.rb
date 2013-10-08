@@ -12,6 +12,15 @@ class BaptismItemsController < ApplicationController
     redirect_to baptism_book_path(@baptism_book)
   end
 
+   def show
+    @baptism_item = BaptismItem.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @baptism_item}
+    end
+  end
+
 # GET /baptism_items/1/edit
   def edit
     @baptism_item = BaptismItem.find(params[:id])
