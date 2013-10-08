@@ -9,6 +9,48 @@ class BaptismBooksController < ApplicationController
       format.json { render json: @baptism_books }
     end
   end
+  
+  # GET /baptism_books/search
+  # GET /baptism_books/search.json
+  def search
+    @baptism_books=buscar(params[:codigo], params[:parroquia])
+    render 'index'
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @baptism_books }
+    end
+  end
+  
+  def buscar(codigo, parroquia)
+    books=Array.new 
+    aux = BaptismBook.all
+    if codigo != "" && codigo != nil
+      if parroquia  != "" && parroquia != nil
+        aux.each do |book|
+          if (book.correspondeACodigo(codigo) && book.correspondeAParroquia(parroquia))
+            books.push(book)
+          end
+        end
+      else
+        aux.each do |book|
+          if (book.correspondeACodigo(codigo))
+            books.push(book)
+          end
+        end
+      end
+    else
+      if parroquia  != "" && parroquia != nil
+        aux.each do |book|
+          if (book.correspondeAParroquia(parroquia))
+            books.push(book)
+          end
+        end
+      else
+        books = aux
+      end
+    end
+    return books
+  end
 
   # GET /baptism_books/1
   # GET /baptism_books/1.json

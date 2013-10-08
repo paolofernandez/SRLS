@@ -5,6 +5,30 @@ class ConfirmationBook < ActiveRecord::Base
   validates :codigo, :uniqueness=>true
   validates :codigo, :numero, :presence=>true
   
+  def correspondeACodigo(codigo)
+    parametros = codigo.split(' ')
+    
+    parametros.each do |parametro|
+      if self.codigo.downcase.include?(parametro.downcase)
+        return true
+      end
+    end
+    false
+  end
+  
+  def correspondeAParroquia(parroquia)
+    parametros = parroquia.split(' ')
+    
+    parametros.each do |parametro|
+      self.confirmation_items.each do |item|
+        if item.parroquia_confirmacion.downcase.include?(parametro.downcase)
+          return true
+        end
+      end
+    end
+    false
+  end
+  
   before_save do
     if self.id != nil && self.id != 0
       old = ConfirmationBook.find(self.id)

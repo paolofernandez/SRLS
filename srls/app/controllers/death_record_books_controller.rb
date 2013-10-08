@@ -9,7 +9,49 @@ class DeathRecordBooksController < ApplicationController
       format.json { render json: @death_record_books }
     end
   end
-
+  
+  # GET /death_record_books/search
+  # GET /death_record_books/search.json
+  def search
+    @death_record_books=buscar(params[:codigo], params[:parroquia])
+    render 'index'
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @death_record_books }
+    end
+  end
+  
+  def buscar(codigo, parroquia)
+    books=Array.new 
+    aux = DeathRecordBook.all
+    if codigo != "" && codigo != nil
+      if parroquia  != "" && parroquia != nil
+        aux.each do |book|
+          if (book.correspondeACodigo(codigo) && book.correspondeAParroquia(parroquia))
+            books.push(book)
+          end
+        end
+      else
+        aux.each do |book|
+          if (book.correspondeACodigo(codigo))
+            books.push(book)
+          end
+        end
+      end
+    else
+      if parroquia  != "" && parroquia != nil
+        aux.each do |book|
+          if (book.correspondeAParroquia(parroquia))
+            books.push(book)
+          end
+        end
+      else
+        books = aux
+      end
+    end
+    return books
+  end
+  
   # GET /death_record_books/1
   # GET /death_record_books/1.json
   def show

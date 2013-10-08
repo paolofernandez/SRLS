@@ -6,6 +6,28 @@ class BaptismBook < ActiveRecord::Base
   validates :codigo, :uniqueness=>true
   validates :codigo, :numero, :parroquia, :presence=>true
   
+  def correspondeACodigo(codigo)
+    parametros = codigo.split(' ')
+    
+    parametros.each do |parametro|
+      if self.codigo.downcase.include?(parametro.downcase)
+        return true
+      end
+    end
+    false
+  end
+  
+  def correspondeAParroquia(parroquia)
+    parametros = parroquia.split(' ')
+    
+    parametros.each do |parametro|
+      if self.parroquia.downcase.include?(parametro.downcase)
+        return true
+      end
+    end
+    false
+  end
+  
   before_save do
     if self.id != nil && self.id != 0
       old = BaptismBook.find(self.id)

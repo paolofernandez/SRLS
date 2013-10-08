@@ -15,6 +15,10 @@ Srls::Application.routes.draw do
   get 'user_logs/changes_index' => 'user_logs#changes_index'
   get 'user_logs/user_changes_index/:id' => 'user_logs#user_changes_index'
   get 'user_logs/show_change_information/:id' => 'user_logs#show_change_information'
+  get 'confirmation_books/search' => 'confirmation_books#search'
+  get 'baptism_books/search' => 'baptism_books#search'
+  get 'death_record_books/search' => 'death_record_books#search'
+  get 'marriege_books/search' => 'marriege_books#search'
   
   resources :user_managers
   resources :change_logs
