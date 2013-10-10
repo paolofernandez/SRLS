@@ -12,6 +12,17 @@ class MarriegeItem < ActiveRecord::Base
       :nombre_esposa, :nombre_esposo, :numero, :parroquia_bautizo_esposo, :tomo_libro, :presence=>true
   validates :numero, :uniqueness => { :scope => :marriege_book_id }
   validates :fecha_matrimonio, :uniqueness => { :scope => :nombre_esposo, :scope => :nombre_esposa }
+
+  def correspondeAnombre(nombre)
+    parametros = nombre.split(' ')
+    
+    parametros.each do |parametro|
+      if self.nombre_esposo.downcase.include?(parametro.downcase) || self.nombre_esposa.downcase.include?(parametro.downcase)
+        return true
+      end
+    end
+    false
+  end
   
   before_save do
     if self.id != nil && self.id != 0

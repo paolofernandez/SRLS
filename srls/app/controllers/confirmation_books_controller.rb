@@ -15,10 +15,6 @@ class ConfirmationBooksController < ApplicationController
   def search
     @confirmation_books=buscar(params[:codigo], params[:parroquia])
     render 'index'
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @baptism_books }
-    end
   end
   
   def buscar(codigo, parroquia)
@@ -50,6 +46,27 @@ class ConfirmationBooksController < ApplicationController
       end
     end
     return books
+  end
+
+  # GET /confirmation_books/searchName
+  # GET /confirmation_books/searchName.json
+  def searchName
+    @confirmation_items=buscarNombre(params[:nombre])
+  end
+  
+  def buscarNombre(nombre)
+    items=Array.new
+    aux = ConfirmationItem.all
+    if nombre != "" && nombre != nil
+      aux.each do |item|
+        if (item.correspondeAnombre(nombre))
+          items.push(item)
+        end
+      end
+    else
+      items = aux
+    end
+    return items
   end
 
   # GET /confirmation_books/1
