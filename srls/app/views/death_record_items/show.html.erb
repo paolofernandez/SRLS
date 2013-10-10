@@ -71,12 +71,12 @@
   <%= @death_record_item.user %>
 </p-->
 
-<p>
+<!--p>
   <b>Death record book:</b>
   <%= @death_record_item.death_record_book %>
-</p>
+</p-->
 
 
-<%= link_to 'Editar', edit_death_record_item_path(@death_record_item) %>
+<!--%= link_to 'Editar', edit_death_record_item_path(@death_record_item) %-->
 <a href = "/death_record_books/<%= @death_record_item.death_record_book.id %>"> Volver </a>
 <a href = "/death_record_items/<%= @death_record_item.id %>.pdf"> Imprimir </a>
