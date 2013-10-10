@@ -1,4 +1,5 @@
 class UserLogsController < ApplicationController
+  load_and_authorize_resource
   # GET /user_logs
   # GET /user_logs.json
   def index

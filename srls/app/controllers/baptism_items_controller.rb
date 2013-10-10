@@ -1,5 +1,5 @@
 class BaptismItemsController < ApplicationController
-
+  load_and_authorize_resource
   # POST /baptism_items
   # POST /baptism_items.json
   def create

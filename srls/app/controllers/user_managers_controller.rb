@@ -1,8 +1,10 @@
 class UserManagersController < ApplicationController
+  #load_and_authorize_resource
+  
   # GET /user_managers
   # GET /user_managers.json
   def index
-    @users = User.where(:status => true)
+    @users = User.all
     @users = User.order(params[:sort])
   end
   

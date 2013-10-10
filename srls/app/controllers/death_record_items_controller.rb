@@ -1,4 +1,5 @@
 class DeathRecordItemsController < ApplicationController
+  load_and_authorize_resource
   # POST /death_record_items
   # POST /death_record_items.json
   def create

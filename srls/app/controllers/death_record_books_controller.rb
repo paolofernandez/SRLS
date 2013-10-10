@@ -1,4 +1,5 @@
 class DeathRecordBooksController < ApplicationController
+  load_and_authorize_resource
   # GET /death_record_books
   # GET /death_record_books.json
   def index

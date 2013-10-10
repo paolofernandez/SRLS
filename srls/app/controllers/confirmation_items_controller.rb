@@ -1,5 +1,6 @@
 class ConfirmationItemsController < ApplicationController
-    # POST /confirmation_items
+  load_and_authorize_resource
+  # POST /confirmation_items
   # POST /confirmation_items.json
   def index
     @confirmation_book = ConfirmationBook.find(params[:confirmation_book_id])

@@ -1,4 +1,5 @@
 class ChangeLogsController < ApplicationController
+  load_and_authorize_resource
   # GET /change_logs
   # GET /change_logs.json
   def index

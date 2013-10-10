@@ -1,4 +1,5 @@
 class MarriegeBooksController < ApplicationController
+  load_and_authorize_resource
   # GET /marriege_books
   # GET /marriege_books.json
   def index

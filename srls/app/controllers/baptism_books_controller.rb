@@ -1,4 +1,5 @@
 class BaptismBooksController < ApplicationController
+  load_and_authorize_resource
   # GET /baptism_books
   # GET /baptism_books.json
   def index

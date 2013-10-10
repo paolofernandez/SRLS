@@ -1,4 +1,5 @@
 class ConfirmationBooksController < ApplicationController
+  load_and_authorize_resource
   # GET /confirmation_books
   # GET /confirmation_books.json
   def index

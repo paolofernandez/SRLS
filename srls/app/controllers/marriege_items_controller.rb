@@ -1,4 +1,6 @@
 class MarriegeItemsController < ApplicationController
+  load_and_authorize_resource
+  
    def create
     @marriege_book = MarriegeBook.find(params[:marriege_book_id])
     @marriege_item = @marriege_book.marriege_items.create(params[:marriege_item])
