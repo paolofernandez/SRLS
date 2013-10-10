@@ -16,6 +16,7 @@ class DeathRecordItemsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @death_record_item}
+      format.pdf  { render :layout => false}
     end
   end
 

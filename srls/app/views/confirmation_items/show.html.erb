@@ -80,11 +80,12 @@
   <%= @confirmation_item.user %>
 </p-->
 
-<p>
+<!--p>
   <b>Confirmation book:</b>
   <%= @confirmation_item.confirmation_book.codigo %>
-</p>
+</p-->
 
 
 <!--%= link_to 'Editar', edit_confirmation_item_path(@confirmation_item) %> |-->
 <a href = "/confirmation_books/<%= @confirmation_item.confirmation_book.id %>"> Volver </a>
+<a href = "/confirmation_items/<%= @confirmation_item.id %>.pdf"> Imprimir </a>
