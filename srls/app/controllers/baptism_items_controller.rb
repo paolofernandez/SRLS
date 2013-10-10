@@ -12,7 +12,7 @@ class BaptismItemsController < ApplicationController
     redirect_to baptism_book_path(@baptism_book)
   end
 
-   def show
+  def show
     @baptism_item = BaptismItem.find(params[:id])
 
     respond_to do |format|

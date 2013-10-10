@@ -7,6 +7,17 @@ class ConfirmationItem < ActiveRecord::Base
       :parroquia_confirmacion, :tomo_libro, :presence=>true
   validates :numero, :uniqueness => { :scope => :confirmation_book_id }
   validates :fecha_confirmacion, :uniqueness => { :scope => :nombre }
+
+  def correspondeAnombre(nombre)
+    parametros = nombre.split(' ')
+    
+    parametros.each do |parametro|
+      if self.nombre.downcase.include?(parametro.downcase)
+        return true
+      end
+    end
+    false
+  end
   
   before_save do
     if self.id != nil && self.id != 0

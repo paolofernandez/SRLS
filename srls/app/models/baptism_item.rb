@@ -8,6 +8,17 @@ class BaptismItem < ActiveRecord::Base
   validates :numero, :uniqueness => { :scope => :baptism_book_id }
   validates :fecha_nacimiento, :uniqueness => { :scope => :nombre, :scope => :baptism_book_id }
   
+  def correspondeAnombre(nombre)
+    parametros = nombre.split(' ')
+    
+    parametros.each do |parametro|
+      if self.nombre.downcase.include?(parametro.downcase)
+        return true
+      end
+    end
+    false
+  end
+
   before_save do
     if self.id != nil && self.id != 0
       old = BaptismItem.find(self.id)

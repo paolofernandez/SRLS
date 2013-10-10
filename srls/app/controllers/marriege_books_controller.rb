@@ -15,10 +15,6 @@ class MarriegeBooksController < ApplicationController
   def search
     @marriege_books=buscar(params[:codigo], params[:parroquia])
     render 'index'
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @marriege_books }
-    end
   end
   
   def buscar(codigo, parroquia)
@@ -50,6 +46,27 @@ class MarriegeBooksController < ApplicationController
       end
     end
     return books
+  end
+
+  # GET /marriege_books/searchName
+  # GET /marriege_books/searchName.json
+  def searchName
+    @marriege_items=buscarNombre(params[:nombre])
+  end
+  
+  def buscarNombre(nombre)
+    items=Array.new
+    aux = MarriegeItem.all
+    if nombre != "" && nombre != nil
+      aux.each do |item|
+        if (item.correspondeAnombre(nombre))
+          items.push(item)
+        end
+      end
+    else
+      items = aux
+    end
+    return items
   end
 
   # GET /marriege_books/1

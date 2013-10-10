@@ -6,6 +6,17 @@ class DeathRecordItem < ActiveRecord::Base
   validates :celebrante, :edad, :fecha, :motivo_muerte, :nombre, :numero, :pagina, :tomo_libro, :presence=>true
   validates :numero, :uniqueness => { :scope => :death_record_book_id }
   validates :fecha, :uniqueness => { :scope => :nombre }
+
+  def correspondeAnombre(nombre)
+    parametros = nombre.split(' ')
+    
+    parametros.each do |parametro|
+      if self.nombre.downcase.include?(parametro.downcase)
+        return true
+      end
+    end
+    false
+  end
   
   before_save do
     if self.id != nil && self.id != 0

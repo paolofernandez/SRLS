@@ -15,10 +15,6 @@ class DeathRecordBooksController < ApplicationController
   def search
     @death_record_books=buscar(params[:codigo], params[:parroquia])
     render 'index'
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @death_record_books }
-    end
   end
   
   def buscar(codigo, parroquia)
@@ -52,6 +48,27 @@ class DeathRecordBooksController < ApplicationController
     return books
   end
   
+  # GET /death_record_books/searchName
+  # GET /death_record_books/searchName.json
+  def searchName
+    @death_record_items=buscarNombre(params[:nombre])
+  end
+  
+  def buscarNombre(nombre)
+    items=Array.new
+    aux = DeathRecordItem.all
+    if nombre != "" && nombre != nil
+      aux.each do |item|
+        if (item.correspondeAnombre(nombre))
+          items.push(item)
+        end
+      end
+    else
+      items = aux
+    end
+    return items
+  end
+
   # GET /death_record_books/1
   # GET /death_record_books/1.json
   def show
