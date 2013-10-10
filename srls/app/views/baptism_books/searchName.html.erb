@@ -1,0 +1,11 @@
+<h1>Partidas de Bautizo con nombre <%=@nombre%></h1>
+<form method="GET" action="/baptism_books/searchName">
+    Nombre: <input type="text" name="nombre"> &nbsp;&nbsp;&nbsp;
+    <input type="submit" value="Buscar">
+</form>
+<br>
+<br>
+
+<%= render "baptism_items/index" %>
+
+<%= link_to 'Volver', baptism_books_path %>

@@ -1,5 +1,6 @@
-<h1>Partidas de Confirmacion</h1>
-<%= link_to 'Nueva Partida de Confirmacion', new_confirmation_item_path %>
+<!--<h1>Partidas de Confirmacion</h1>
+<%= link_to 'Nueva Partida de Confirmacion', new_confirmation_item_path %>-->
+<CENTER>
 <table>
   <tr>
     <th>Tomo libro</th>
@@ -18,13 +19,13 @@
     <th>Celebrante</th>
     <!--th>Validado</th>
     <th>User</th-->
-    <th>Confirmation book</th>
+    <th>Libro de Confirmacion</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @confirmation_book.confirmation_items.each do |confirmation_item| %>
+<% @confirmation_items.each do |confirmation_item| %>
   <tr>
     <td><%= confirmation_item.tomo_libro %></td>
     <td><%= confirmation_item.numero %></td>
@@ -42,7 +43,7 @@
     <td><%= confirmation_item.celebrante %></td>
     <!--td><%= confirmation_item.validado %></td>
     <td><%= confirmation_item.user %></td-->
-    <td><%= confirmation_item.confirmation_book.codigo %></td>
+    <td><%= link_to confirmation_item.confirmation_book.codigo, confirmation_item.confirmation_book %></td>
     <td><%= link_to 'Ver', confirmation_item %></td>
     <td><%= link_to 'Editar', edit_confirmation_item_path(confirmation_item) %></td>
     <!--td><%= link_to 'Eliminar', confirmation_item, method: :delete, data: { confirm: 'Are you sure?' } %></td-->

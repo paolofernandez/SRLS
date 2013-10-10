@@ -1,0 +1,11 @@
+<h1>Partidas de Defuncion con nombre <%=@nombre%></h1>
+<form method="GET" action="/death_record_books/searchName">
+    Nombre: <input type="text" name="nombre"> &nbsp;&nbsp;&nbsp;
+    <input type="submit" value="Buscar">
+</form>
+<br>
+<br>
+
+<%= render "death_record_items/index" %>
+
+<%= link_to 'Volver', death_record_books_path %>

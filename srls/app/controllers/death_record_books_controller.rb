@@ -51,7 +51,8 @@ class DeathRecordBooksController < ApplicationController
   # GET /death_record_books/searchName
   # GET /death_record_books/searchName.json
   def searchName
-    @death_record_items=buscarNombre(params[:nombre])
+    @nombre=params[:nombre]
+    @death_record_items=buscarNombre(@nombre)
   end
   
   def buscarNombre(nombre)

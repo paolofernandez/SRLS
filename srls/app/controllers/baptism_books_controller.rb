@@ -51,7 +51,8 @@ class BaptismBooksController < ApplicationController
   # GET /baptism_books/searchName
   # GET /baptism_books/searchName.json
   def searchName
-    @baptism_items=buscarNombre(params[:nombre])
+    @nombre=params[:nombre]
+    @baptism_items=buscarNombre(@nombre)
   end
   
   def buscarNombre(nombre)

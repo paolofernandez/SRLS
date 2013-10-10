@@ -51,7 +51,8 @@ class MarriegeBooksController < ApplicationController
   # GET /marriege_books/searchName
   # GET /marriege_books/searchName.json
   def searchName
-    @marriege_items=buscarNombre(params[:nombre])
+    @nombre=params[:nombre]
+    @marriege_items=buscarNombre(@nombre)
   end
   
   def buscarNombre(nombre)

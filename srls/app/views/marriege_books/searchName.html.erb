@@ -1,0 +1,11 @@
+<h1>Partidas de Matrimonio con nombre <%=@nombre%></h1>
+<form method="GET" action="/marriege_books/searchName">
+    Nombre: <input type="text" name="nombre"> &nbsp;&nbsp;&nbsp;
+    <input type="submit" value="Buscar">
+</form>
+<br>
+<br>
+
+<%= render "marriege_items/index" %>
+
+<%= link_to 'Volver', marriege_books_path %>

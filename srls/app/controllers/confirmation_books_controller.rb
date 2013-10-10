@@ -51,7 +51,8 @@ class ConfirmationBooksController < ApplicationController
   # GET /confirmation_books/searchName
   # GET /confirmation_books/searchName.json
   def searchName
-    @confirmation_items=buscarNombre(params[:nombre])
+    @nombre=params[:nombre]
+    @confirmation_items=buscarNombre(@nombre)
   end
   
   def buscarNombre(nombre)
