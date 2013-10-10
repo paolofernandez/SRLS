@@ -27,6 +27,11 @@ Srls::Application.routes.draw do
   get 'death_record_books/search' => 'death_record_books#search'
   get 'marriege_books/search' => 'marriege_books#search'
 
+  get 'confirmation_books/searchName' => 'confirmation_books#searchName'
+  get 'baptism_books/searchName' => 'baptism_books#searchName'
+  get 'death_record_books/searchName' => 'death_record_books#searchName'
+  get 'marriege_books/searchName' => 'marriege_books#searchName'
+
   
   get 'marriege_items/:id' => 'marriege_items#show'
   get 'marriege_items/:id/edit' => 'marriege_items#edit'
