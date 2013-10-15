@@ -13,6 +13,10 @@ class MarriegeItem < ActiveRecord::Base
   validates :numero, :uniqueness => { :scope => :marriege_book_id }
   validates :fecha_matrimonio, :uniqueness => { :scope => :nombre_esposo, :scope => :nombre_esposa }
 
+  def nombre_tabla
+    "Partida de Matrimonio"
+  end
+
   def correspondeAnombre(nombre)
     parametros = nombre.split(' ')
     

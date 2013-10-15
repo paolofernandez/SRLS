@@ -8,6 +8,10 @@ class BaptismItem < ActiveRecord::Base
   validates :numero, :uniqueness => { :scope => :baptism_book_id }
   validates :fecha_nacimiento, :uniqueness => { :scope => :nombre, :scope => :baptism_book_id }
   
+  def nombre_tabla
+    "Partida de Bautizo"
+  end
+
   def correspondeAnombre(nombre)
     parametros = nombre.split(' ')
     

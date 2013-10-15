@@ -5,6 +5,10 @@ class DeathRecordBook < ActiveRecord::Base
   validates :codigo, :uniqueness=>true
   validates :codigo, :numero, :parroquia, :presence=>true
   
+  def nombre_tabla
+    "Libro de Defuncion"
+  end
+
   def correspondeACodigo(codigo)
     parametros = codigo.split(' ')
     

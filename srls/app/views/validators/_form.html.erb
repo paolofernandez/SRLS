@@ -1,0 +1,64 @@
+<% case @validator.tabla %>
+  <% when "Libro de Bautizo" %>
+    <% @baptism_book = @validator.dato %>
+    <%= render '/baptism_books/form' %>
+  <% when "Partida de Bautizo" %>
+    <% @baptism_item = @validator.dato %>
+    <%= render '/baptism_items/new_form' %>
+  <% when "Libro de Confirmacion" %>
+    <% @confirmation_book = @validator.dato %>
+    <%= render '/confirmation_books/form' %>
+  <% when "Partida de Confirmacion" %>
+    <% @confirmation_item = @validator.dato %>
+    <%= render '/confirmation_items/new_form' %>
+  <% when "Libro de Defuncion" %>
+    <% @death_record_book = @validator.dato %>
+    <%= render '/death_record_books/form' %>
+  <% when "Partida de Defuncion" %>
+    <% @death_record_item = @validator.dato %>
+    <%= render '/death_record_items/new_form' %>
+  <% when "Libro de Matrimonio" %>
+    <% @marriege_book = @validator.dato %>
+    <%= render '/marriege_books/form' %>
+  <% when "Partida de Matrimonio" %>
+    <% @marriege_item = @validator.dato %>
+    <%= render '/marriege_items/new_form' %>
+<% end %>
+
+<%= form_for(@validator) do |f| %>
+  <% if @validator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@validator.errors.count, "error") %> prohibited this validator from being saved:</h2>
+
+      <ul>
+      <% @validator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :comentario %><br />
+    <%= f.text_area :comentario %>
+  </div>
+  <div class="field">
+    <%= f.label :valido %><br />
+    <%= f.check_box :valido %>
+  </div>
+  <div class="field">
+    <%= f.label :tabla %><br />
+    <%= f.text_field :tabla %>
+  </div>
+  <div class="field">
+    <%= f.label :id_dato %><br />
+    <%= f.number_field :id_dato %>
+  </div>
+  <div class="field">
+    <%= f.label :users %><br />
+    <%= f.text_field :users %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

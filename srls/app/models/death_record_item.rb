@@ -7,6 +7,10 @@ class DeathRecordItem < ActiveRecord::Base
   validates :numero, :uniqueness => { :scope => :death_record_book_id }
   validates :fecha, :uniqueness => { :scope => :nombre }
 
+  def nombre_tabla
+    "Partida de Defuncion"
+  end
+
   def correspondeAnombre(nombre)
     parametros = nombre.split(' ')
     

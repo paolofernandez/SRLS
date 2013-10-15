@@ -6,6 +6,10 @@ class BaptismBook < ActiveRecord::Base
   validates :codigo, :uniqueness=>true
   validates :codigo, :numero, :parroquia, :presence=>true
   
+  def nombre_tabla
+    "Libro de Bautizo"
+  end
+
   def correspondeACodigo(codigo)
     parametros = codigo.split(' ')
     

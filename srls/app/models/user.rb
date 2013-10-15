@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :rol, :status
   # attr_accessible :title, :body
   
-  validates :email, :uniqueness=>true
+  validates :email, :presence=>true, :uniqueness=>true
+  validates :password, :presence=>true
   
   has_many :baptism_books
   has_many :baptism_items
@@ -21,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :marriege_items
   has_many :user_logs
   has_many :updated_data_tables
+  has_many :validators
   
   after_save do
     if self.current_sign_in_at != nil

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Comentario:</b>
+  <%= @validator.comentario %>
+</p>
+
+<p>
+  <b>Valido:</b>
+  <%= @validator.valido %>
+</p>
+
+<p>
+  <b>Tabla:</b>
+  <%= @validator.tabla %>
+</p>
+
+<p>
+  <b>Id dato:</b>
+  <%= @validator.id_dato %>
+</p>
+
+<p>
+  <b>Users:</b>
+  <%= @validator.users %>
+</p>
+
+
+<%= link_to 'Edit', edit_validator_path(@validator) %> |
+<%= link_to 'Back', validators_path %>

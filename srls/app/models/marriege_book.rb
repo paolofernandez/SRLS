@@ -5,6 +5,10 @@ class MarriegeBook < ActiveRecord::Base
   validates :codigo, :uniqueness=>true
   validates :codigo, :numero, :parroquia, :presence=>true
   
+  def nombre_tabla
+    "Libro de Matrimonio"
+  end
+
   def correspondeACodigo(codigo)
     parametros = codigo.split(' ')
     

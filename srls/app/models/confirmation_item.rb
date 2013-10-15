@@ -8,6 +8,10 @@ class ConfirmationItem < ActiveRecord::Base
   validates :numero, :uniqueness => { :scope => :confirmation_book_id }
   validates :fecha_confirmacion, :uniqueness => { :scope => :nombre }
 
+  def nombre_tabla
+    "Partida de Confirmacion"
+  end
+
   def correspondeAnombre(nombre)
     parametros = nombre.split(' ')
     

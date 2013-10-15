@@ -1,0 +1,81 @@
+<%= form_for(@baptism_item) do |f| %>
+  <% if @baptism_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@baptism_item.errors.count, "error") %> prohibited this baptism_item from being saved:</h2>
+
+      <ul>
+      <% @baptism_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :tomo_libro %><br />
+    <%= f.text_field :tomo_libro %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_bautizo %><br />
+    <%= f.date_select :fecha_bautizo %>
+  </div>
+  <div class="field">
+    <%= f.label :celebrante %><br />
+    <%= f.text_field :celebrante %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar_nacimiento %><br />
+    <%= f.text_field :lugar_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nacimiento %><br />
+    <%= f.text_field :fecha_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_hijo %><br />
+    <%= f.text_field :tipo_hijo %>
+  </div>
+  <div class="field">
+    <%= f.label :padre %><br />
+    <%= f.text_field :padre %>
+  </div>
+  <div class="field">
+    <%= f.label :madre %><br />
+    <%= f.text_field :madre %>
+  </div>
+  <div class="field">
+    <%= f.label :feligreses %><br />
+    <%= f.text_field :feligreses %>
+  </div>
+  <div class="field">
+    <%= f.label :padrino %><br />
+    <%= f.text_field :padrino %>
+  </div>
+  <div class="field">
+    <%= f.label :madrina %><br />
+    <%= f.text_field :madrina %>
+  </div>
+  <div class="field">
+    <%= f.label :oficialia %><br />
+    <%= f.text_field :oficialia %>
+  </div>
+  <div class="field">
+    <%= f.label :encargado %><br />
+    <%= f.text_field :encargado %>
+  </div>
+   <div class="field">
+    <%= f.label :pagina %><br />
+    <%= f.text_field :pagina %>
+  </div>
+   
+  <div class="actions">
+    <%= f.submit "Guardar" %>
+  </div>
+<% end %>

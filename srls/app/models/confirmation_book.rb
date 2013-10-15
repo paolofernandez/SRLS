@@ -5,6 +5,10 @@ class ConfirmationBook < ActiveRecord::Base
   validates :codigo, :uniqueness=>true
   validates :codigo, :numero, :presence=>true
   
+  def nombre_tabla
+    "Libro de Confirmacion"
+  end
+
   def correspondeACodigo(codigo)
     parametros = codigo.split(' ')
     

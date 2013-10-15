@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  comentario: MyText
+  valido: false
+  tabla: MyString
+  id_dato: 1
+  users: 
+
+two:
+  comentario: MyText
+  valido: false
+  tabla: MyString
+  id_dato: 1
+  users: 
