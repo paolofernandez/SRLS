@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001145144) do
+ActiveRecord::Schema.define(:version => 20131015143139) do
 
   create_table "baptism_books", :force => true do |t|
     t.string   "codigo"
@@ -246,6 +246,7 @@ ActiveRecord::Schema.define(:version => 20131001145144) do
     t.string   "email",                  :default => "",   :null => false
     t.string   "encrypted_password",     :default => "",   :null => false
     t.integer  "rol",                    :default => 1
+    t.boolean  "status",                 :default => true
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -256,10 +257,21 @@ ActiveRecord::Schema.define(:version => 20131001145144) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
-    t.boolean  "status",                 :default => true
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "validators", :force => true do |t|
+    t.text     "comentario"
+    t.boolean  "valido",     :default => false
+    t.string   "tabla"
+    t.integer  "id_dato"
+    t.integer  "users_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "validators", ["users_id"], :name => "index_validators_on_users_id"
 
 end
