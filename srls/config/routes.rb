@@ -43,6 +43,12 @@ Srls::Application.routes.draw do
   get 'death_record_items/:id/edit' => 'death_record_items#edit'
 
 
+
+
+
+  get 'baptism_items/:id/print' => 'baptism_items#print'
+
+
   resources :user_managers
   resources :change_logs
   resources :user_logs

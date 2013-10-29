@@ -21,7 +21,7 @@ class ConfirmationItemsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @confirmation_item}
-      format.pdf  { render :layout => false}
+      #format.pdf  { render :layout => false}
     end
   end
 # GET /confirmation_items/1/edit

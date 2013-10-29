@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015143139) do
+ActiveRecord::Schema.define(:version => 20131029145211) do
 
   create_table "baptism_books", :force => true do |t|
     t.string   "codigo"
@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(:version => 20131015143139) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.integer  "pagina"
+    t.integer  "oficialiaLibro"
+    t.integer  "oficialiaPartida"
+    t.integer  "oficialiaFs"
   end
 
   add_index "baptism_items", ["baptism_book_id"], :name => "index_baptism_items_on_baptism_book_id"

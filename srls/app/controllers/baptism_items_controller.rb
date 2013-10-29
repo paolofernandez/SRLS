@@ -18,12 +18,16 @@ class BaptismItemsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @baptism_item}
-      format.pdf  { render :layout => false}
+      #format.pdf  { render :layout => false}
     end
   end
 
 # GET /baptism_items/1/edit
   def edit
+    @baptism_item = BaptismItem.find(params[:id])
+  end
+
+  def print
     @baptism_item = BaptismItem.find(params[:id])
   end
 
