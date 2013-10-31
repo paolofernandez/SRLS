@@ -30,6 +30,11 @@ class ConfirmationItemsController < ApplicationController
     @confirmation_item = ConfirmationItem.find(params[:id])
   end
 
+  def print
+    @confirmation_item = ConfirmationItem.find(params[:id])
+    render layout: false
+  end
+
   def update
     @confirmation_item = ConfirmationItem.find(params[:id])
     @confirmation_item.user = current_user

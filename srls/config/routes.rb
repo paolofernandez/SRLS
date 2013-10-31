@@ -47,6 +47,9 @@ Srls::Application.routes.draw do
 
 
   get 'baptism_items/:id/print' => 'baptism_items#print'
+  get 'confirmation_items/:id/print' => 'confirmation_items#print'
+  get 'death_record_items/:id/print' => 'death_record_items#print'
+  get 'marriege_items/:id/print' => 'marriege_items#print'
 
 
   resources :user_managers

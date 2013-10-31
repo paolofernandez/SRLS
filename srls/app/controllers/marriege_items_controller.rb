@@ -26,6 +26,11 @@ class MarriegeItemsController < ApplicationController
     end
   end
 
+  def print
+    @marriege_item = MarriegeItem.find(params[:id])
+    render layout: false
+  end
+
   def update
     @marriege_item = MarriegeItem.find(params[:id])
     @marriege_item.user = current_user

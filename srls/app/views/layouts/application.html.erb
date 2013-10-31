@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Srls</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Ingreso al sistema como <%= current_user.email %>. No eres tu?
-    <!--<%= link_to "Cerrar Sesion   |   ", destroy_user_session_path, :method => :delete %>-->
-    <A HREF="/user_logs/cerrar_sesion">Cerrar Sesion</A>
-    <br><A HREF="/baptism_books">Libros De Bautizo</A>
-    <A HREF="/confirmation_books">          Libros De Confirmacion</A>  
-    <A HREF="/marriege_books">          Libros De Matrimonio</A>
-    <A HREF="/death_record_books">          Libros De Defuncion</A>
-    <A HREF="/user_managers">          Usuarios</A> 
-  <% else %>
-    <!--<%= link_to "Iniciar Sesion", new_user_session_path %>-->
-    <%= link_to "Registrarse", new_user_registration_path %> or <%= link_to "Iniciar Sesion", new_user_session_path %>
-
-  <% end %>
-</div>
-
-
-<%= yield %>
-
+  <head>
+    <title>Srls</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+        <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
 </body>
 </html>
+
+

@@ -1,0 +1,21 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-custom">
+    <div class="container">      
+        <nav>
+          <% if user_signed_in?%>
+          <ul>
+            <li>Loggeado como <%= current_user.email %>. No eres tu? <%= link_to "Cerrar Sesion", '/user_logs/cerrar_sesion', id: 'link' %></li></ul>
+            <ul class="nav pull-left">
+              <li class="navbar-custom navbar-brand"><%=link_to "SRLS", '#', id: 'main' %></li>
+              <li><%= link_to "Libros de Bautizo", '/baptism_books', id: 'link' %></li>
+              <li><%= link_to "Libros de Confirmacion", '/confirmation_books', id: 'link' %></li>
+              <li><%= link_to "Libros de Matrimonio", '/marriege_books', id: 'link' %></li>
+              <li><%= link_to "Libros de Defuncion", '/death_record_books', id: 'link' %></li>
+            </ul>
+          <% else %>
+            <li><%= link_to "Registrarse", new_user_registration_path %> or <%= link_to "Iniciar Sesion", new_user_session_path %><!--%= link_to "Iniciar Sesion", signin_path %></li-->
+          <% end %>
+        </nav>
+    </div>
+  </div>
+</header>

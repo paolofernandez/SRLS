@@ -29,6 +29,7 @@ class BaptismItemsController < ApplicationController
 
   def print
     @baptism_item = BaptismItem.find(params[:id])
+    render layout: false
   end
 
   def update

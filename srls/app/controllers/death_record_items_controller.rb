@@ -2,6 +2,7 @@ class DeathRecordItemsController < ApplicationController
   load_and_authorize_resource
   # POST /death_record_items
   # POST /death_record_items.json
+
   def create
     @death_record_book = DeathRecordBook.find(params[:death_record_book_id])
     @death_record_item = @death_record_book.death_record_items.create(params[:death_record_item])
@@ -24,6 +25,11 @@ class DeathRecordItemsController < ApplicationController
   # GET /death_record_items/1/edit
   def edit
     @death_record_item = DeathRecordItem.find(params[:id])
+  end
+
+  def print
+    @death_record_item = DeathRecordItem.find(params[:id])
+    render layout: false
   end
 
   def update
