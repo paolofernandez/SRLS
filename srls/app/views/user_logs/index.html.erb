@@ -6,7 +6,7 @@
   	<th>Estado</th>
     <th>Hora Entrada</th>
     <th>Hora Salida</th>
-
+<%= will_paginate %>
 <% @user_logs.each do |user_log| %>
   <tr>
   	<td><%= user_log.user.email%></td>
@@ -19,6 +19,7 @@
     <td><%= user_log.salida %></td>
   </tr>
 <% end %>
+<%= will_paginate %>
 </table>
 
 <br />

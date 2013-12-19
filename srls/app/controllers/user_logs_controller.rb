@@ -4,6 +4,7 @@ class UserLogsController < ApplicationController
   # GET /user_logs.json
   def index
     @user_logs = UserLog.all
+    @user_logs = UserLog.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

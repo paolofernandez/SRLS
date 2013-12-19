@@ -26,7 +26,7 @@
     <th></th>
     <th></th>
   </tr>
-
+<%= will_paginate %>
 <% @confirmation_books.each do |confirmation_book| %>
   <tr>
     <td><%= confirmation_book.codigo %></td>
@@ -40,5 +40,6 @@
     <!--td><%= link_to 'Eliminar', confirmation_book, method: :delete, data: { confirm: 'Seguro?' } %></td-->
   </tr>
 <% end %>
+<%= will_paginate %>
 </table>
 </CENTER>

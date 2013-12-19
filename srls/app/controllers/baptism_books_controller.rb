@@ -5,6 +5,7 @@ class BaptismBooksController < ApplicationController
   def index
     @baptism_books = BaptismBook.all
     @baptism_books = BaptismBook.order(params[:sort])
+    @baptism_books = BaptismBook.paginate(page: params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @baptism_books }

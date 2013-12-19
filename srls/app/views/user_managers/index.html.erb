@@ -28,6 +28,7 @@
 <th> </th>
 <th> </th>
 </tr>
+<%= will_paginate %>
 <% @users.each do |user| %>
 	<tr>
 	<td> <%=user.id%> </td>
@@ -60,6 +61,7 @@
     <td> <a href="/user_managers/delete/<%=user.id%>" > Cambiar Estado </a> </td>
 	</tr>
 <% end %>
+<%= will_paginate %>
 </table>
 <br>
 <a href="/user_managers/new"> Registrar Nuevo Usuario </a> 

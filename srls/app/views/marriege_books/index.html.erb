@@ -27,7 +27,7 @@
     <th></th>
     <th></th>
   </tr>
-
+<%= will_paginate %>
 <% @marriege_books.each do |marriege_book| %>
   <tr>
     <td><%= marriege_book.codigo %></td>
@@ -42,5 +42,6 @@
     <!--td><%= link_to 'Eliminar', marriege_book, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
   </tr>
 <% end %>
+<%= will_paginate %>
 </table>
 </CENTER>

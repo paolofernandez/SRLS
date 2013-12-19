@@ -5,6 +5,7 @@ class ConfirmationBooksController < ApplicationController
   def index
     @confirmation_books = ConfirmationBook.all
     @confirmation_books = ConfirmationBook.order(params[:sort])
+    @confirmation_books = ConfirmationBook.paginate(page: params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @confirmation_books }
