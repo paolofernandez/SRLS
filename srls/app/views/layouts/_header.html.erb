@@ -1,20 +1,32 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-custom">
+  <div class="navbar-inner">
     <div class="container">      
+    <%=link_to "SRLS", '/', id: "logo" %>
         <nav>
           <% if user_signed_in?%>
-          <ul>
-            <li>Loggeado como <%= current_user.email %>. No eres tu? <%= link_to "Cerrar Sesion", '/user_logs/cerrar_sesion', id: 'link' %></li></ul>
-            <ul class="nav pull-left">
-              <li class="navbar-custom navbar-brand"><%=link_to "SRLS", '#', id: 'main' %></li>
-              <li><%= link_to "Libros de Bautizo", '/baptism_books', id: 'link' %></li>
-              <li><%= link_to "Libros de Confirmacion", '/confirmation_books', id: 'link' %></li>
-              <li><%= link_to "Libros de Matrimonio", '/marriege_books', id: 'link' %></li>
-              <li><%= link_to "Libros de Defuncion", '/death_record_books', id: 'link' %></li>
-            </ul>
+          <ul class="nav pull-right">
+              <li><%= link_to "Libros de Bautizo", '/baptism_books'%></li>
+              <li><%= link_to "Libros de Confirmacion", '/confirmation_books'%></li>
+              <li><%= link_to "Libros de Matrimonio", '/marriege_books'%></li>
+              <li><%= link_to "Libros de Defuncion", '/death_record_books'%></li>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Usuario <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Cambiar contraseña", '#'%></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Cerrar Sesion", '/user_logs/cerrar_sesion'%>
+                  </li>
+                </ul>
+              </li>
           <% else %>
-            <li><%= link_to "Registrarse", new_user_registration_path %> or <%= link_to "Iniciar Sesion", new_user_session_path %><!--%= link_to "Iniciar Sesion", signin_path %></li-->
+          <ul class="nav pull-right">
+            <li><%= link_to "Registrarse", new_user_registration_path %></li> <li><%= link_to "Iniciar Sesion", new_user_session_path %><!--%= link_to "Iniciar Sesion", signin_path %></li--></li>
+            </ul>
           <% end %>
+          </ul>
         </nav>
     </div>
   </div>
