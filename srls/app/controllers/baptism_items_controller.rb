@@ -37,7 +37,7 @@ class BaptismItemsController < ApplicationController
     @baptism_item.user = current_user
     respond_to do |format|
       if @baptism_item.update_attributes(params[:baptism_item])
-        format.html { redirect_to @baptism_item, notice: 'Marriege book was successfully updated.' }
+        format.html { redirect_to @baptism_item, notice: 'Partida de Bautizo actualizada exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

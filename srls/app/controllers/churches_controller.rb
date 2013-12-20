@@ -45,7 +45,7 @@ class ChurchesController < ApplicationController
     @church.user = current_user
     respond_to do |format|
       if @church.save
-        format.html { redirect_to @church, notice: 'Church was successfully created.' }
+        format.html { redirect_to @church, notice: 'Iglesia Creada exitosamente.' }
         format.json { render json: @church, status: :created, location: @church }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class ChurchesController < ApplicationController
 
     respond_to do |format|
       if @church.update_attributes(params[:church])
-        format.html { redirect_to @church, notice: 'Church was successfully updated.' }
+        format.html { redirect_to @church, notice: 'Iglesia Actualizada exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

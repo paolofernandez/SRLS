@@ -37,7 +37,7 @@ class DeathRecordItemsController < ApplicationController
     @death_record_item.user = current_user
     respond_to do |format|
       if @death_record_item.update_attributes(params[:death_record_item])
-        format.html { redirect_to @death_record_item, notice: 'Marriege book was successfully updated.' }
+        format.html { redirect_to @death_record_item, notice: 'Partida de Defuncion actualizada exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

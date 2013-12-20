@@ -40,7 +40,7 @@ class ConfirmationItemsController < ApplicationController
     @confirmation_item.user = current_user
     respond_to do |format|
       if @confirmation_item.update_attributes(params[:confirmation_item])
-        format.html { redirect_to @confirmation_item, notice: 'Confirmation Item was successfully updated.' }
+        format.html { redirect_to @confirmation_item, notice: 'Partida de Confirmacion Actualizada exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

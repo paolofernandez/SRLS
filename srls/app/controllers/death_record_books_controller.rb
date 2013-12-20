@@ -107,7 +107,7 @@ class DeathRecordBooksController < ApplicationController
     @death_record_book.validado = false
     respond_to do |format|
       if @death_record_book.save
-        format.html { redirect_to @death_record_book, notice: 'Death record book was successfully created.' }
+        format.html { redirect_to @death_record_book, notice: 'Libro de Defunciones creado exitosamente.' }
         format.json { render json: @death_record_book, status: :created, location: @death_record_book }
       else
         format.html { render action: "new" }
@@ -123,7 +123,7 @@ class DeathRecordBooksController < ApplicationController
     @death_record_book.user = current_user
     respond_to do |format|
       if @death_record_book.update_attributes(params[:death_record_book])
-        format.html { redirect_to @death_record_book, notice: 'Death record book was successfully updated.' }
+        format.html { redirect_to @death_record_book, notice: 'Libro de Defunciones actualizado exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

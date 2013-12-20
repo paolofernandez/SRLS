@@ -45,7 +45,7 @@ class ChangeLogsController < ApplicationController
 
     respond_to do |format|
       if @change_log.save
-        format.html { redirect_to @change_log, notice: 'Change log was successfully created.' }
+        format.html { redirect_to @change_log, notice: 'Log de Cambios Creado con exito.' }
         format.json { render json: @change_log, status: :created, location: @change_log }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class ChangeLogsController < ApplicationController
 
     respond_to do |format|
       if @change_log.update_attributes(params[:change_log])
-        format.html { redirect_to @change_log, notice: 'Change log was successfully updated.' }
+        format.html { redirect_to @change_log, notice: 'Log de Cambios exitosamente actualizado.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -107,7 +107,7 @@ class ConfirmationBooksController < ApplicationController
     @confirmation_book.validado = false
     respond_to do |format|
       if @confirmation_book.save
-        format.html { redirect_to @confirmation_book, notice: 'Confirmation book was successfully created.' }
+        format.html { redirect_to @confirmation_book, notice: 'Libro de Confirmacion creado exitosamente.' }
         format.json { render json: @confirmation_book, status: :created, location: @confirmation_book }
       else
         format.html { render action: "new" }
@@ -123,7 +123,7 @@ class ConfirmationBooksController < ApplicationController
     @confirmation_book.user = current_user
     respond_to do |format|
       if @confirmation_book.update_attributes(params[:confirmation_book])
-        format.html { redirect_to @confirmation_book, notice: 'Confirmation book was successfully updated.' }
+        format.html { redirect_to @confirmation_book, notice: 'Libro de Confirmacion actualizad exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

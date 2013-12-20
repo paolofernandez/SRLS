@@ -107,7 +107,7 @@ class BaptismBooksController < ApplicationController
     @baptism_book.validado = false
     respond_to do |format|
       if @baptism_book.save
-        format.html { redirect_to @baptism_book, notice: 'Baptism book was successfully created.' }
+        format.html { redirect_to @baptism_book, notice: 'Libro de Bautizos creado con exito.' }
         format.json { render json: @baptism_book, status: :created, location: @baptism_book }
       else
         format.html { render action: "new" }
@@ -124,7 +124,7 @@ class BaptismBooksController < ApplicationController
     
     respond_to do |format|
       if @baptism_book.update_attributes(params[:baptism_book])
-        format.html { redirect_to @baptism_book, notice: 'Baptism book was successfully updated.' }
+        format.html { redirect_to @baptism_book, notice: 'Libro de Bautizos actualizado con exito.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

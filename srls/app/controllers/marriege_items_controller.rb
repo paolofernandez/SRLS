@@ -36,7 +36,7 @@ class MarriegeItemsController < ApplicationController
     @marriege_item.user = current_user
     respond_to do |format|
       if @marriege_item.update_attributes(params[:marriege_item])
-        format.html { redirect_to @marriege_item, notice: 'Marriege book was successfully updated.' }
+        format.html { redirect_to @marriege_item, notice: 'Partida de Matrimonio actualizada exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
