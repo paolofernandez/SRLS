@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :rol, :status
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :rol, :status, :clave
   # attr_accessible :title, :body
 
   def timeout_in
