@@ -1,6 +1,4 @@
 Srls::Application.routes.draw do
-  
-  resources :validators
 
 
   match 'user_managers/delete/:id' => 'user_managers#delete'
@@ -39,11 +37,11 @@ Srls::Application.routes.draw do
   get 'marriege_items/:id' => 'marriege_items#show'
   get 'marriege_items/:id/edit' => 'marriege_items#edit'
 
-   get 'death_record_items/:id' => 'death_record_items#show'
+  get 'death_record_items/:id' => 'death_record_items#show'
   get 'death_record_items/:id/edit' => 'death_record_items#edit'
 
 
-
+  get 'validators/pending_index/:tabla' => 'validators#pending_index'
 
 
   get 'baptism_items/:id/print' => 'baptism_items#print'
@@ -51,7 +49,7 @@ Srls::Application.routes.draw do
   get 'death_record_items/:id/print' => 'death_record_items#print'
   get 'marriege_items/:id/print' => 'marriege_items#print'
 
-
+  resources :validators
   resources :user_managers
   resources :change_logs
   resources :user_logs

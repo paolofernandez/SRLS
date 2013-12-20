@@ -30,22 +30,22 @@ class ValidatorsController < ApplicationController
   private
   #metodo para obtener la tabla
   def datos_no_validados
-    case self.tabla
-      when "Libro de Bautizo"
+    case params[:tabla]
+      when "batism_books"
         datos = BatismBook.where(validado: false)
-      when "Partida de Bautizo"
+      when "batism_items"
         datos = BatismItem.where(validado: false)
-      when "Libro de Confirmacion"
+      when "confirmation_books"
         datos = ConfirmationBook.where(validado: false)
-      when "Partida de Confirmacion"
+      when "confirmation_items"
         datos = ConfirmationItem.where(validado: false)
-      when "Libro de Defuncion"
+      when "death_record_books"
         datos = DeathRecordBook.where(validado: false)
-      when "Partida de Defuncion"
+      when "death_ecord_items"
         datos = DeathRecordItem.where(validado: false)
-      when "Libro de Matrimonio"
+      when "marriege_books"
         datos = MarriegeBook.where(validado: false)
-      when "Partida de Matrimonio"
+      when "marriege_items"
         datos = MarriegeItem.where(validado: false)
       else
         datos = nil
