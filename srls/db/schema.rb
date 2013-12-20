@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131029145211) do
+ActiveRecord::Schema.define(:version => 20131220145613) do
 
   create_table "baptism_books", :force => true do |t|
     t.string   "codigo"
@@ -260,6 +260,7 @@ ActiveRecord::Schema.define(:version => 20131029145211) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.string   "clave"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

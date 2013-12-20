@@ -40,12 +40,12 @@ class UserManagersController < ApplicationController
     @user.email = params[:email]
     @user.rol = params[:rol]
     @user.password = params[:password]
-    @user.password_confirmation = params[:confirm]
-    if @user.password == @user.password_confirmation
+    password_confirmation = params[:confirm]
+    if @user.password == password_confirmation
       @user.save
-      redirect_to :action => 'index'
+      redirect_to :root
     else
-      redirect_to :action => 'edit_password'
+      render :action => 'new'
     end
   end  
   def delete
@@ -62,7 +62,7 @@ class UserManagersController < ApplicationController
     rol = (params[:rol]).to_i
     #rol = User.new(params[:user]).rol
     if @user.rol == 2 && rol !=2
-      functionary = Funcionaryuser.where(:user_id => params[:id])
+      functionary = User.where(:user_id => params[:id])
       functionary.each do |aux|
         aux.destroy
       end
@@ -77,12 +77,13 @@ class UserManagersController < ApplicationController
   def change_password
     @user = User.find(params[:id])
     @user.password = params[:password]
-    @user.password_confirmation = params[:confirm]
-    if @user.password == @user.password_confirmation
+    password_confirmation = params[:confirm]
+    if @user.password == password_confirmation
       @user.save
-      redirect_to :action => 'index'
+      redirect_to :root
     else
-      redirect_to :action => 'edit_password'
+      flash[:notice] = "El password de confirmacion no coincide"
+      render :action => 'edit_password'
     end
   end
 end
