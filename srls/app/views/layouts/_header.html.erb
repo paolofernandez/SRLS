@@ -1,13 +1,16 @@
 <HTML>
 <HEAD><link rel="shortcut icon" href="favicon.ico"></HEAD>
 <header class="navbar navbar-fixed-top navbar-inverse">
+<div class="row" >
+    <Center><a class="navbar-brand" href="/"><img src="/assets/srls.jpg" /></a></Center>
+  </div>
   <div class="navbar-inner">
     <div class="container">      
       
         <nav>
           <% if user_signed_in?%>
           <ul class="nav pull-left">
-          <li><a class="navbar-brand" href="/"><img src="/assets/srls.jpg" /></a>   </li></ul>
+          <!--li><a class="navbar-brand" href="/"><img src="/assets/srls.jpg" /></a>   </li></ul-->
           <ul class="nav pull-right">
           
               <li><%= link_to "Libros de Bautizo", '/baptism_books'%></li>
