@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131220145613) do
+ActiveRecord::Schema.define(:version => 20140107150512) do
 
   create_table "baptism_books", :force => true do |t|
     t.string   "codigo"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20131220145613) do
     t.date     "fecha_bautizo"
     t.string   "celebrante"
     t.string   "lugar_nacimiento"
-    t.string   "fecha_nacimiento"
+    t.date     "fecha_nacimiento", :limit => 255
     t.string   "tipo_hijo"
     t.string   "padre"
     t.string   "madre"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(:version => 20131220145613) do
     t.boolean  "validado"
     t.integer  "user_id"
     t.integer  "baptism_book_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.integer  "pagina"
     t.integer  "oficialiaLibro"
     t.integer  "oficialiaPartida"
@@ -271,11 +271,11 @@ ActiveRecord::Schema.define(:version => 20131220145613) do
     t.boolean  "valido",     :default => false
     t.string   "tabla"
     t.integer  "id_dato"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
 
-  add_index "validators", ["users_id"], :name => "index_validators_on_users_id"
+  add_index "validators", ["user_id"], :name => "index_validators_on_users_id"
 
 end

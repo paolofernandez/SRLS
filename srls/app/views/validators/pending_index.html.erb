@@ -16,7 +16,7 @@
     <td><%= pending.updated_at %></td>
     <td><%= pending.user.email %></td>
     <td><%= link_to 'Mostrar', pending %></td>
-    <td><%= link_to 'Validar', "/validators/new/"+pending.nombre_tabla+"&"+pending.id %></td>
+    <td><%= link_to 'Validar', "/validators/new/"+pending.nombre_tabla+"&"+pending.id.to_s %></td>
     <!--<td><%= link_to 'Destroy', pending, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
   </tr>
 <% end %>

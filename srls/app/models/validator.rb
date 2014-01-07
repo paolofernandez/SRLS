@@ -1,5 +1,5 @@
 class Validator < ActiveRecord::Base
-  belongs_to :users
+  belongs_to :user
   attr_accessible :comentario, :id_dato, :tabla, :valido
   validates :comentario, :uniqueness=>true, :presence=>true
 
