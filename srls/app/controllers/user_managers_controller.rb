@@ -6,7 +6,6 @@ class UserManagersController < ApplicationController
   def index
     @users = User.all
     @users = User.order(params[:sort])
-    @users = User.paginate(page: params[:page])
   end
   
   def search

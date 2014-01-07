@@ -1,7 +1,3 @@
-<br>
-<br>
-<br>
-
 <% if current_user != nil %>
 	<% if current_user.rol == 1 %>
 		
@@ -28,7 +24,6 @@
 <th> </th>
 <th> </th>
 </tr>
-<%= will_paginate %>
 <% @users.each do |user| %>
 	<tr>
 	<td> <%=user.id%> </td>
@@ -53,15 +48,14 @@
 		<td>Inactivo</td>
 	<% end %>
 	</td> 
-	<!--<td> <a href="/user_managers/show/<%=user.id%>" > Ver informacion de usuario |  </a> </td>-->
-	<td><a href="/user_logs/user_logs_index/<%=user.id%>"> Ver Sesiones </a> </td>
-	<td><a href="/user_logs/user_changes_index/<%=user.id%>"> Ver Modificaciones </a> </td>
-	<td> <a href="/user_managers/edit/<%=user.id%>" > Editar Rol |  </a> </td>
-	<td> <a href="/user_managers/edit_password/<%=user.id%>" > Editar Password |  </a> </td>
-    <td> <a href="/user_managers/delete/<%=user.id%>" > Cambiar Estado </a> </td>
+	<td> <a href="/user_managers/show/<%=user.id%>">Informacion de usuario|</a> </td>
+	<td><a href="/user_logs/user_logs_index/<%=user.id%>">Sesiones|</a> </td>
+	<td><a href="/user_logs/user_changes_index/<%=user.id%>">Modificaciones|</a> </td>
+	<td> <a href="/user_managers/edit/<%=user.id%>" >Editar Rol|</a> </td>
+	<td> <a href="/user_managers/edit_password/<%=user.id%>">Editar Password|</a> </td>
+    <td> <a href="/user_managers/delete/<%=user.id%>">Cambiar Estado</a> </td>
 	</tr>
 <% end %>
-<%= will_paginate %>	
 </table>
 <br>
 <a href="/user_managers/new"> Registrar Nuevo Usuario </a> 

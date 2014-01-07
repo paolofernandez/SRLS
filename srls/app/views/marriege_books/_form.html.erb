@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :codigo %><br />
+    <%= f.label :codigo, "Codigo de Libro" %><br />
     <%= f.text_field :codigo %>
   </div>
   <div class="field">
-    <%= f.label :numero %><br />
+    <%= f.label :numero, "Numero de Libro" %><br />
     <%= f.text_field :numero %>
   </div>
   <div class="field">
-    <%= f.label :paginas %><br />
+    <%= f.label :paginas, "Cantidad de Paginas" %><br />
     <%= f.text_field :paginas %>
   </div>
   <div class="field">
-    <%= f.label :partidas_pagina %><br />
+    <%= f.label :partidas_pagina, "Cantidad de Partidas por Pagina" %><br />
     <%= f.text_field :partidas_pagina %>
   </div>
   <div class="field">
-    <%=f.label :parroquia %><br />
+    <%=f.label :parroquia, "Parroquia de Pertenencia" %><br />
     <%=f.collection_select(:parroquia, Church.all, :nombre, :nombre)%>
   </div>
   <!--div class="field">
