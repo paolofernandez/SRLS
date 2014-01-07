@@ -1,29 +1,33 @@
 <% case @validator.tabla %>
   <% when "Libro de Bautizo" %>
-    <% @baptism_book = @validator.dato %>
+    <% @baptism_book = BaptismBook.find(@validator.id_dato) %>
     <%= render '/baptism_books/form' %>
   <% when "Partida de Bautizo" %>
-    <% @baptism_item = @validator.dato %>
+    <% @baptism_item = BaptismItem.find(@validator.id_dato) %>
     <%= render '/baptism_items/new_form' %>
   <% when "Libro de Confirmacion" %>
-    <% @confirmation_book = @validator.dato %>
+    <% @confirmation_book = ConfirmationBook.find(@validator.id_dato) %>
     <%= render '/confirmation_books/form' %>
   <% when "Partida de Confirmacion" %>
-    <% @confirmation_item = @validator.dato %>
+    <% @confirmation_item = ConfirmationItem.find(@validator.id_dato) %>
     <%= render '/confirmation_items/new_form' %>
   <% when "Libro de Defuncion" %>
-    <% @death_record_book = @validator.dato %>
+    <% @death_record_book = DeathRecordBook.find(@validator.id_dato) %>
     <%= render '/death_record_books/form' %>
   <% when "Partida de Defuncion" %>
-    <% @death_record_item = @validator.dato %>
+    <% @death_record_item = DeathRecordItem.find(@validator.id_dato) %>
     <%= render '/death_record_items/new_form' %>
   <% when "Libro de Matrimonio" %>
-    <% @marriege_book = @validator.dato %>
+    <% @marriege_book = MarriegeBook.find(@validator.id_dato) %>
     <%= render '/marriege_books/form' %>
   <% when "Partida de Matrimonio" %>
-    <% @marriege_item = @validator.dato %>
+    <% @marriege_item = MarriegeItem.find(@validator.id_dato) %>
     <%= render '/marriege_items/new_form' %>
 <% end %>
+
+<br><br>
+
+<h2>Validar</h2>
 
 <%= form_for(@validator) do |f| %>
   <% if @validator.errors.any? %>
@@ -47,16 +51,10 @@
     <%= f.check_box :valido %>
   </div>
   <div class="field">
-    <%= f.label :tabla %><br />
-    <%= f.text_field :tabla %>
+    <%= f.hidden_field :tabla %>
   </div>
   <div class="field">
-    <%= f.label :id_dato %><br />
-    <%= f.number_field :id_dato %>
-  </div>
-  <div class="field">
-    <%= f.label :users %><br />
-    <%= f.text_field :users %>
+    <%= f.hidden_field :id_dato %>
   </div>
   <div class="actions">
     <%= f.submit %>

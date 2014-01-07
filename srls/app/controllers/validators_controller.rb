@@ -88,10 +88,11 @@ class ValidatorsController < ApplicationController
   # POST /validators.json
   def create
     @validator = Validator.new(params[:validator])
+    @validator.user = current_user
     
     respond_to do |format|
       if @validator.save
-        format.html { redirect_to @validator, notice: 'Validator was successfully created.' }
+        format.html { redirect_to @validator, notice: 'Validacion fue creada exitosamente.' }
         format.json { render json: @validator, status: :created, location: @validator }
       else
         format.html { render action: "new" }
@@ -107,7 +108,7 @@ class ValidatorsController < ApplicationController
 
     respond_to do |format|
       if @validator.update_attributes(params[:validator])
-        format.html { redirect_to @validator, notice: 'Validator was successfully updated.' }
+        format.html { redirect_to @validator, notice: 'Validacion fue modificada exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

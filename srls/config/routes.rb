@@ -42,7 +42,7 @@ Srls::Application.routes.draw do
 
 
   get 'validators/pending_index/:tabla' => 'validators#pending_index'
-
+  get 'validators/new/:dato' => 'validators#new'
 
   get 'baptism_items/:id/print' => 'baptism_items#print'
   get 'confirmation_items/:id/print' => 'confirmation_items#print'

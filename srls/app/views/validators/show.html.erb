@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Datos de Validacion</h2>
 <p>
   <b>Comentario:</b>
   <%= @validator.comentario %>
@@ -21,10 +21,10 @@
 </p>
 
 <p>
-  <b>Users:</b>
-  <%= @validator.users %>
+  <b>Creador:</b>
+  <%= @validator.user.email %>
 </p>
 
 
-<%= link_to 'Edit', edit_validator_path(@validator) %> |
-<%= link_to 'Back', validators_path %>
+<%= link_to 'Editar', edit_validator_path(@validator) %> |
+<%= link_to 'Lista de Validaciones', validators_path %>

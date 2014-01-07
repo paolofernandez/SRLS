@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
 
   def timeout_in
     if self.rol==1 
-      1.minutes
+      20.minutes
     else
-      1.minutes
+      20.minutes
     end
   end
   
