@@ -34,4 +34,7 @@ Srls::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.i18n.default_locale = :es
+  config.i18n.available_locales =[:es, :en]
 end

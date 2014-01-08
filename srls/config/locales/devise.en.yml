@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-en:
+es:
   devise:
     confirmations:
       confirmed: "Your account was successfully confirmed. You are now signed in."
@@ -57,3 +57,6 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+
+
+
