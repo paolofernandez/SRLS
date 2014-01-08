@@ -8,13 +8,13 @@
 
 <DIV style="position: absolute;top:450px; font-size:22px; width:400px; font-family:Times News Roman; left: 50px; height: 25px;">CERTIFICA:</DIV>
 
-<DIV style="position: absolute;top: 520px; font-size:22px; font-family:Times News Roman; width: 805px; left: 160px; height: 35px;">Que en el Libro de Confirmaciones No <%=@confirmation_item.confirmation_book.numero%>, del Área urbana, a pag. No <%=@confirmation_item.pagina%>, ptda. No <%=@confirmation_item.numero%>, correspondiente al año x, se encuentra la siguiente Partida de Confirmacion, realizada en la "<%= @confirmation_item.parroquia_confirmacion %>", que a la letra dice: </DIV><BR><BR><BR>
+<DIV style="position: absolute;top: 520px; font-size:22px; font-family:Times News Roman; width: 805px; left: 160px; height: 35px;">Que en el Libro de Confirmaciones No <%=@confirmation_item.confirmation_book.numero%>, del Área urbana, a pag. No <%=@confirmation_item.pagina%>, ptda. No <%=@confirmation_item.numero%>, correspondiente al año <%=@confirmation_item.fecha_confirmacion.year%>, se encuentra la siguiente Partida de Confirmacion, realizada en la Parroquia de "<%= @confirmation_item.parroquia_confirmacion %>", que a la letra dice: </DIV><BR><BR><BR>
 
-<DIV style="position: absolute;top: 650px; font-size:22px; width: 805px; font-family:Times News Roman; left: 160px; height: 35px;">"Nombre: <B><%=@confirmation_item.nombre%>;</B> edad: <%=@confirmation_item.edad%>; Padre: <%=@confirmation_item.padre%>; Madre: <%=@confirmation_item.madre%>; Padrino: <%=@confirmation_item.padrino%>; Madrina: <%=@confirmation_item.madrina%>; Parroquia donde se Bautizó: <%=@confirmation_item.parroquia_bautizo%>(<%=@confirmation_item.fecha_bautizo%>); Fecha de la Confirmación: x de y de z; Obispo Confirmante: <%=@confirmation_item.celebrante%>"</DIV>
+<DIV style="position: absolute;top: 650px; font-size:22px; width: 805px; font-family:Times News Roman; left: 160px; height: 35px;">"Nombre: <B><%=@confirmation_item.nombre%>;</B> edad: <%=@confirmation_item.edad%> años; Padre: <%=@confirmation_item.padre%>; Madre: <%=@confirmation_item.madre%>; Padrino: <%=@confirmation_item.padrino%>; Madrina: <%=@confirmation_item.madrina%>; Parroquia donde se Bautizó: <%=@confirmation_item.parroquia_bautizo%>(<%=I18n.localize(@confirmation_item.fecha_bautizo, :format => :long)%>); Fecha de la Confirmación: <%= I18n.localize(@confirmation_item.fecha_confirmacion, :format => :long)%>; Obispo Confirmante: <%=@confirmation_item.celebrante%>"</DIV>
 
-<CENTER><DIV style="position: absolute; top: 850px; left:350px; font-size:22px; width: 400px; font-family:Times News Roman; ">Es cuanto certifica para fines consiguientes. Cochabamba, x de y, del z</DIV></CENTER>
+<CENTER><DIV style="position: absolute; top: 850px; left:350px; font-size:22px; width: 400px; font-family:Times News Roman; ">Es cuanto certifica para fines consiguientes. Cochabamba, <%=I18n.localize(Date.today, :format => :long)%></DIV></CENTER>
 
-<DIV style="position: absolute; top: 1350px; left:50px; font-size:22px; width: 805; font-family:Times News Roman; "><U>Nota.-</U> Cualquier enmienda o raspadura en el presente Certificado lo hacen nulo y sin valor legal.</DIV>
+<DIV style="position: absolute; top: 1200px; left:50px; font-size:22px; width: 805; font-family:Times News Roman; "><U>Nota.-</U> Cualquier enmienda o raspadura en el presente Certificado lo hacen nulo y sin valor legal.</DIV>
 
 </BDOY>
 </HTML>	
