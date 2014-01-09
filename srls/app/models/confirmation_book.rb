@@ -2,8 +2,20 @@ class ConfirmationBook < ActiveRecord::Base
   belongs_to :user
   has_many :confirmation_items, :dependent => :destroy
   attr_accessible :codigo, :numero, :paginas, :partidas_pagina, :validado
-  validates :codigo, :uniqueness=>true
-  validates :codigo, :numero, :presence=>true
+
+  validates :codigo,
+            :presence => {:message => "No puede estar vacio." },
+            :uniqueness=> {:message => "Codigo ya existe." }
+  validates :parroquia,
+            :presence =>true
+  validates :numero,
+            :presence => {:message => "No puede estar vacio." },
+            :numericality=> { only_integer: true}
+  validates :paginas, :presence => { :message => "No puede estar vacio" },
+            :numericality=> { only_integer: true}
+  validates :partidas_pagina, :presence => { :message => "No puede estar vacio" },
+            :numericality=> { only_integer: true}
+
   
   def nombre_tabla
     "Libro de Confirmacion"

@@ -8,13 +8,13 @@
 
 <DIV style="position: absolute;top:450px; font-size:22px; width:400px; font-family:Times News Roman; left: 50px; height: 25px;">CERTIFICA:</DIV>
 
-<DIV style="position: absolute;top: 520px; font-size:22px; font-family:Times News Roman; width: 805px; left: 160px; height: 35px;">Que en el Libro Duplicado de Defunciones No <%=@death_record_item.death_record_book.numero%>, de la Parroquia <%=@death_record_item.death_record_book.parroquia%>, a pag. <%=@death_record_item.pagina%>, ptda. No <%=@death_record_item.numero%>, correspondiente al año x, se encuentra la siguiente Partida de Defuncion, que a la letra dice: </DIV><BR><BR><BR>
+<DIV style="position: absolute;top: 520px; font-size:22px; font-family:Times News Roman; width: 805px; left: 160px; height: 35px;">Que en el Libro Duplicado de Defunciones No <%=@death_record_item.death_record_book.numero%>, de la Parroquia <%=@death_record_item.death_record_book.parroquia%>, a pag. <%=@death_record_item.pagina%>, ptda. No <%=@death_record_item.numero%>, correspondiente al año <%=@death_record_item.fecha.year%>, se encuentra la siguiente Partida de Defuncion, que a la letra dice: </DIV><BR><BR><BR>
 
-<DIV style="position: absolute;top: 650px; font-size:22px; width: 805px; font-family:Times News Roman; left: 160px; height: 35px;">"En esta Parroquia <%=@death_record_item.death_record_book.parroquia%>, el dia x del mes y del año del señor z. Fue sepultado en el cementerio de <%=@death_record_item.lugar_sepultura%> el cadaver de <B><%=@death_record_item.nombre%></B>, de <%=@death_record_item.edad%> años, hijo <%=@death_record_item.tipo_hijo%> de <%=@death_record_item.padre%> y de <%=@death_record_item.madre%>. Domiciliado en X, murió de <%=@death_record_item.motivo_muerte%>. De que doy fé Yo el parroco <%=@death_record_item.celebrante%>"</DIV>
+<DIV style="position: absolute;top: 650px; font-size:22px; width: 805px; font-family:Times News Roman; left: 160px; height: 35px;">"En esta Parroquia <%=@death_record_item.death_record_book.parroquia%>, el dia <%= I18n.localize(@death_record_item.fecha, :format => :short)%> del año del señor <%=@death_record_item.fecha.year%>. Fue sepultado en el cementerio de <%=@death_record_item.lugar_sepultura%> el cadaver de <B><%=@death_record_item.nombre%></B>, de <%=@death_record_item.edad%> años, hijo <%=@death_record_item.tipo_hijo%> de <%=@death_record_item.padre%> y de <%=@death_record_item.madre%>. Domiciliado en X, murió de <%=@death_record_item.motivo_muerte%>. De que doy fé Yo el parroco <%=@death_record_item.celebrante%>"</DIV>
 
-<CENTER><DIV style="position: absolute; top: 850px; left:350px; font-size:22px; width: 400px; font-family:Times News Roman; ">Es cuanto certifica para fines consiguientes. Cochabamba, x de y, del z</DIV></CENTER>
+<CENTER><DIV style="position: absolute; top: 850px; left:350px; font-size:22px; width: 400px; font-family:Times News Roman; ">Es cuanto certifica para fines consiguientes. Cochabamba, <%=I18n.localize(Date.today, :format => :long)%></DIV></CENTER>
 
-<DIV style="position: absolute; top: 1350px; left:50px; font-size:22px; width: 805; font-family:Times News Roman; "><U>Nota.-</U> Cualquier enmienda o raspadura en el presente Certificado lo hacen nulo y sin valor legal.</DIV>
+<DIV style="position: absolute; top: 1200px; left:50px; font-size:22px; width: 805; font-family:Times News Roman; "><U>Nota.-</U> Cualquier enmienda o raspadura en el presente Certificado lo hacen nulo y sin valor legal.</DIV>
 
 </BDOY>
 </HTML>

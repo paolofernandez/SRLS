@@ -1,6 +1,3 @@
-# Spanish translations for Rails
-# by Francisco Fernando García Nieto (ffgarcianieto@gmail.com)
-
 es:
   number:
     # Used in number_with_delimiter()
