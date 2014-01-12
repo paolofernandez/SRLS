@@ -97,6 +97,9 @@ class DeathRecordBooksController < ApplicationController
   # GET /death_record_books/1/edit
   def edit
     @death_record_book = DeathRecordBook.find(params[:id])
+    if @death_record_book.validado
+        format.html { redirect_to @death_record_book, notice: 'Validacion ya fue hecha no se puede modificar' }
+    end
   end
 
   # POST /death_record_books

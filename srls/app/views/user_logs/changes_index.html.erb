@@ -1,3 +1,5 @@
+<% if current_user != nil %>
+  <% if current_user.rol == 1 %>
 <h1> Listando Cambios </h1>
 <br>
 <table>
@@ -21,3 +23,12 @@
 </table>
 <br />
 <%= link_to 'Lista de Usuarios', user_managers_path %>
+
+  <%else%>
+    <br>
+    Usted No tiene permitido ingresar a esta pagina
+  <%end%>
+<%else%>
+  <br>
+  Usted No tiene permitido ingresar a esta pagina
+<%end%>

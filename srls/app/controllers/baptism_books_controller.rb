@@ -97,6 +97,9 @@ class BaptismBooksController < ApplicationController
   # GET /baptism_books/1/edit
   def edit
     @baptism_book = BaptismBook.find(params[:id])
+    if @baptism_book.validado
+        format.html { redirect_to @baptism_book, notice: 'Validacion ya fue hecha no se puede modificar' }
+    end
   end
 
   # POST /baptism_books

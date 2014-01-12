@@ -14,6 +14,9 @@ class MarriegeItemsController < ApplicationController
   # GET /marriege_items/1/edit
   def edit
     @marriege_item = MarriegeItem.find(params[:id])
+    if @marriege_item.validado
+        format.html { redirect_to @marriege_item, notice: 'Validacion ya fue hecha no se puede modificar' }
+    end
   end
 
      def show

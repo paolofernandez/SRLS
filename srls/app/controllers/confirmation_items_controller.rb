@@ -26,8 +26,10 @@ class ConfirmationItemsController < ApplicationController
   end
 # GET /confirmation_items/1/edit
   def edit
-
     @confirmation_item = ConfirmationItem.find(params[:id])
+    if @confirmation_item.validado
+        format.html { redirect_to @confirmation_item, notice: 'Validacion ya fue hecha no se puede modificar' }
+    end
   end
 
   def print

@@ -25,6 +25,9 @@ class BaptismItemsController < ApplicationController
 # GET /baptism_items/1/edit
   def edit
     @baptism_item = BaptismItem.find(params[:id])
+    if @baptism_item.validado
+        format.html { redirect_to @baptism_item, notice: 'Validacion ya fue hecha no se puede modificar' }
+    end
   end
 
   def print

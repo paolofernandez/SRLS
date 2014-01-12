@@ -1,6 +1,5 @@
 Srls::Application.routes.draw do
 
-
   match 'user_managers/delete/:id' => 'user_managers#delete'
   match 'user_managers/new' => 'user_managers#new'
   match 'user_managers/create' => 'user_managers#create'
@@ -22,7 +21,6 @@ Srls::Application.routes.draw do
   get 'baptism_items/:id' => 'baptism_items#show'
   get 'baptism_items/:id/edit' => 'baptism_items#edit'
 
- 
   get 'confirmation_books/search' => 'confirmation_books#search'
   get 'baptism_books/search' => 'baptism_books#search'
   get 'death_record_books/search' => 'death_record_books#search'
@@ -32,7 +30,6 @@ Srls::Application.routes.draw do
   get 'baptism_books/searchName' => 'baptism_books#searchName'
   get 'death_record_books/searchName' => 'death_record_books#searchName'
   get 'marriege_books/searchName' => 'marriege_books#searchName'
-
   
   get 'marriege_items/:id' => 'marriege_items#show'
   get 'marriege_items/:id/edit' => 'marriege_items#edit'
@@ -40,7 +37,8 @@ Srls::Application.routes.draw do
   get 'death_record_items/:id' => 'death_record_items#show'
   get 'death_record_items/:id/edit' => 'death_record_items#edit'
 
-
+  get 'validators/not_valid_index/:tabla' => 'validators#not_valid_index'
+  get 'validators/table_index/:tabla' => 'validators#table_index'
   get 'validators/pending_index/:tabla' => 'validators#pending_index'
   get 'validators/new/:dato' => 'validators#new'
 

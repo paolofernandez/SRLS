@@ -20,6 +20,14 @@ class ValidatorsController < ApplicationController
     render 'index'
   end
 
+  # GET /validators/not_valid_index
+  # GET /validators/not_valid_index.json
+  def not_valid_index
+    @validators = Validator.where(tabla: params[:tabla], valido: false)
+
+    render 'index'
+  end
+
   # GET /validators/pending_index
   # GET /validators/pending_index.json
   def pending_index
@@ -89,6 +97,9 @@ class ValidatorsController < ApplicationController
   def create
     @validator = Validator.new(params[:validator])
     @validator.user = current_user
+    if @validator.valido
+      validar(@validator.tabla, @validator.id_dato)
+    end
     
     respond_to do |format|
       if @validator.save
@@ -117,22 +128,37 @@ class ValidatorsController < ApplicationController
     end
   end
 
-  # DELETE /validators/1
-  # DELETE /validators/1.json
-  def validar
-    parametros = params[:dato].split('&')
-    validator = Validator.new
-    validator.tabla = parametros[0]
-    validator.id_dato = parametros[1]
-    @dato = validator.dato
+  private
+
+  def validar(tabla, id_dato)
+    @dato = buscar_dato(tabla, id_dato)
     @dato.validado = true
     @dato.save
-
-    respond_to do |format|
-      format.html { redirect_to validators_url }
-      format.json { head :no_content }
-    end
   end
+
+  def buscar_dato(tabla,id_dato)
+    case tabla
+      when "Libro de Bautizo"
+        dato = BaptismBook.find(id_dato)
+      when "Partida de Bautizo"
+        dato = BaptismItem.find(id_dato)
+      when "Libro de Confirmacion"
+        dato = ConfirmationBook.find(id_dato)
+      when "Partida de Confirmacion"
+        dato = ConfirmationItem.find(id_dato)
+      when "Libro de Defuncion"
+        dato = DeathRecordBook.find(id_dato)
+      when "Partida de Defuncion"
+        dato = DeathRecordItem.find(id_dato)
+      when "Libro de Matrimonio"
+        dato = MarriegeBook.find(id_dato)
+      when "Partida de Matrimonio"
+        dato = MarriegeItem.find(id_dato)
+    end
+    dato
+  end
+
+  public
 
   # DELETE /validators/1
   # DELETE /validators/1.json

@@ -25,6 +25,9 @@ class DeathRecordItemsController < ApplicationController
   # GET /death_record_items/1/edit
   def edit
     @death_record_item = DeathRecordItem.find(params[:id])
+    if @death_record_item.validado
+        format.html { redirect_to @death_record_item, notice: 'Validacion ya fue hecha no se puede modificar' }
+    end
   end
 
   def print

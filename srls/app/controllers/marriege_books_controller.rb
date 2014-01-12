@@ -97,6 +97,9 @@ class MarriegeBooksController < ApplicationController
   # GET /marriege_books/1/edit
   def edit
     @marriege_book = MarriegeBook.find(params[:id])
+    if @marriege_book.validado
+        format.html { redirect_to @marriege_book, notice: 'Validacion ya fue hecha no se puede modificar' }
+    end
   end
 
   # POST /marriege_books

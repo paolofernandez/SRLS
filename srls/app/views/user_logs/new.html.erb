@@ -1,3 +1,5 @@
+<% if current_user != nil %>
+  <% if current_user.rol == 1 %>
 <h2>Ingresar al sistema</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -15,3 +17,11 @@
 <% end %>
 
 <!--<%= render "devise/shared/links" %>-->
+  <%else%>
+    <br>
+    Usted No tiene permitido ingresar a esta pagina
+  <%end%>
+<%else%>
+  <br>
+  Usted No tiene permitido ingresar a esta pagina
+<%end%>

@@ -1,3 +1,5 @@
+<% if current_user != nil %>
+  <% if current_user.rol == 1 %>
 <h1>Listando Logs de <%= @user.email %></h1>
 <br>
 <% if @user.status%>
@@ -26,3 +28,11 @@
 <br />
 <%= link_to 'Lista de Usuarios', user_managers_path %><br />
 <%= link_to 'Lista de Usuarios', user_logs_path %>
+  <%else%>
+    <br>
+    Usted No tiene permitido ingresar a esta pagina
+  <%end%>
+<%else%>
+  <br>
+  Usted No tiene permitido ingresar a esta pagina
+<%end%>

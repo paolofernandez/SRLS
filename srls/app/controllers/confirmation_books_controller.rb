@@ -97,6 +97,9 @@ class ConfirmationBooksController < ApplicationController
   # GET /confirmation_books/1/edit
   def edit
     @confirmation_book = ConfirmationBook.find(params[:id])
+    if @confirmation_book.validado
+        format.html { redirect_to @confirmation_book, notice: 'Validacion ya fue hecha no se puede modificar' }
+    end
   end
 
   # POST /confirmation_books

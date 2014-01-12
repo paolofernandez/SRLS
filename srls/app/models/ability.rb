@@ -4,8 +4,32 @@ class Ability
   def initialize(user)
     #if user_signed_in?
       user ||= User.new # guest user (not logged in)
-      if user.status == true #admin
+      if user.rol == 1 #admin
            can :manage, :all
+      else
+        if user.rol == 2
+          can :manage, BaptismItem
+          can :manage, BaptismBook
+          can :manage, ConfirmationItem
+          can :manage, ConfirmationBook
+          can :manage, DeathRecordItem
+          can :manage, DeathRecordBook
+          can :manage, MarriegeItem
+          can :manage, MarriegeBook
+          can [:index, :table_index, :not_valid_index, :show], Validator
+        else
+          if user.rol == 3
+            can :manage, BaptismItem
+            can :manage, BaptismBook
+            can :manage, ConfirmationItem
+            can :manage, ConfirmationBook
+            can :manage, DeathRecordItem
+            can :manage, DeathRecordBook
+            can :manage, MarriegeItem
+            can :manage, MarriegeBook
+            can :manage, Validator
+          end
+        end
       end
   end
     # Define abilities for the passed in user here. For example:
