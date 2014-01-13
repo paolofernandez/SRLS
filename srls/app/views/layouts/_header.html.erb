@@ -19,7 +19,7 @@
               <li><%= link_to "Libros de Defuncion", '/death_record_books'%></li>
               <li><%= link_to "Validaciones", '/validators'%></li>
               <% if current_user.rol==1 %>
-                <li><%= link_to "Logs de Usuario", '/user_logs'%></li>
+                <li><%= link_to "Usuarios", '/user_managers'%></li>
                 <li><%= link_to "Agregar Parroquia", '/churches'%></li>
               <% end %>
               <li id="fat-menu" class="dropdown">
@@ -36,7 +36,7 @@
               </li>
           <% else %>
           <ul class="nav pull-right">
-            <li><%= link_to "Registrarse", new_user_registration_path %></li> <li><%= link_to "Iniciar Sesion", new_user_session_path %><!--%= link_to "Iniciar Sesion", signin_path %></li--></li>
+            <!--<li><%= link_to "Registrarse", new_user_registration_path %></li>--> <li><%= link_to "Iniciar Sesion", new_user_session_path %><!--%= link_to "Iniciar Sesion", signin_path %></li--></li>
             </ul>
           <% end %>
           </ul>
