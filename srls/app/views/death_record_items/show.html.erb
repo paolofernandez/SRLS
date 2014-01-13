@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
+<br>
+<CENTER><p>
+<h2>DATOS DE LA PARTIDA</h2>
+</p>
 
 <p>
-  <b>Tomo libro:</b>
+  <b>Tomo del libro:</b>
   <%= @death_record_item.tomo_libro %>
 </p>
 
@@ -32,12 +36,12 @@
 </p>
 
 <p>
-  <b>Motivo muerte:</b>
+  <b>Motivo de la muerte:</b>
   <%= @death_record_item.motivo_muerte %>
 </p>
 
 <p>
-  <b>Tipo hijo:</b>
+  <b>Tipo de hijo:</b>
   <%= @death_record_item.tipo_hijo %>
 </p>
 
@@ -52,7 +56,7 @@
 </p>
 
 <p>
-  <b>Lugar sepultura:</b>
+  <b>Lugar de sepultura:</b>
   <%= @death_record_item.lugar_sepultura %>
 </p>
 
@@ -76,7 +80,9 @@
   <%= @death_record_item.death_record_book %>
 </p-->
 
-
+</CENTER>
+<br>
+<br>
 <!--%= link_to 'Editar', edit_death_record_item_path(@death_record_item) %-->
-<a href = "/death_record_books/<%= @death_record_item.death_record_book.id %>"> Volver </a>
-<a href = "/death_record_items/<%= @death_record_item.id %>/print"> Imprimir </a>
+<DIV align="Left"><a href = "/death_record_books/<%= @death_record_item.death_record_book.id %>"> Volver </a></DIV>
+<DIV align="Right"><a href = "/death_record_items/<%= @death_record_item.id %>/print"> Imprimir </a></DIV>
