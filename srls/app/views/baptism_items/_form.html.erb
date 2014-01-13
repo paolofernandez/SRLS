@@ -14,7 +14,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_bautizo, "Fecha de Bautizo" %><br />
-    <%= f.date_select :fecha_bautizo %>
+    <%= f.date_select :fecha_bautizo, :start_year => 1830, :end_year=>2013 %>
   </div>
   <div class="field">
     <%= f.label :celebrante, "Celebrante" %><br />
@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_nacimiento, "Fecha de Nacimiento" %><br />
-    <%= f.date_select :fecha_nacimiento %>
+    <%= f.date_select :fecha_nacimiento, :start_year => 1830, :end_year=>2013 %>
   </div>
   <div class="field">
     <%= f.label :tipo_hijo, "Tipo de Hijo" %><br />

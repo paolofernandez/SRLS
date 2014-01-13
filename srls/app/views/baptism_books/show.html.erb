@@ -1,22 +1,26 @@
   <p id="notice"><%= notice %></p>
-
+  
+<br>
+<CENTER><p>
+<h2>DATOS DEL LIBRO</h2>
+</p>
 <p>
-  <b>Codigo:</b>
+  <b>Codigo Del Libro: </b>
   <%= @baptism_book.codigo %>
 </p>
 
 <p>
-  <b>Numero:</b>
+  <b>Numero De Libro:</b>
   <%= @baptism_book.numero %>
 </p>
 
 <p>
-  <b>Paginas:</b>
+  <b>Cantidad de Paginas Del Libro:</b>
   <%= @baptism_book.paginas %>
 </p>
 
 <p>
-  <b>Partidas pagina:</b>
+  <b>Cantidad de Partidas por Pagina:</b>
   <%= @baptism_book.partidas_pagina %>
 </p>
 
@@ -24,6 +28,8 @@
   <b>Parroquia:</b>
   <%= @baptism_book.parroquia %>
 </p>
+</CENTER> 
+
 
 <!--p>
   <b>Validado:</b>
@@ -40,13 +46,19 @@
 <CENTER>
 <TABLE>
   <tr>
-    <th>Tomo libro</th>
-    <th>Numero</th>
+    <th>Tomo del libro</th>
+    <th></th><th></th>
+    <th>Numero de Partida</th>
+    <th></th><th></th>
     <th>Pagina</th>
+    <th></th><th></th>
     <th><%=link_to "Nombre", :sort => "Nombre" %></th>
+    <th></th><th></th>
     <th>Fecha bautizo</th>
+    <th></th><th></th>
     <th>Celebrante</th>
-    <th>Lugar nacimiento</th>
+    <th></th><th></th>
+    <!--th>Lugar nacimiento</th>
     <th>Fecha nacimiento</th>
     <th>Tipo hijo</th>
     <th>Padre</th>
@@ -55,7 +67,7 @@
     <th>Padrino</th>
     <th>Madrina</th>
     <th>Oficialia</th>
-    <th>Encargado</th>
+    <th>Encargado</th-->
     <!--th>Validado</th-->
     <!--th>User</th-->
     <th></th>
@@ -64,13 +76,19 @@
   </tr>
   <% @baptism_book.baptism_items.each do |baptism_item| %>
   <tr>
-    <td><%= baptism_item.tomo_libro %></td>
-    <td><%= baptism_item.numero %></td>
-    <td><%= baptism_item.pagina %></td>
-    <td><%= baptism_item.nombre %></td>
-    <td><%= baptism_item.fecha_bautizo %></td>
-    <td><%= baptism_item.celebrante %></td>
-    <td><%= baptism_item.lugar_nacimiento %></td>
+    <td><center><%= baptism_item.tomo_libro %><center></td>
+    <td></td><td></td>
+    <td><center><%= baptism_item.numero %></center></td>
+    <td></td><td></td>
+    <td><center><%= baptism_item.pagina %></center></td>
+    <td></td><td></td>
+    <td><center><%= baptism_item.nombre %></center></td>
+    <td></td><td></td>
+    <td><center><%= baptism_item.fecha_bautizo %></center></td>
+    <td></td><td></td>
+    <td><center><%= baptism_item.celebrante %></center></td>
+    <td></td><td></td>
+    <!--td><%= baptism_item.lugar_nacimiento %></td>
     <td><%= baptism_item.fecha_nacimiento %></td>
     <td><%= baptism_item.tipo_hijo %></td>
     <td><%= baptism_item.padre %></td>
@@ -79,7 +97,7 @@
     <td><%= baptism_item.padrino %></td>
     <td><%= baptism_item.madrina %></td>
     <td><%= baptism_item.oficialia %></td>
-    <td><%= baptism_item.encargado %></td>
+    <td><%= baptism_item.encargado %></td-->
     <!--td><%= baptism_item.validado %></td-->
     <!--td><%= baptism_item.user %></td-->
      <td><%= link_to 'Ver', baptism_item %></td>
@@ -89,6 +107,9 @@
 <% end %>
 </table>
 </CENTER>
+
+<br>
+<br>
  
 <h2>Agregar Partida:</h2>
 <%= render "baptism_items/form" %>
