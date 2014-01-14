@@ -1,12 +1,19 @@
 <h1>Listando validaciones</h1>
 
+<br>
+<Center>
 <table>
   <tr>
     <th>Comentario</th>
+    <th></th><th></th>
     <th>Tabla</th>
+    <th></th><th></th>
     <th>Id dato</th>
+    <th></th><th></th>
     <th>Valido</th>
+    <th></th><th></th>
     <th>Usuario</th>
+    <th></th><th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,18 +21,23 @@
 
 <% @validators.each do |validator| %>
   <tr>
-    <td><%= validator.comentario %></td>
-    <td><%= validator.tabla %></td>
-    <td><%= validator.id_dato %></td>
-    <td><%= validator.valido %></td>
-    <td><%= validator.user.email %></td>
+    <td><Center><%= validator.comentario %></Center></td>
+    <td></td><td></td>
+    <td><Center><%= validator.tabla %></Center></td>
+    <td></td><td></td>
+    <td><Center><%= validator.id_dato %></Center></td>
+    <td></td><td></td>
+    <td><Center><%= validator.valido %></Center></td>
+    <td></td><td></td>
+    <td><Center><%= validator.user.email %></Center></td>
+    <td></td><td></td>
     <td><%= link_to 'Mostrar', validator %></td>
     <td><%= link_to 'Editar', edit_validator_path(validator) %></td>
     <td><%= link_to 'Eliminar', validator, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
   </tr>
 <% end %>
 </table>
-
+</Center>
 <br />
 
 <!--<%= link_to 'New Validator', new_validator_path %>-->

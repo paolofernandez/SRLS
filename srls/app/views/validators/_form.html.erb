@@ -43,13 +43,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :comentario %><br />
+    <%= f.label :comentario, "Comentarios" %><br />
     <%= f.text_area :comentario %>
   </div>
+
   <div class="field">
-    <%= f.label :valido %><br />
     <%= f.check_box :valido %>
+    <%= f.label :valido, "Validado" %>
   </div>
+  <br>
+
   <div class="field">
     <%= f.hidden_field :tabla %>
   </div>
@@ -57,6 +60,6 @@
     <%= f.hidden_field :id_dato %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Validar" %>
   </div>
 <% end %>
