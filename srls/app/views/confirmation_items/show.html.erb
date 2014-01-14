@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<br>
+<CENTER><p>
+<h2>DATOS DE LA PARTIDA</h2>
+</p>
 <p>
-  <b>Tomo libro:</b>
+  <b>Tomo del libro:</b>
   <%= @confirmation_item.tomo_libro %>
 </p>
 
@@ -46,22 +49,22 @@
 </p>
 
 <p>
-  <b>Parroquia confirmacion:</b>
+  <b>Parroquia de confirmacion:</b>
   <%= @confirmation_item.parroquia_confirmacion %>
 </p>
 
 <p>
-  <b>Fecha confirmacion:</b>
+  <b>Fecha de confirmacion:</b>
   <%= @confirmation_item.fecha_confirmacion %>
 </p>
 
 <p>
-  <b>Parroquia bautizo:</b>
+  <b>Parroquia de bautizo:</b>
   <%= @confirmation_item.parroquia_bautizo %>
 </p>
 
 <p>
-  <b>Fecha bautizo:</b>
+  <b>Fecha de bautizo:</b>
   <%= @confirmation_item.fecha_bautizo %>
 </p>
 
@@ -84,8 +87,10 @@
   <b>Confirmation book:</b>
   <%= @confirmation_item.confirmation_book.codigo %>
 </p-->
-
+</CENTER>
+<br>
+<br>
 
 <!--%= link_to 'Editar', edit_confirmation_item_path(@confirmation_item) %> |-->
-<a href = "/confirmation_books/<%= @confirmation_item.confirmation_book.id %>"> Volver </a>
-<a href = "/confirmation_items/<%= @confirmation_item.id %>/print"> Imprimir </a>
+<DIV align="left"><a href = "/confirmation_books/<%= @confirmation_item.confirmation_book.id %>"> Volver </a></DIV>
+<DIV align="Right"><a href = "/confirmation_items/<%= @confirmation_item.id %>/print"> Imprimir </a></DIV>

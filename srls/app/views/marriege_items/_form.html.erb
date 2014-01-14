@@ -15,7 +15,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_matrimonio, "Fecha de Matrimonio" %><br />
-    <%= f.date_select :fecha_matrimonio %>
+    <%= f.date_select :fecha_matrimonio, :start_year => 1830, :end_year=>2013 %>
   </div>
   <div class="field">
     <%= f.label :celebrante, "Celebrante" %><br />
@@ -51,7 +51,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_nacimiento_esposo, "Fecha de Nacimiento" %><br />
-    <%= f.date_select :fecha_nacimiento_esposo %>
+    <%= f.date_select :fecha_nacimiento_esposo, :start_year => 1830, :end_year=>2013 %>
   </div>
   <div class="field">
     <%= f.label :parroquia_bautizo_esposo, "Parroquia de Bautizo" %><br />
@@ -59,7 +59,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_bautizo_esposo, "Fecha de Bautizo" %><br />
-    <%= f.date_select :fecha_bautizo_esposo %>
+    <%= f.date_select :fecha_bautizo_esposo, :start_year => 1830, :end_year=>2013 %>
   </div>
   <div class="field">
     <%= f.label :nombre_esposa, "Nombre de la Esposa" %><br />
@@ -91,7 +91,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_nacimiento_esposa, "Fecha de Nacimiento" %><br />
-    <%= f.date_select :fecha_nacimiento_esposa %>
+    <%= f.date_select :fecha_nacimiento_esposa, :start_year => 1830, :end_year=>2013 %>
   </div>
   <div class="field">
     <%= f.label :parroquia_bautizo_esposa, "Parroquia de Bautizo" %><br />
@@ -99,7 +99,7 @@
   </div>
   <div class="field">
     <%= f.label :fecha_bautizo_esposa, "Fecha de Bautizo" %><br />
-    <%= f.date_select :fecha_bautizo_esposa %>
+    <%= f.date_select :fecha_bautizo_esposa,, :start_year => 1830, :end_year=>2013 %>
   </div>
   <div class="field">
     <%= f.label :feligreses, "Feligreses de..." %><br />
@@ -135,7 +135,7 @@
   </div>
   <div class="field">
     <%= f.label :en_fecha, "En Fecha" %><br />
-    <%= f.date_select :en_fecha %>
+    <%= f.date_select :en_fecha, :start_year => 1830, :end_year=>2013 %>
   </div>
   <!--div class="field">
     <%= f.label :validado %><br />

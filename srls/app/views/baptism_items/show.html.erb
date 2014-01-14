@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
+<br>
+<CENTER><p>
+<h2>DATOS DE LA PARTIDA</h2>
+</p>
+
 
 <p>
-  <b>Tomo libro:</b>
+  <b>Tomo del libro:</b>
   <%= @baptism_item.tomo_libro %>
 </p>
 <p>
@@ -92,5 +97,8 @@
   <b>Baptism book:</b>
   <%= @baptism_item.baptism_book %>
 </p-->
-<a href = "/baptism_books/<%= @baptism_item.baptism_book.id %>"> Volver </a>
-<a href = "/baptism_items/<%= @baptism_item.id %>/print"> Imprimir </a>
+</Center>
+<br>
+<br>
+<DIV align="left"><a href = "/baptism_books/<%= @baptism_item.baptism_book.id %>"> Volver </a></DIV>
+<DIV align="Right"><a href = "/baptism_items/<%= @baptism_item.id %>/print"> Imprimir </a></DIV>

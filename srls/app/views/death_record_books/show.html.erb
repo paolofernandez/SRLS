@@ -1,27 +1,31 @@
 <p id="notice"><%= notice %></p>
+<br>
+<CENTER><p>
+<h2>DATOS DEL LIBRO</h2>
+</p>
 
 <p>
-  <b>Codigo:</b>
+  <b>Codigo Del Libro:</b>
   <%= @death_record_book.codigo %>
 </p>
 
 <p>
-  <b>Numero:</b>
+  <b>Numero de Libro:</b>
   <%= @death_record_book.numero %>
 </p>
 
 <p>
-  <b>Parroquia:</b>
+  <b>Parroquia de Pertenecia:</b>
   <%= @death_record_book.parroquia %>
 </p>
 
 <p>
-  <b>Paginas:</b>
+  <b>Cantidad de Paginas Del Libro:</b>
   <%= @death_record_book.paginas %>
 </p>
 
 <p>
-  <b>Partidas pagina:</b>
+  <b>Cantidad de Partidas Por Pagina:</b>
   <%= @death_record_book.partidas_pagina %>
 </p>
 
@@ -34,21 +38,29 @@
   <b>User:</b>
   <%= @death_record_book.user %>
 </p-->
+</CENTER>
+<Center>
 <h2>Partidas:</h2>
 <table>
   <tr>
-    <th>Tomo libro</th>
-    <th>Numero</th>
+    <th>Tomo del Libro</th>
+    <th></th><th></th>
+    <th>Numero del Libro</th>
+    <th></th><th></th>
     <th>Pagina</th>
+    <th></th><th></th>
     <th>Nombre</th>
+    <th></th><th></th>
     <th>Fecha</th>
-    <th>Edad</th>
+    <th></th><th></th>
+    <!--th>Edad</th>
     <th>Motivo muerte</th>
     <th>Tipo hijo</th>
     <th>Padre</th>
-    <th>Madre</th>
+    <th>Madre</th-->
     <th>Lugar sepultura</th>
-    <th>Celebrante</th>
+    <th></th><th></th>
+    <!--th>Celebrante</th-->
     <!--th>Validado</th>
     <th>User</th>
     <th>Death record book</th-->
@@ -59,26 +71,34 @@
 
 <% @death_record_book.death_record_items.each do |death_record_item| %>
   <tr>
-    <td><%= death_record_item.tomo_libro %></td>
-    <td><%= death_record_item.numero %></td>
-    <td><%= death_record_item.pagina %></td>
-    <td><%= death_record_item.nombre %></td>
-    <td><%= death_record_item.fecha %></td>
-    <td><%= death_record_item.edad %></td>
+    <td><CENTER><%= death_record_item.tomo_libro %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= death_record_item.numero %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= death_record_item.pagina %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= death_record_item.nombre %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= death_record_item.fecha %></CENTER></td>
+    <td></td><td></td>
+    <!--td><%= death_record_item.edad %></td>
     <td><%= death_record_item.motivo_muerte %></td>
     <td><%= death_record_item.tipo_hijo %></td>
     <td><%= death_record_item.padre %></td>
-    <td><%= death_record_item.madre %></td>
-    <td><%= death_record_item.lugar_sepultura %></td>
-    <td><%= death_record_item.celebrante %></td>
+    <td><%= death_record_item.madre %></td-->
+    <td><CENTER><%= death_record_item.lugar_sepultura %></CENTER></td>
+    <td></td><td></td>
+    <!--td><%= death_record_item.celebrante %></td-->
     <!--td><%= death_record_item.validado %></td>
     <td><%= death_record_item.user %></td>
     <td><%= death_record_item.death_record_book %></td-->
-       <td><%= link_to 'Ver', death_record_item %></td>
+    <td><%= link_to 'Ver', death_record_item %></td>
     <td><%= link_to 'Editar', edit_death_record_item_path(death_record_item) %></td>  <!--td><%= link_to 'Eliminar', death_record_item, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
   </tr>
 <% end %>
 </table>
+</Center>
+<br><br>
 <h2>Agregar Partida:</h2>
 <%= render "death_record_items/form" %>
 

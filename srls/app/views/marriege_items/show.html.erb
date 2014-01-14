@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<br>
+<CENTER><p>
+<h2>DATOS DE LA PARTIDA</h2>
+</p>
+
 <p>
-  <b>Tomo libro:</b>
+  <b>Tomo del libro:</b>
   <%= @marriege_item.tomo_libro %>
 </p>
 
@@ -17,7 +22,7 @@
 
 
 <p>
-  <b>Fecha matrimonio:</b>
+  <b>Fecha de matrimonio:</b>
   <%= @marriege_item.fecha_matrimonio %>
 </p>
 
@@ -27,102 +32,102 @@
 </p>
 
 <p>
-  <b>Nombre esposo:</b>
+  <b>Nombre del esposo:</b>
   <%= @marriege_item.nombre_esposo %>
 </p>
 
 <p>
-  <b>Edad esposo:</b>
+  <b>Edad del esposo:</b>
   <%= @marriege_item.edad_esposo %>
 </p>
 
 <p>
-  <b>Profesion esposo:</b>
+  <b>Profesion del esposo:</b>
   <%= @marriege_item.profesion_esposo %>
 </p>
 
 <p>
-  <b>Tipo hijo esposo:</b>
+  <b>Tipo de hijo del esposo:</b>
   <%= @marriege_item.tipo_hijo_esposo %>
 </p>
 
 <p>
-  <b>Padre esposo:</b>
+  <b>Padre del esposo:</b>
   <%= @marriege_item.padre_esposo %>
 </p>
 
 <p>
-  <b>Madre esposo:</b>
+  <b>Madre del esposo:</b>
   <%= @marriege_item.madre_esposo %>
 </p>
 
 <p>
-  <b>Lugar nacimiento esposo:</b>
+  <b>Lugar de nacimiento del esposo:</b>
   <%= @marriege_item.lugar_nacimiento_esposo %>
 </p>
 
 <p>
-  <b>Fecha nacimiento esposo:</b>
+  <b>Fecha de nacimiento del esposo:</b>
   <%= @marriege_item.fecha_nacimiento_esposo %>
 </p>
 
 <p>
-  <b>Parroquia bautizo esposo:</b>
+  <b>Parroquia de bautizo del esposo:</b>
   <%= @marriege_item.parroquia_bautizo_esposo %>
 </p>
 
 <p>
-  <b>Fecha bautizo esposo:</b>
+  <b>Fecha de bautizo del esposo:</b>
   <%= @marriege_item.fecha_bautizo_esposo %>
 </p>
 
 <p>
-  <b>Nombre esposa:</b>
+  <b>Nombre de la esposa:</b>
   <%= @marriege_item.nombre_esposa %>
 </p>
 
 <p>
-  <b>Edad esposa:</b>
+  <b>Edad de la esposa:</b>
   <%= @marriege_item.edad_esposa %>
 </p>
 
 <p>
-  <b>Profesion esposa:</b>
+  <b>Profesion de la esposa:</b>
   <%= @marriege_item.profesion_esposa %>
 </p>
 
 <p>
-  <b>Tipo hijo esposa:</b>
+  <b>Tipo de hijo de la esposa:</b>
   <%= @marriege_item.tipo_hijo_esposa %>
 </p>
 
 <p>
-  <b>Padre esposa:</b>
+  <b>Padre de la esposa:</b>
   <%= @marriege_item.padre_esposa %>
 </p>
 
 <p>
-  <b>Madre esposa:</b>
+  <b>Madre de la esposa:</b>
   <%= @marriege_item.madre_esposa %>
 </p>
 
 <p>
-  <b>Lugar nacimiento esposa:</b>
+  <b>Lugar de nacimiento de la esposa:</b>
   <%= @marriege_item.lugar_nacimiento_esposa %>
 </p>
 
 <p>
-  <b>Fecha nacimiento esposa:</b>
+  <b>Fecha de nacimiento de la esposa:</b>
   <%= @marriege_item.fecha_nacimiento_esposa %>
 </p>
 
 <p>
-  <b>Parroquia bautizo esposa:</b>
+  <b>Parroquia de bautizo de la esposa:</b>
   <%= @marriege_item.parroquia_bautizo_esposa %>
 </p>
 
 <p>
-  <b>Fecha bautizo esposa:</b>
+  <b>Fecha de bautizo de la esposa:</b>
   <%= @marriege_item.fecha_bautizo_esposa %>
 </p>
 
@@ -185,6 +190,9 @@
   <b>Marriege book:</b>
   <%= @marriege_item.marriege_book %>
 </p-->
+</CENTER>
+<br>
+<br>
 
-<a href = "/marriege_books/<%= @marriege_item.marriege_book.id %>"> Volver </a>
-<a href = "/marriege_items/<%= @marriege_item.id %>/print"> Imprimir </a>
+<DIV align="left"><a href = "/marriege_books/<%= @marriege_item.marriege_book.id %>"> Volver </a></DIV>
+<DIV align="right"><a href = "/marriege_items/<%= @marriege_item.id %>/print"> Imprimir </a></DIV>

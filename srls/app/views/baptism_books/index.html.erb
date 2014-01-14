@@ -1,5 +1,8 @@
 <h1>Libros de Bautizo</h1>
+<br>
 <%= link_to 'Crear Nuevo Libro', new_baptism_book_path %>
+<br>
+<br>
 <br>
 <br>
 <form method="GET" action="/baptism_books/search">
@@ -18,12 +21,17 @@
 <table>
   <tr>
     <th><%=link_to "Codigo", :sort => "Codigo" %></th>
-    <th>Numero</th>
-    <th>Paginas</th>
-    <th>Partidas Pagina</th>
+    <th></th><th></th>
+    <th>Numero de Libro</th>
+    <th></th><th></th>
+    <th>Cantidad de Paginas</th>
+    <th></th><th></th>
+    <th>Partidas Por Pagina</th>
+    <th></th><th></th>
     <!--th>Validado</th>
     <th>User</th-->
     <th><%=link_to "Parroquia", :sort => "Parroquia" %></th>
+    <th></th><th></th>
     <th></th>
     <th></th>
   </tr>
@@ -31,13 +39,18 @@
 <%= will_paginate %>
 <% @baptism_books.each do |baptism_book| %>
   <tr>
-    <td><%= baptism_book.codigo %></td>
-    <td><%= baptism_book.numero %></td>
-    <td><%= baptism_book.paginas %></td>
-    <td><%= baptism_book.partidas_pagina %></td>
+    <td><CENTER><%= baptism_book.codigo %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= baptism_book.numero %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= baptism_book.paginas %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= baptism_book.partidas_pagina %></CENTER></td>
+    <td></td><td></td>
     <!--td><%= baptism_book.validado %></td>
     <td><%= baptism_book.user %></td-->
-    <td><%= baptism_book.parroquia %></td>
+    <td><CENTER><%= baptism_book.parroquia %></CENTER></td>
+    <td></td><td></td>
     <td><%= link_to 'Ver', baptism_book %></td>
     <td><%= link_to 'Editar', edit_baptism_book_path(baptism_book) %></td>
     <!--td><%= link_to 'Eliminar', baptism_book, method: :delete, data: { confirm: 'Are you sure?' } %></td-->

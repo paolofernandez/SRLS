@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
-
+<br>
+<CENTER><p>
+<h2>DATOS DEL LIBRO</h2>
+</p>
 <p>
-  <b>Codigo:</b>
+  <b>Codigo Del Libro:</b>
   <%= @confirmation_book.codigo %>
 </p>
 
 <p>
-  <b>Numero:</b>
+  <b>Numero De Libro:</b>
   <%= @confirmation_book.numero %>
 </p>
 
 <p>
-  <b>Paginas:</b>
+  <b>Cantidad de Paginas Del Libro:</b>
   <%= @confirmation_book.paginas %>
 </p>
 
 <p>
-  <b>Partidas pagina:</b>
+  <b>Cantidad de Partidas Por Pagina:</b>
   <%= @confirmation_book.partidas_pagina %>
 </p>
+</CENTER> 
 
 <!--p>
   <b>Validado:</b>
@@ -29,24 +33,32 @@
   <b>User:</b>
   <%= @confirmation_book.user %>
 </p-->
+<br>
+<Center>
 <h2>Partidas:</h2>
 
 <table>
   <tr>
-    <th>Tomo libro</th>
-    <th>Numero</th>
+    <th>Tomo del libro</th>
+    <th></th><th></th>
+    <th>Numero de Libro</th>
+    <th></th><th></th>
     <th>Pagina</th>
+    <th></th><th></th>
     <th>Nombre</th>
-    <th>Edad</th>
+    <th></th><th></th>
+    <!--th>Edad</th>
     <th>Padre</th>
     <th>Madre</th>
     <th>Padrino</th>
-    <th>Madrina</th>
+    <th>Madrina</th-->
     <th>Parroquia confirmacion</th>
+    <th></th><th></th>
     <th>Fecha confirmacion</th>
-    <th>Parroquia bautizo</th>
+    <th></th><th></th>
+    <!--th>Parroquia bautizo</th>
     <th>Fecha bautizo</th>
-    <th>Celebrante</th>
+    <th>Celebrante</th-->
     <!--th>Validado</th>
     <th>User</th-->
     <!--th>Confirmation book</th-->
@@ -57,20 +69,26 @@
 
 <% @confirmation_book.confirmation_items.each do |confirmation_item| %>
   <tr>
-    <td><%= confirmation_item.tomo_libro %></td>
-    <td><%= confirmation_item.numero %></td>
-    <td><%= confirmation_item.pagina %></td>
-    <td><%= confirmation_item.nombre %></td>
-    <td><%= confirmation_item.edad %></td>
+    <td><Center><%= confirmation_item.tomo_libro %></Center></td>
+    <td></td><td></td>
+    <td><Center><%= confirmation_item.numero %></Center></td>
+    <td></td><td></td>
+    <td><Center><%= confirmation_item.pagina %></Center></td>
+    <td></td><td></td>
+    <td><Center><%= confirmation_item.nombre %></Center></td>
+    <td></td><td></td>
+    <!--td><%= confirmation_item.edad %></td>
     <td><%= confirmation_item.padre %></td>
     <td><%= confirmation_item.madre %></td>
     <td><%= confirmation_item.padrino %></td>
-    <td><%= confirmation_item.madrina %></td>
-    <td><%= confirmation_item.parroquia_confirmacion %></td>
-    <td><%= confirmation_item.fecha_confirmacion %></td>
-    <td><%= confirmation_item.parroquia_bautizo %></td>
+    <td><%= confirmation_item.madrina %></td-->
+    <td><Center><%= confirmation_item.parroquia_confirmacion %></Center></td>
+    <td></td><td></td>
+    <td><Center><%= confirmation_item.fecha_confirmacion %></Center></td>
+    <td></td><td></td>
+    <!--td><%= confirmation_item.parroquia_bautizo %></td>
     <td><%= confirmation_item.fecha_bautizo %></td>
-    <td><%= confirmation_item.celebrante %></td>
+    <td><%= confirmation_item.celebrante %></td-->
     <!--td><%= confirmation_item.validado %></td>
     <td><%= confirmation_item.user %></td-->
     <!--td><%= confirmation_item.confirmation_book %></td-->
@@ -80,6 +98,9 @@
   </tr>
 <% end %>
 </table>
+</Center>
+<br>
+<br>
 
 <h2>Agregar Partida:</h2>
 <%= render "confirmation_items/form" %>
