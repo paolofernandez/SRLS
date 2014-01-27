@@ -17,13 +17,13 @@
     <td><%= change_log.tabla %></td>
     <td><%= change_log.id_objeto %></td>
     <td><%= change_log.user %></td>
-    <td><%= link_to 'Show', change_log %></td>
-    <td><%= link_to 'Edit', edit_change_log_path(change_log) %></td>
-    <td><%= link_to 'Destroy', change_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Ver', change_log %></td>
+    <td><%= link_to 'Editar', edit_change_log_path(change_log) %></td>
+    <td><%= link_to 'Eliminar', change_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Change log', new_change_log_path %>
+<%= button_to 'Crear Log de Cambios', new_change_log_path, :method => :get %>

@@ -107,5 +107,5 @@
 
 
 
-<%= link_to 'Editar', edit_confirmation_book_path(@confirmation_book) %> |
-<%= link_to 'Volver', confirmation_books_path %>
+<%= button_to 'Editar', edit_confirmation_book_path(@confirmation_book), :method => :get %> |
+<%= button_to 'Volver', confirmation_books_path, :method => :get %>

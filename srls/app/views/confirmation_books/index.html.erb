@@ -1,5 +1,5 @@
 <h1>Libros de Confirmación</h1>
-<%= link_to 'Crear Nuevo Libro', new_confirmation_book_path %>
+<%= button_to 'Crear Nuevo Libro', new_confirmation_book_path, :method => :get %>
 <br>
 <form method="GET" action="/confirmation_books/search">
 	Codigo: <input type="text" name="codigo"> &nbsp;&nbsp;&nbsp; Parroquia: <input type="text" name="parroquia">

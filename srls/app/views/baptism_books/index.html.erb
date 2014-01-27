@@ -1,9 +1,6 @@
 <h1>Libros de Bautizo</h1>
 <br>
-<%= link_to 'Crear Nuevo Libro', new_baptism_book_path %>
-<br>
-<br>
-<br>
+<%= button_to 'Crear Nuevo Libro', new_baptism_book_path, :method => :get %>
 <br>
 <form method="GET" action="/baptism_books/search">
 	Codigo: <input type="text" name="codigo"> &nbsp;&nbsp;&nbsp; Parroquia: <input type="text" name="parroquia">

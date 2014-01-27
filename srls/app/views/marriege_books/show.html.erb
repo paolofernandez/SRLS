@@ -146,5 +146,5 @@
 <h2>Agregar Partida:</h2>
 <%= render "marriege_items/form" %>
 
-<%= link_to 'Editar', edit_marriege_book_path(@marriege_book) %> |>
-<%= link_to 'Volver', marriege_books_path %>
+<%= button_to 'Editar', edit_marriege_book_path(@marriege_book), :method => :get %>
+<%= button_to 'Volver', marriege_books_path, :method => :get %>

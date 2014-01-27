@@ -1,5 +1,7 @@
 Srls::Application.routes.draw do
 
+  root :to => 'user_managers#home'
+
   match 'user_managers/delete/:id' => 'user_managers#delete'
   match 'user_managers/new' => 'user_managers#new'
   match 'user_managers/create' => 'user_managers#create'
@@ -77,8 +79,6 @@ Srls::Application.routes.draw do
   resources :churches
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end 
   
-  root :to => 'user_managers#home'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

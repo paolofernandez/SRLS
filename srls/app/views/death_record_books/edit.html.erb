@@ -1,6 +1,6 @@
-<h1>Editing death_record_book</h1>
-
+<h1>Editar  Libro de Defuncion</h1>
+<Center>
 <%= render 'form' %>
-
-<%= link_to 'Ver', @death_record_book %> |
-<%= link_to 'Volver', death_record_books_path %>
+</Center>
+<%= button_to 'Ver', @death_record_book, :method => :get %>
+<%= button_to 'Volver', death_record_books_path, :method => :get %>

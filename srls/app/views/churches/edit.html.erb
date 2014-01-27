@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Ver', @church %> |
-<%= link_to 'Volver', churches_path %>
+<%= button_to 'Ver', @church, :method => :get %> |
+<%= button_to 'Volver', churches_path, :method => :get %>

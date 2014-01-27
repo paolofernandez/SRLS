@@ -88,6 +88,6 @@
 <% end %>
 
 
-<%= link_to 'Ver', @confirmation_item %> |
+<%= button_to 'Ver', @confirmation_item, :method => :get %> |
 <a href = "/confirmation_books/<%= @confirmation_item.confirmation_book.id %>"> Volver </a>
 

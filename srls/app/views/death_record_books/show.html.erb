@@ -103,5 +103,5 @@
 <%= render "death_record_items/form" %>
 
 
-<%= link_to 'Editar', edit_death_record_book_path(@death_record_book) %> |>
-<%= link_to 'Volver', death_record_books_path %>
+<%= button_to 'Editar', edit_death_record_book_path(@death_record_book), :method => :get %> |>
+<%= button_to 'Volver', death_record_books_path, :method => :get %>

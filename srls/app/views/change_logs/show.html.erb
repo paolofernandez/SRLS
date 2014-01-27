@@ -21,5 +21,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_change_log_path(@change_log) %> |
-<%= link_to 'Back', change_logs_path %>
+<%= button_to 'Editar', edit_change_log_path(@change_log), :method => :get %> |
+<%= button_to 'Volver', change_logs_path, :method => :get %>

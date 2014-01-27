@@ -1,4 +1,4 @@
-<h1>Editing marriege_item</h1>
+<h1>Editar Partida de Matrimonio</h1>
  <%= form_for(@marriege_item) do |f| %>
   <% if @marriege_item.errors.any? %>
     <div id="error_explanation">
@@ -163,7 +163,7 @@
     <%= f.submit "Crear Partida de Matrimonio"%>
   </div>
 <% end %>
-<%= link_to 'Ver', @marriege_item %> |
+<%= button_to 'Ver', @marriege_item, :method => :get %>
 <a href = "/marriege_books/<%= @marriege_item.marriege_book.id %>"> Volver </a>
 
 

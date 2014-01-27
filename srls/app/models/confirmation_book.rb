@@ -6,8 +6,6 @@ class ConfirmationBook < ActiveRecord::Base
   validates :codigo,
             :presence => {:message => "No puede estar vacio." },
             :uniqueness=> {:message => "Codigo ya existe." }
-  validates :parroquia,
-            :presence =>true
   validates :numero,
             :presence => {:message => "No puede estar vacio." },
             :numericality=> { only_integer: true}

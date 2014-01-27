@@ -1,4 +1,4 @@
-<h1>Editing death_record_item</h1>
+<h1>Editar Partida de Defuncion</h1>
 
 <%= form_for(@death_record_item) do |f| %>
   <% if @death_record_item.errors.any? %>
@@ -74,9 +74,9 @@
     <%= f.text_field :death_record_book %>
   </div-->
   <div class="actions">
-    <%= f.submit "Crear Partida de Defuncion" %>
+    <%= f.submit "Guardar Partida de Defuncion" %>
   </div>
 <% end %>
 
-<%= link_to 'Ver', @death_record_item %> |
+<%= button_to 'Ver', @death_record_item, :method => :get %>
 <a href = "/death_record_books/<%= @death_record_item.death_record_book.id %>"> Volver </a>

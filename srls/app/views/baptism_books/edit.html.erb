@@ -1,6 +1,6 @@
-<h1>Editing baptism_book</h1>
+<h1>Editar Libro de Bautizo</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Ver', @baptism_book %> |
-<%= link_to 'Volver', baptism_books_path %>
+<%= button_to 'Ver', @baptism_book, :method => :get %> |
+<%= button_to 'Volver', baptism_books_path, :method => :get %>

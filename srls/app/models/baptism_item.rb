@@ -6,7 +6,7 @@ class BaptismItem < ActiveRecord::Base
   validates :celebrante, :encargado, :fecha_bautizo, :fecha_nacimiento, :lugar_nacimiento, :nombre, :numero,
        :tomo_libro, :pagina, :presence=>true
   validates :numero, :uniqueness => { :scope => :baptism_book_id }
-  validates :fecha_nacimiento, :uniqueness => { :scope => :nombre, :scope => :baptism_book_id }
+  validates :fecha_nacimiento, :uniqueness => { :scope => :nombre}#, :scope => :baptism_book_id }
   
   def nombre_tabla
     "Partida de Bautizo"

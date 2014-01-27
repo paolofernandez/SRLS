@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Ver', @confirmation_book %> |
-<%= link_to 'Volver', confirmation_books_path %>
+<%= button_to 'Ver', @confirmation_book, :method => :get %> |
+<%= button_to 'Volver', confirmation_books_path, :method => :get %>
