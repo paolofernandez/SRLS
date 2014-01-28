@@ -37,8 +37,14 @@
 <p>
   <b>User:</b>
   <%= @marriege_book.user %>
-</p-->
+</p--><br>
+<%= button_to 'Editar', edit_marriege_book_path(@marriege_book), :method => :get %>
+
 </CENTER>
+<div align="left">
+<%= button_to 'Volver', marriege_books_path, :method => :get %>
+</div>
+<br>
 <CENTER>
 <h2>Partidas:</h2>
 <table>
@@ -144,7 +150,8 @@
 </table>
 </CENTER>
 <h2>Agregar Partida:</h2>
+<Center><%= link_to_function "Formulario de Partidas", "$('#hide').toggle()" %></Center>
+<div id="hide" style="display:none">
 <%= render "marriege_items/form" %>
+</div>
 
-<%= button_to 'Editar', edit_marriege_book_path(@marriege_book), :method => :get %>
-<%= button_to 'Volver', marriege_books_path, :method => :get %>

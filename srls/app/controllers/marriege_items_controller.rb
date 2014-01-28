@@ -1,5 +1,14 @@
 class MarriegeItemsController < ApplicationController
   load_and_authorize_resource
+
+  def index
+    @marriege_items = MarriegeItem.all
+    @marriege_items = MarriegeItem.order(params[:sort])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @marriege_items }
+    end
+  end
   
    def create
     @marriege_book = MarriegeBook.find(params[:marriege_book_id])

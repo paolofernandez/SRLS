@@ -1,6 +1,9 @@
 <h1>Libros de Matrimonio</h1>
 <%= button_to 'Crear Nuevo Libro', new_marriege_book_path, :method => :get %>
 <br>
+<%= link_to_function "Busquedas", "$('#hide').toggle()" %><br>
+<div id="hide" style="display:none">
+<br>
 <form method="GET" action="/marriege_books/search">
 	Codigo: <input type="text" name="codigo"> &nbsp;&nbsp;&nbsp; Parroquia: <input type="text" name="parroquia">
 	&nbsp;&nbsp;&nbsp; <input type="submit" value="Filtrar">
@@ -11,16 +14,22 @@
     Nombre: <input type="text" name="nombre"> &nbsp;&nbsp;&nbsp;
     <input type="submit" value="Buscar">
 </form>
+</div>
 <br>
 <br>
 <CENTER>
 <table>
   <tr>
-    <th><%=link_to "Codigo", :sort => "Codigo" %></th>    
+    <th><%=link_to "Codigo", :sort => "Codigo" %></th> 
+    <th></th><th></th>
     <th>Numero</th>
+    <th></th><th></th>
     <th><%=link_to "Parroquia", :sort => "Parroquia" %></th>
+    <th></th><th></th>
     <th>Paginas</th>
+    <th></th><th></th>
     <th>Partidas pagina</th>
+    <th></th><th></th>
     <!--th>Validado</th>
     <th>User</th-->
     <th></th>
@@ -29,11 +38,16 @@
   </tr>
 <% @marriege_books.each do |marriege_book| %>
   <tr>
-    <td><%= marriege_book.codigo %></td>
-    <td><%= marriege_book.numero %></td>
-    <td><%= marriege_book.parroquia %></td>
-    <td><%= marriege_book.paginas %></td>
-    <td><%= marriege_book.partidas_pagina %></td>
+    <td><CENTER><%= marriege_book.codigo %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= marriege_book.numero %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= marriege_book.parroquia %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= marriege_book.paginas %></CENTER></td>
+    <td></td><td></td>
+    <td><CENTER><%= marriege_book.partidas_pagina %></CENTER></td>
+    <td></td><td></td>
     <!--td><%= marriege_book.validado %></td>
     <td><%= marriege_book.user %></td-->
     <td><%= link_to 'Ver', marriege_book %></td>
@@ -48,4 +62,6 @@
 <br><br>
 <%= link_to "Validar Partidas", '/validators/pending_index/marriege_items'%> |
 <%= link_to "Ver validaciones de Partidas", '/validators/not_valid_index/Partida de Matrimonio'%>
+<br><br>
+<%= link_to "Ver Todas las Partidas", '/marriege_items'%>
 </CENTER>
