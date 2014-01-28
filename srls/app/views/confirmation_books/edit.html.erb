@@ -1,6 +1,8 @@
 <h1>Editing confirmation_book</h1>
 
 <%= render 'form' %>
+<center>
+<%= button_to 'Ver', @confirmation_book, :method => :get %> 
+</center>
 
-<%= button_to 'Ver', @confirmation_book, :method => :get %> |
-<%= button_to 'Volver', confirmation_books_path, :method => :get %>
+<div align="Left"><%= button_to 'Volver', confirmation_books_path, :method => :get %></div>

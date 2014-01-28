@@ -2,6 +2,10 @@
 <br>
 <%= button_to 'Crear Nuevo Libro', new_baptism_book_path, :method => :get %>
 <br>
+
+<%= link_to_function "Busquedas", "$('#hide').toggle()" %><br>
+<div id="hide" style="display:none">
+<br>
 <form method="GET" action="/baptism_books/search">
 	Codigo: <input type="text" name="codigo"> &nbsp;&nbsp;&nbsp; Parroquia: <input type="text" name="parroquia">
 	&nbsp;&nbsp;&nbsp; <input type="submit" value="Filtrar">
@@ -12,6 +16,7 @@
     Nombre: <input type="text" name="nombre"> &nbsp;&nbsp;&nbsp;
     <input type="submit" value="Buscar">
 </form>
+</div>
 <br>
 <br>
 <CENTER>
@@ -58,6 +63,8 @@
 <br><br>
 <%= link_to "Validar Partidas", '/validators/pending_index/baptism_items'%> |
 <%= link_to "Ver validaciones de Partidas", '/validators/not_valid_index/Partida de Bautizo'%>
+<br><br>
+<%= link_to "Ver Todas las Partidas", '/baptism_items'%>
 </CENTER>
 
 

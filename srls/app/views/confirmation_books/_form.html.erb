@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :codigo, "Codigo de Libro" %><br />
-    <%= f.text_field :codigo %>
-  </div>
+    <%= f.label :codigo, "Codigo de Libro" %>
+    <%= f.text_field :codigo, placeholder: "Codigo del Libro"   %>
+  <br>
   <div class="field">
-    <%= f.label :numero, "Numero de Libro" %><br />
-    <%= f.text_field :numero %>
-  </div>
+    <%= f.label :numero, "Numero de Libro" %>
+    <%= f.text_field :numero, placeholder: "Numero del Libro"   %>
+  </div><br>
   <div class="field">
-    <%= f.label :paginas, "Cantidad de Paginas" %><br />
-    <%= f.text_field :paginas %>
-  </div>
+    <%= f.label :paginas, "Cantidad de Paginas" %>
+    <%= f.text_field :paginas, placeholder: "Numero de Paginas"   %>
+  </div><br>
   <div class="field">
-    <%= f.label :partidas_pagina, "Cantidad de Partidas por Pagina" %><br />
-    <%= f.text_field :partidas_pagina %>
-  </div>
+    <%= f.label :partidas_pagina, "Cantidad de Partidas por Pagina" %>
+    <%= f.text_field :partidas_pagina, placeholder: "Numero de Partidas"   %>
+  </div><br>
   <!--div class="field">
     <%= f.label :validado %><br />
     <%= f.check_box :validado %>
@@ -37,5 +37,5 @@
   </div-->
   <div class="actions">
     <%= f.submit "Crear Libro de Confirmacion" %>
-  </div>
+  </div><br>
 <% end %>

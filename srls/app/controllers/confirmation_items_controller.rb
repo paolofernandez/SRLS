@@ -3,7 +3,12 @@ class ConfirmationItemsController < ApplicationController
   # POST /confirmation_items
   # POST /confirmation_items.json
   def index
-    @confirmation_book = ConfirmationBook.find(params[:confirmation_book_id])
+    @confirmation_items = ConfirmationItem.all
+    @confirmation_items = ConfirmationItem.order(params[:sort])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @confirmation_items }
+    end
   end
   
   def create

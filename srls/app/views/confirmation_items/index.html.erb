@@ -3,11 +3,17 @@
 <CENTER>
 <table>
   <tr>
-    <th>Tomo libro</th>
-    <th>Numero</th>
-    <th>Pagina</th>
     <th>Nombre</th>
-    <th>Edad</th>
+    <th></th><th></th>
+    <th>Libro de Confirmacion</th>
+    <th></th><th></th>
+    <th>Pagina</th>
+    <th></th><th></th>
+    <th>Numero de Partida</th>
+    <th></th><th></th>
+    
+    
+    <!--th>Edad</th>
     <th>Padre</th>
     <th>Madre</th>
     <th>Padrino</th>
@@ -16,10 +22,10 @@
     <th>Fecha confirmacion</th>
     <th>Parroquia bautizo</th>
     <th>Fecha bautizo</th>
-    <th>Celebrante</th>
+    <th>Celebrante</th-->
     <!--th>Validado</th>
     <th>User</th-->
-    <th>Libro de Confirmacion</th>
+    
     <th></th>
     <th></th>
     <th></th>
@@ -27,10 +33,18 @@
 
 <% @confirmation_items.each do |confirmation_item| %>
   <tr>
-    <td><%= confirmation_item.tomo_libro %></td>
-    <td><%= confirmation_item.numero %></td>
-    <td><%= confirmation_item.pagina %></td>
-    <td><%= confirmation_item.nombre %></td>
+    <td><center><%= confirmation_item.nombre %></center></td>
+    <td></td><td></td>
+    <td><center><%= link_to confirmation_item.confirmation_book.codigo, confirmation_item.confirmation_book %></center></td>
+    <td></td><td></td>
+    <td><center><%= confirmation_item.pagina %></center></td>
+    <td></td><td></td>
+    <td><center><%= confirmation_item.numero %></center></td>
+    <td></td><td></td>
+    <!--td><%= confirmation_item.tomo_libro %></td>
+    
+    
+    
     <td><%= confirmation_item.edad %></td>
     <td><%= confirmation_item.padre %></td>
     <td><%= confirmation_item.madre %></td>
@@ -40,10 +54,10 @@
     <td><%= confirmation_item.fecha_confirmacion %></td>
     <td><%= confirmation_item.parroquia_bautizo %></td>
     <td><%= confirmation_item.fecha_bautizo %></td>
-    <td><%= confirmation_item.celebrante %></td>
+    <td><%= confirmation_item.celebrante %></td-->
     <!--td><%= confirmation_item.validado %></td>
     <td><%= confirmation_item.user %></td-->
-    <td><%= link_to confirmation_item.confirmation_book.codigo, confirmation_item.confirmation_book %></td>
+    
     <td><%= link_to 'Ver', confirmation_item %></td>
     <td><%= link_to 'Editar', edit_confirmation_item_path(confirmation_item) %></td>
     <!--td><%= link_to 'Eliminar', confirmation_item, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
@@ -51,5 +65,4 @@
 <% end %>
 </table>
 </CENTER>
-
-
+<div align="left"><%= button_to 'Volver', confirmation_books_path, :method => :get %></div>

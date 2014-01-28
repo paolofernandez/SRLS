@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<center>
 <p>
   <b>Hora:</b>
   <%= @change_log.hora %>
@@ -21,5 +21,6 @@
 </p>
 
 
-<%= button_to 'Editar', edit_change_log_path(@change_log), :method => :get %> |
-<%= button_to 'Volver', change_logs_path, :method => :get %>
+<%= button_to 'Editar', edit_change_log_path(@change_log), :method => :get %>
+</center>
+<div align="Left"><%= button_to 'Volver', change_logs_path, :method => :get %></div>

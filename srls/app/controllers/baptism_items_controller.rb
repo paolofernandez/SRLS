@@ -2,6 +2,16 @@ class BaptismItemsController < ApplicationController
   load_and_authorize_resource
   # POST /baptism_items
   # POST /baptism_items.json
+
+def index
+    @baptism_items = BaptismItem.all
+    @baptism_items = BaptismItem.order(params[:sort])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @baptism_items }
+    end
+  end
+
   def create
     @baptism_book = BaptismBook.find(params[:baptism_book_id])
     @baptism_item = @baptism_book.baptism_items.create(params[:baptism_item])

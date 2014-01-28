@@ -1,6 +1,9 @@
 <h1>Libros de Confirmación</h1>
 <%= button_to 'Crear Nuevo Libro', new_confirmation_book_path, :method => :get %>
 <br>
+<%= link_to_function "Busquedas", "$('#hide').toggle()" %><br>
+<div id="hide" style="display:none">
+<br>
 <form method="GET" action="/confirmation_books/search">
 	Codigo: <input type="text" name="codigo"> &nbsp;&nbsp;&nbsp; Parroquia: <input type="text" name="parroquia">
 	&nbsp;&nbsp;&nbsp; <input type="submit" value="Filtrar">
@@ -11,14 +14,18 @@
     Nombre: <input type="text" name="nombre"> &nbsp;&nbsp;&nbsp;
     <input type="submit" value="Buscar">
 </form>
+</div>
 <br>
 <br>
 <CENTER>
 <table>
   <tr>
     <th><%=link_to "Codigo", :sort => "Codigo" %></th>
+    <th></th><th></th>
     <th>Numero</th>
+    <th></th><th></th>
     <th>Paginas</th>
+    <th></th><th></th>
     <th>Partidas pagina</th>
     <!--th>Validado</th-->
     <!--th>User</th-->
@@ -29,10 +36,14 @@
 
 <% @confirmation_books.each do |confirmation_book| %>
   <tr>
-    <td><%= confirmation_book.codigo %></td>
-    <td><%= confirmation_book.numero %></td>
-    <td><%= confirmation_book.paginas %></td>
-    <td><%= confirmation_book.partidas_pagina %></td>
+    <td><center><%= confirmation_book.codigo %></center></td>
+    <td></td><td></td>
+    <td><center><%= confirmation_book.numero %></center></td>
+    <td></td><td></td>
+    <td><center><%= confirmation_book.paginas %></center></td>
+    <td></td><td></td>
+    <td><center><%= confirmation_book.partidas_pagina %></center></td>
+    <td></td><td></td>
     <!--td><%= confirmation_book.validado %></td-->
     <!--td><%= confirmation_book.user %></td-->
     <td><%= link_to 'Ver', confirmation_book %></td>
@@ -48,4 +59,7 @@
 <br><br>
 <%= link_to "Validar Partidas", '/validators/pending_index/confirmation_items'%> |
 <%= link_to "Ver validaciones de Partidas", '/validators/not_valid_index/Partida de Confirmacion'%>
+<br>
+<br>
+<%= link_to "Ver Todas las Partidas", '/confirmation_items'%>
 </CENTER>

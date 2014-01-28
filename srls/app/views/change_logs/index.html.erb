@@ -3,9 +3,11 @@
 <table>
   <tr>
     <th>Hora</th>
+    <th></th><th></th>
     <th>Tabla</th>
-    <th>Id objeto</th>
-    <th>User</th>
+    <th></th><th></th>
+    <th>Id objeto</th><th></th><th></th>
+    <th>Usuario</th><th></th><th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +15,14 @@
 
 <% @change_logs.each do |change_log| %>
   <tr>
-    <td><%= change_log.hora %></td>
-    <td><%= change_log.tabla %></td>
-    <td><%= change_log.id_objeto %></td>
-    <td><%= change_log.user %></td>
+    <td><center><%= change_log.hora %></center></td>
+    <td></td><td></td>
+    <td><center><%= change_log.tabla %></center></td>
+    <td></td><td></td>
+    <td><center><%= change_log.id_objeto %></center></td>
+    <td></td><td></td>
+    <td><center><%= change_log.user %></center></td>
+    <td></td><td></td>
     <td><%= link_to 'Ver', change_log %></td>
     <td><%= link_to 'Editar', edit_change_log_path(change_log) %></td>
     <td><%= link_to 'Eliminar', change_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
