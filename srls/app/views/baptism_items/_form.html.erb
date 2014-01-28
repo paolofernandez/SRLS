@@ -1,69 +1,69 @@
 <%= form_for([@baptism_book, @baptism_book.baptism_items.build]) do |f| %>
 
   <div class="field">
-    <%= f.label :tomo_libro, "Tomo del Libro" %><br />
-    <%= f.text_field :tomo_libro %>
-  </div>
+    <%= f.label :tomo_libro, "Tomo del Libro" %>
+    <%= f.text_field :tomo_libro, placeholder: "Tomo del libro" %>
+  </div><br>
   <div class="field">
-    <%= f.label :numero, "Numero de Partida" %><br />
-    <%= f.text_field :numero %>
-  </div>
+    <%= f.label :numero, "Numero de Partida" %>
+    <%= f.text_field :numero, placeholder: "Numero de Partida" %>
+  </div><br>
    <div class="field">
-    <%= f.label :pagina, "Numero de Pagina" %><br />
-    <%= f.text_field :pagina %>
-  </div>
+    <%= f.label :pagina, "Numero de Pagina" %>
+    <%= f.text_field :pagina, placeholder: "Numero de Pagina" %>
+  </div><br>
   <div class="field">
-    <%= f.label :nombre, "Nombre del Bautizado" %><br />
-    <%= f.text_field :nombre %>
-  </div>
+    <%= f.label :nombre, "Nombre del Bautizado" %>
+    <%= f.text_field :nombre, placeholder: "Nombre del Bautizado" %>
+  </div><br>
   <div class="field">
-    <%= f.label :fecha_bautizo, "Fecha de Bautizo" %><br />
+    <%= f.label :fecha_bautizo, "Fecha de Bautizo" %>
     <%= f.date_select :fecha_bautizo, :start_year => 1830, :end_year=>2013 %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :celebrante, "Celebrante" %><br />
-    <%= f.text_field :celebrante %>
-  </div>
+    <%= f.label :celebrante, "Celebrante" %>
+    <%= f.text_field :celebrante, placeholder: "Celebrante" %>
+  </div><br>
   <div class="field">
-    <%= f.label :lugar_nacimiento, "Lugar de Nacimiento" %><br />
-    <%= f.text_field :lugar_nacimiento %>
-  </div>
+    <%= f.label :lugar_nacimiento, "Lugar de Nacimiento" %>
+    <%= f.text_field :lugar_nacimiento, placeholder: "Lugar de Nacimiento" %>
+  </div><br>
   <div class="field">
-    <%= f.label :fecha_nacimiento, "Fecha de Nacimiento" %><br />
+    <%= f.label :fecha_nacimiento, "Fecha de Nacimiento" %>
     <%= f.date_select :fecha_nacimiento, :start_year => 1830, :end_year=>2013 %>
-  </div>
+  </div><br>
   <div class="field">
-    <%= f.label :tipo_hijo, "Tipo de Hijo" %><br />
-    <%= f.text_field :tipo_hijo %>
-  </div>
+    <%= f.label :tipo_hijo, "Tipo de Hijo" %>
+    <%= f.text_field :tipo_hijo, placeholder: "Tipo de Hijo" %>
+  </div><br>
   <div class="field">
-    <%= f.label :padre, "Nombre del Padre" %><br />
-    <%= f.text_field :padre %>
-  </div>
+    <%= f.label :padre, "Nombre del Padre" %>
+    <%= f.text_field :padre, placeholder: "Nombre del Padre" %>
+  </div><br>
   <div class="field">
-    <%= f.label :madre, "Nombre de la Madre" %><br />
-    <%= f.text_field :madre %>
-  </div>
+    <%= f.label :madre, "Nombre de la Madre" %>
+    <%= f.text_field :madre, placeholder: "Nombre de la Madre" %>
+  </div><br>
   <div class="field">
-    <%= f.label :feligreses, "Feligreses de..." %><br />
-    <%= f.text_field :feligreses %>
-  </div>
+    <%= f.label :feligreses, "Feligreses de..." %>
+    <%= f.text_field :feligreses, placeholder: "Parroquia" %>
+  </div><br>
   <div class="field">
-    <%= f.label :padrino, "Nombre del Padrino" %><br />
-    <%= f.text_field :padrino %>
-  </div>
+    <%= f.label :padrino, "Nombre del Padrino" %>
+    <%= f.text_field :padrino, placeholder: "Nombre del Padrino" %>
+  </div><br>
   <div class="field">
-    <%= f.label :madrina, "Nombre de la Madrina" %><br />
-    <%= f.text_field :madrina %>
-  </div>
+    <%= f.label :madrina, "Nombre de la Madrina" %>
+    <%= f.text_field :madrina, placeholder: "Nombre de la Madrina" %>
+  </div><br>
   <div class="field">
-    <%= f.label :oficialia, "Numero de Oficialia" %><br />
-    <%= f.text_field :oficialia %>
-  </div>
+    <%= f.label :oficialia, "Numero de Oficialia" %>
+    <%= f.text_field :oficialia, placeholder: "Numero de Oficialia" %>
+  </div><br>
   <div class="field">
-    <%= f.label :encargado, "Encargado de la Parroquia" %><br />
-    <%= f.text_field :encargado %>
-  </div>
+    <%= f.label :encargado, "Encargado de la Parroquia" %>
+    <%= f.text_field :encargado, placeholder: "Nombre del Encargado" %>
+  </div><br>
   
   <!--div class="field">
     <%= f.label :validado %><br />

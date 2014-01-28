@@ -5,7 +5,6 @@ class ValidatorsController < ApplicationController
   def index
     @validators = Validator.all
     @validators = Validator.paginate(page: params[:page])
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @validators }

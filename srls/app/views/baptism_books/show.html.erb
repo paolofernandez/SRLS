@@ -28,7 +28,13 @@
   <b>Parroquia:</b>
   <%= @baptism_book.parroquia %>
 </p>
+<br>
+<%= button_to 'Editar', edit_baptism_book_path(@baptism_book), :method => :get %>
 </CENTER> 
+<DIV Align=left>
+  <%= button_to 'Volver', baptism_books_path, :method => :get %>
+  
+</DIV>
 
 
 <!--p>
@@ -112,9 +118,8 @@
 <br>
  
 <h2>Agregar Partida:</h2>
+<Center><%= link_to_function "Formulario de Partidas", "$('#hide').toggle()" %></Center>
+<div id="hide" style="display:none">
 <%= render "baptism_items/form" %>
+</div>
 
-
-
-<%= button_to 'Editar', edit_baptism_book_path(@baptism_book), :method => :get %>|
-<%= button_to 'Volver', baptism_books_path, :method => :get %>

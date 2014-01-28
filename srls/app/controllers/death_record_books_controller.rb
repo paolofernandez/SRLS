@@ -5,7 +5,6 @@ class DeathRecordBooksController < ApplicationController
   def index
     @death_record_books = DeathRecordBook.all
     @death_record_books = DeathRecordBook.order(params[:sort])
-    @death_record_books = DeathRecordBook.paginate(page: params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @death_record_books }

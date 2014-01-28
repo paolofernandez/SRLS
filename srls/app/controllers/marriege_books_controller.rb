@@ -5,7 +5,6 @@ class MarriegeBooksController < ApplicationController
   def index
     @marriege_books = MarriegeBook.all
     @marriege_books = MarriegeBook.order(params[:sort])
-    @marriege_books = MarriegeBook.paginate(page: params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @marriege_books }

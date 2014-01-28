@@ -1,13 +1,16 @@
-<!--<h1>Partidas De Bautizo</h1>
-<%= link_to 'Nueva Partida de Bautizo', new_baptism_item_path %>-->
+<h1>Todas Las Partidas De Bautizo</h1>
+<!--%= link_to 'Nueva Partida de Bautizo', new_baptism_item_path %>-->
 <CENTER>
 <table>
   <tr>
-    <th>Tomo libro</th>
-    <th>Numero</th>
-    <th>Pagina</th>
+    <!--th>Tomo de libro</th-->
     <th><%=link_to "Nombre", :sort => "Nombre" %></th>
-    <th>Fecha bautizo</th>
+    <th>Libro de bautizo</th>
+    <th>Pagina</th>
+    <th>Numero de Partida</th>
+    
+    
+    <!--th>Fecha bautizo</th>
     <th>Celebrante</th>
     <th>Lugar nacimiento</th>
     <th>Fecha nacimiento</th>
@@ -18,10 +21,10 @@
     <th>Padrino</th>
     <th>Madrina</th>
     <th>Oficialia</th>
-    <th>Encargado</th>
+    <th>Encargado</th-->
     <!--th>Validado</th-->
     <!--th>User</th-->
-    <th>Libro de bautizo</th>
+    
     <th></th>
     <th></th>
     <th></th>
@@ -29,11 +32,14 @@
 
 <% @baptism_items.each do |baptism_item| %>
   <tr>
-    <td><%= baptism_item.tomo_libro %></td>
-    <td><%= baptism_item.numero %></td>
-    <td><%= baptism_item.pagina %></td>
+    <!--td><%= baptism_item.tomo_libro %></td-->
     <td><%= baptism_item.nombre %></td>
-    <td><%= baptism_item.fecha_bautizo %></td>
+    <td><%= link_to baptism_item.baptism_book.codigo, baptism_item.baptism_book %></td>
+    <td><%= baptism_item.pagina %></td>
+    <td><%= baptism_item.numero %></td>
+    
+    
+    <!--td><%= baptism_item.fecha_bautizo %></td>
     <td><%= baptism_item.celebrante %></td>
     <td><%= baptism_item.lugar_nacimiento %></td>
     <td><%= baptism_item.fecha_nacimiento %></td>
@@ -44,10 +50,10 @@
     <td><%= baptism_item.padrino %></td>
     <td><%= baptism_item.madrina %></td>
     <td><%= baptism_item.oficialia %></td>
-    <td><%= baptism_item.encargado %></td>
+    <td><%= baptism_item.encargado %></td-->
     <!--td><%= baptism_item.validado %></td-->
     <!--td><%= baptism_item.user %></td-->
-    <td><%= link_to baptism_item.baptism_book.codigo, baptism_item.baptism_book %></td>
+    
     <td><%= link_to 'Ver', baptism_item %></td>
     <td><%= link_to 'Editar', edit_baptism_item_path(baptism_item) %></td>
     <!--<td><%= link_to 'Eliminar', baptism_item, method: :delete, data: { confirm: 'Are you sure?' } %></td-->

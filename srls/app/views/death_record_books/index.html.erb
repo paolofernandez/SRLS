@@ -27,7 +27,6 @@
     <th></th>
     <th></th>
   </tr>
-<%= will_paginate %>
 <% @death_record_books.each do |death_record_book| %>
   <tr>
     <td><%= death_record_book.codigo %></td>
@@ -42,7 +41,6 @@
     <!--td><%= link_to 'Eliminar', death_record_book, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
   </tr>
 <% end %>
-<%= will_paginate %>
 </table>
 <br>
 <%= link_to "Validar Libros", '/validators/pending_index/death_record_books'%> |
