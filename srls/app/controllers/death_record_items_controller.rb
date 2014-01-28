@@ -2,6 +2,14 @@ class DeathRecordItemsController < ApplicationController
   load_and_authorize_resource
   # POST /death_record_items
   # POST /death_record_items.json
+  def index
+    @death_record_items = DeathRecordItem.all
+    @death_record_items = DeathRecordItem.order(params[:sort])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @death_record_items }
+    end
+  end
 
   def create
     @death_record_book = DeathRecordBook.find(params[:death_record_book_id])

@@ -1,6 +1,9 @@
-<h1>Editar  Libro de Defuncion</h1>
+<h1>Editar Libro de Defuncion</h1>
 <Center>
 <%= render 'form' %>
-</Center>
+<br>
 <%= button_to 'Ver', @death_record_book, :method => :get %>
+</Center>
+<div align="left">
 <%= button_to 'Volver', death_record_books_path, :method => :get %>
+</div>

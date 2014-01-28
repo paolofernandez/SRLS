@@ -38,7 +38,13 @@
   <b>User:</b>
   <%= @death_record_book.user %>
 </p-->
+<br>
+<%= button_to 'Editar', edit_death_record_book_path(@death_record_book), :method => :get %>
+
 </CENTER>
+<div align="left"><%= button_to 'Volver', death_record_books_path, :method => :get %>
+</div>
+
 <Center>
 <h2>Partidas:</h2>
 <table>
@@ -99,9 +105,11 @@
 </table>
 </Center>
 <br><br>
+
 <h2>Agregar Partida:</h2>
+<Center><%= link_to_function "Formulario de Partidas", "$('#hide').toggle()" %></Center>
+<div id="hide" style="display:none">
 <%= render "death_record_items/form" %>
+</div>
 
 
-<%= button_to 'Editar', edit_death_record_book_path(@death_record_book), :method => :get %> |>
-<%= button_to 'Volver', death_record_books_path, :method => :get %>

@@ -11,56 +11,67 @@
     </div>
   <% end %>
 
+      <div class="field">
+    <%= f.label :tomo_libro, "Tomo del Libro" %>
+    <%= f.text_field :tomo_libro, placeholder: "Tomo del Libro"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :numero, "Numero de Partida" %>
+    <%= f.text_field :numero, placeholder: "Numero de Partida"  %>
+  </div><br>
     <div class="field">
-    <%= f.label :tomo_libro, "Tomo del Libro" %><br />
-    <%= f.text_field :tomo_libro %>
+    <%= f.label :pagina, "Numero de Pagina" %>
+    <%= f.text_field :pagina, placeholder: "Numero de Pagina"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :nombre, "Nombre del Difunto" %>
+    <%= f.text_field :nombre, placeholder: "Nombre Completo"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :fecha, "Fecha de Defuncion" %>
+    <%= f.date_select :fecha, :start_year => 1830, :end_year=>2013 %>
+  </div><br>
+  <div class="field">
+    <%= f.label :edad, "Edad del Difunto" %>
+    <%= f.text_field :edad, placeholder: "Edad"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :motivo_muerte, "Causa de la Defuncion" %>
+    <%= f.text_field :motivo_muerte, placeholder: "Causa de Muerte"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :tipo_hijo, "Tipo de Hijo" %>
+    <%= f.text_field :tipo_hijo, placeholder: "Tipo de hijo"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :padre, "Nombre del Padre" %>
+    <%= f.text_field :padre, placeholder: "Nombre Completo"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :madre, "Nombre de la Madre" %>
+    <%= f.text_field :madre, placeholder: "Nombre Completo"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :lugar_sepultura, "Lugar de Sepultura" %>
+    <%= f.text_field :lugar_sepultura, placeholder: "Lugar de entierro"  %>
+  </div><br>
+  <div class="field">
+    <%= f.label :celebrante, "Celebrante" %>
+    <%= f.text_field :celebrante, placeholder: "Nombre Completo"  %>
+  </div><br>
+  <!--div class="field">
+    <%= f.label :validado %>
+    <%= f.check_box :validado %>
   </div>
   <div class="field">
-    <%= f.label :numero, "Numero de Partida" %><br />
-    <%= f.text_field :numero %>
-  </div>
-    <div class="field">
-    <%= f.label :pagina, "Numero de Pagina" %><br />
-    <%= f.text_field :pagina %>
+    <%= f.label :user %>
+    <%= f.text_field :user %>
   </div>
   <div class="field">
-    <%= f.label :nombre, "Nombre del Difunto" %><br />
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha, "Fecha de Defuncion" %><br />
-    <%= f.date_select :fecha %>
-  </div>
-  <div class="field">
-    <%= f.label :edad, "Edad del Difunto" %><br />
-    <%= f.text_field :edad %>
-  </div>
-  <div class="field">
-    <%= f.label :motivo_muerte, "Causa de la Defuncion" %><br />
-    <%= f.text_field :motivo_muerte %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo_hijo, "Tipo de Hijo" %><br />
-    <%= f.text_field :tipo_hijo %>
-  </div>
-  <div class="field">
-    <%= f.label :padre, "Nombre del Padre" %><br />
-    <%= f.text_field :padre %>
-  </div>
-  <div class="field">
-    <%= f.label :madre, "Nombre de la Madre" %><br />
-    <%= f.text_field :madre %>
-  </div>
-  <div class="field">
-    <%= f.label :lugar_sepultura, "Lugar de Sepultura" %><br />
-    <%= f.text_field :lugar_sepultura %>
-  </div>
-  <div class="field">
-    <%= f.label :celebrante, "Celebrante" %><br />
-    <%= f.text_field :celebrante %>
-  </div>
-
+    <%= f.label :death_record_book %>
+    <%= f.text_field :death_record_book %>
+  </div-->
   <div class="actions">
     <%= f.submit "Crear Partida de Defuncion" %>
-  </div>
+  </div><br>
 <% end %> 
