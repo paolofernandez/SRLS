@@ -12,48 +12,44 @@
 <br>	
 
 <br>
-<table>
+<table border=1>
 <tr>
 <th> Id </th>
 <th> Correo electronico </th>
 <th> Rol </th>
 <th> Estado </th>
-<th> </th>
-<th> </th>
-<th> </th>
-<th> </th>
-<th> </th>
+
 </tr>
 <% @users.each do |user| %>
 	<tr>
-	<td> <%=user.id%> </td>
+	<td><center> <%=user.id%></center> </td>
 	</td>
-	<td> <%= user.email %> </td>
+	<td><center> <%= user.email %></center> </td>
 	</td>
 	<% if user.rol == 1%>
-		<td> Administrador </td>
+		<td><center> Administrador</center> </td>
 	<% else %>
 		<% if user.rol == 2%>
-			<td> Redactor </td>
+			<td><center> Redactor</center> </td>
 		<% else %>
 			<% if user.rol == 3%>
-				<td> Validador </td>
+				<td><center> Validador</center> </td>
 			<%end%>
 		<%end%>
 	<%end%>
 	</td>
 	<% if user.status %>
-		<td>Activo</td>
+		<td><center>Activo</center></td>
 	<% else %>
-		<td>Inactivo</td>
+		<td><center>Inactivo</center></td>
 	<% end %>
 	</td> 
-	<td> <a href="/user_managers/show/<%=user.id%>">Informacion de usuario|</a> </td>
-	<td><a href="/user_logs/user_logs_index/<%=user.id%>">Sesiones|</a> </td>
-	<td><a href="/user_logs/user_changes_index/<%=user.id%>">Modificaciones|</a> </td>
-	<td> <a href="/user_managers/edit/<%=user.id%>" >Editar Rol|</a> </td>
-	<td> <a href="/user_managers/edit_password/<%=user.id%>">Editar Password|</a> </td>
-    <td> <a href="/user_managers/delete/<%=user.id%>">Cambiar Estado</a> </td>
+	<td><center> <a href="/user_managers/show/<%=user.id%>">Informacion de usuario</a></center> </td>
+	<td><center><a href="/user_logs/user_logs_index/<%=user.id%>">Sesiones</a></center> </td>
+	<td><center><a href="/user_logs/user_changes_index/<%=user.id%>">Modificaciones</a></center> </td>
+	<td><center> <a href="/user_managers/edit/<%=user.id%>" >Editar Rol</a></center> </td>
+	<td><center> <a href="/user_managers/edit_password/<%=user.id%>">Editar Password</a></center> </td>
+    <td><center> <a href="/user_managers/delete/<%=user.id%>">Cambiar Estado</a></center> </td>
 	</tr>
 <% end %>
 </table>

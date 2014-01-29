@@ -2,16 +2,16 @@
 <!--%= link_to 'Nueva Partida de Confirmacion', new_confirmation_item_path %>-->
 <br>
 <CENTER>
-<table>
+<table border=1>
   <tr>
     <th>Nombre</th>
-    <th></th><th></th>
+    
     <th>Libro de Confirmacion</th>
-    <th></th><th></th>
+    
     <th>Pagina</th>
-    <th></th><th></th>
+    
     <th>Numero de Partida</th>
-    <th></th><th></th>
+    
     
     
     <!--th>Edad</th>
@@ -27,21 +27,18 @@
     <!--th>Validado</th>
     <th>User</th-->
     
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @confirmation_items.each do |confirmation_item| %>
   <tr>
     <td><center><%= confirmation_item.nombre %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= link_to confirmation_item.confirmation_book.codigo, confirmation_item.confirmation_book %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= confirmation_item.pagina %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= confirmation_item.numero %></center></td>
-    <td></td><td></td>
+    
     <!--td><%= confirmation_item.tomo_libro %></td>
     
     

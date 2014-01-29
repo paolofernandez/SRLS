@@ -2,16 +2,16 @@
 <%= link_to 'Nueva Partida de Defuncion', new_death_record_item_path %>-->
 <br>
 <CENTER>
-<table>
+<table border=1>
   <tr>
     <th>Nombre</th>
-    <th></th><th></th>
+    
     <th>Libro de Defuncion</th> 
-    <th></th><th></th>
+    
     <th>Pagina</th>
-    <th></th><th></th>
+    
     <th>Numero</th>
-    <th></th><th></th>
+    
     <!--th>Fecha</th>
     <th>Edad</th>
     <th>Motivo muerte</th>
@@ -23,21 +23,18 @@
     <!--<th>Validado</th>
     <th>User</th>-->
     
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @death_record_items.each do |death_record_item| %>
   <tr>
     <td><CENTER><%= death_record_item.nombre %></CENTER></td>
-    <td></td><td></td>    
+        
     <td><CENTER><%= link_to death_record_item.death_record_book.codigo, death_record_item.death_record_book %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= death_record_item.pagina %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= death_record_item.numero %></CENTER></td>
-    <td></td><td></td>
+    
     <!--td><%= death_record_item.tomo_libro %></td>  
     <td><%= death_record_item.fecha %></td>
     <td><%= death_record_item.edad %></td>

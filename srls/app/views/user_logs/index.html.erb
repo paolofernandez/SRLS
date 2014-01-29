@@ -2,26 +2,24 @@
   <% if current_user.rol == 1 %>
 <h1>Listando Logs de Usuario</h1>
 
-<table>
+<table border=1>
   <tr>
   	<th>Usuario</th>
   	<th>Estado</th>
     <th>Hora Entrada</th>
     <th>Hora Salida</th>
-<%= will_paginate %>
 <% @user_logs.each do |user_log| %>
   <tr>
-  	<td><%= user_log.user.email%></td>
+  	<td><Center><%= user_log.user.email%></td>
   	<% if user_log.user.status%>
-  		<td>Activo</td>
+  		<td><Center>Activo</Center></td>
   	<%else%>
-  		<td>Inactivo</td>
+  		<td><Center>Inactivo</Center></td>
   	<%end%>
-    <td><%= user_log.entrada %></td>
-    <td><%= user_log.salida %></td>
+    <td><Center><%= user_log.entrada %></Center></td>
+    <td><Center><%= user_log.salida %></Center></td>
   </tr>
 <% end %>
-<%= will_paginate %>
 </table>
 
 <br />

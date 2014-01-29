@@ -13,7 +13,7 @@
 Tabla del Dato: <%= @change.source_table %> <br>
 Id del Dato: <%= @change.id_datum %> <br>
 Campos modificados:<br>
-<table>
+<table border=1>
   <tr>
   	<th>Posicion en tabla</th>
   	<th>Dato Antiguo</th>
@@ -21,9 +21,9 @@ Campos modificados:<br>
   </tr>
 <% @change.updated_data_table_items.each do |data| %>
   <tr>
-  	<td><%= data.item%></td>
-  	<td><%= data.old_data%></td>
-    <td><%= data.new_data %></td>
+  	<td><Center><%= data.item%></Center></td>
+  	<td><Center><%= data.old_data%></Center></td>
+    <td><Center><%= data.new_data %></Center></td>
   </tr>
 <% end %>
 </table>

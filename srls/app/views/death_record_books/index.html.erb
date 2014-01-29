@@ -18,36 +18,34 @@
 <br>
 <br>
 <CENTER>
-<table>
+<table border=1>
   <tr>
     <th><%=link_to "Codigo", :sort => "Codigo" %></th>
-    <th></th><th></th>
+    
     <th>Numero</th>
-    <th></th><th></th>
+    
     <th><%=link_to "Parroquia", :sort => "Parroquia" %></th>
-    <th></th><th></th>
+    
     <th>Paginas</th>
-    <th></th><th></th>
+    
     <th>Partidas pagina</th>
-    <th></th><th></th>
+    
     <!--th>Validado</th>
     <th>User</th-->
-    <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 <% @death_record_books.each do |death_record_book| %>
   <tr>
     <td><CENTER><%= death_record_book.codigo %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= death_record_book.numero %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= death_record_book.parroquia %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= death_record_book.paginas %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= death_record_book.partidas_pagina %></CENTER></td>
-    <td></td><td></td>
+    
     <!--td><%= death_record_book.validado %></td>
     <td><%= death_record_book.user %></td-->
     <td><%= link_to 'Ver', death_record_book %></td>

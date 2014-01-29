@@ -18,32 +18,30 @@
 <br>
 <br>
 <CENTER>
-<table>
+<table border=1>
   <tr>
     <th><%=link_to "Codigo", :sort => "Codigo" %></th>
-    <th></th><th></th>
+    
     <th>Numero</th>
-    <th></th><th></th>
+    
     <th>Paginas</th>
-    <th></th><th></th>
+    
     <th>Partidas pagina</th>
     <!--th>Validado</th-->
     <!--th>User</th-->
-    <th></th>
-    <th></th>
-    <th></th>
+   
   </tr>
 
 <% @confirmation_books.each do |confirmation_book| %>
   <tr>
     <td><center><%= confirmation_book.codigo %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= confirmation_book.numero %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= confirmation_book.paginas %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= confirmation_book.partidas_pagina %></center></td>
-    <td></td><td></td>
+    
     <!--td><%= confirmation_book.validado %></td-->
     <!--td><%= confirmation_book.user %></td-->
     <td><%= link_to 'Ver', confirmation_book %></td>

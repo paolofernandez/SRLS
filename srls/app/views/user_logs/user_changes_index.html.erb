@@ -8,22 +8,21 @@
 	<h3> Estado: Inactivo </h3>
 <%end%>
 <br>
-<table>
+<table border=1>
   <tr>
   	<th>Fecha</th>
   	<th>Tabla del Dato</th>
     <th>Id del Dato</th>
     <th>Usuario</th>
-    <th></th>
   </tr>
 
 <% @user.updated_data_tables.each do |data| %>
   <tr>
-  	<td><%= data.created_at%></td>
-  	<td><%= data.source_table%></td>
-    <td><%= data.id_datum %></td>
-    <td><%= data.user.email %></td>
-    <td><a href="/user_logs/show_change_information/<%= data.id %>"> Ver </a>
+  	<td><Center><%= data.created_at%></Center></td>
+  	<td><Center><%= data.source_table%></Center></td>
+    <td><Center><%= data.id_datum %></Center></td>
+    <td><Center><%= data.user.email %></Center></td>
+    <td><Center><a href="/user_logs/show_change_information/<%= data.id %>"> Ver </a></Center></td>
   </tr>
 <% end %>
 </table>

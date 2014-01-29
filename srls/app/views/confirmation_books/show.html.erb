@@ -39,55 +39,53 @@
 <Center>
 <h2>Partidas:</h2>
 
-<table>
+<table border=1>
   <tr>
     <th>Tomo del libro</th>
-    <th></th><th></th>
+    
     <th>Numero de Libro</th>
-    <th></th><th></th>
+    
     <th>Pagina</th>
-    <th></th><th></th>
+    
     <th>Nombre</th>
-    <th></th><th></th>
+    
     <!--th>Edad</th>
     <th>Padre</th>
     <th>Madre</th>
     <th>Padrino</th>
     <th>Madrina</th-->
     <th>Parroquia confirmacion</th>
-    <th></th><th></th>
+    
     <th>Fecha confirmacion</th>
-    <th></th><th></th>
+    
     <!--th>Parroquia bautizo</th>
     <th>Fecha bautizo</th>
     <th>Celebrante</th-->
     <!--th>Validado</th>
     <th>User</th-->
     <!--th>Confirmation book</th-->
-    <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 
 <% @confirmation_book.confirmation_items.each do |confirmation_item| %>
   <tr>
     <td><Center><%= confirmation_item.tomo_libro %></Center></td>
-    <td></td><td></td>
+    
     <td><Center><%= confirmation_item.numero %></Center></td>
-    <td></td><td></td>
+    
     <td><Center><%= confirmation_item.pagina %></Center></td>
-    <td></td><td></td>
+    
     <td><Center><%= confirmation_item.nombre %></Center></td>
-    <td></td><td></td>
+    
     <!--td><%= confirmation_item.edad %></td>
     <td><%= confirmation_item.padre %></td>
     <td><%= confirmation_item.madre %></td>
     <td><%= confirmation_item.padrino %></td>
     <td><%= confirmation_item.madrina %></td-->
     <td><Center><%= confirmation_item.parroquia_confirmacion %></Center></td>
-    <td></td><td></td>
+    
     <td><Center><%= confirmation_item.fecha_confirmacion %></Center></td>
-    <td></td><td></td>
+    
     <!--td><%= confirmation_item.parroquia_bautizo %></td>
     <td><%= confirmation_item.fecha_bautizo %></td>
     <td><%= confirmation_item.celebrante %></td-->

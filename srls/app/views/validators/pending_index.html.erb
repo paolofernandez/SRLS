@@ -1,14 +1,14 @@
 <h1>Listando registros no validados</h1>
 
 <CENTER>
-<table>
+<table border=1>
   <tr>
     <th>Numero de Partida</th>
-    <th></th><th></th>
+    
     <th>Fecha ulitma modificacion</th>
-    <th></th><th></th>
+    
     <th>Usuario</th>
-    <th></th><th></th>
+    
     <th></th>
     <th></th>
     <th></th>
@@ -17,11 +17,11 @@
 <% @pendings.each do |pending| %>
   <tr>
     <td><CENTER><%= pending.numero %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= pending.updated_at %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= pending.user.email %></CENTER></td>
-    <td></td><td></td>
+    
     <td><%= link_to 'Mostrar', pending %></td>
     <td><%= link_to 'Validar', "/validators/new/"+pending.nombre_tabla+"&"+pending.id.to_s %></td>
     <td><%= link_to 'Eliminar', pending, method: :delete, data: { confirm: 'Estas seguro?' } %></td>

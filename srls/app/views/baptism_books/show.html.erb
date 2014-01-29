@@ -50,20 +50,20 @@
 <h2>Partidas:</h2>
 <!--%= render @baptism_book.baptism_items %-->
 <CENTER>
-<TABLE>
+<table border=1>
   <tr>
     <th>Tomo del libro</th>
-    <th></th><th></th>
+    
     <th>Numero de Partida</th>
-    <th></th><th></th>
+    
     <th>Pagina</th>
-    <th></th><th></th>
+    
     <th><%=link_to "Nombre", :sort => "Nombre" %></th>
-    <th></th><th></th>
+    
     <th>Fecha bautizo</th>
-    <th></th><th></th>
+    
     <th>Celebrante</th>
-    <th></th><th></th>
+    
     <!--th>Lugar nacimiento</th>
     <th>Fecha nacimiento</th>
     <th>Tipo hijo</th>
@@ -76,24 +76,22 @@
     <th>Encargado</th-->
     <!--th>Validado</th-->
     <!--th>User</th-->
-    <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
   <% @baptism_book.baptism_items.each do |baptism_item| %>
   <tr>
     <td><center><%= baptism_item.tomo_libro %><center></td>
-    <td></td><td></td>
+    
     <td><center><%= baptism_item.numero %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= baptism_item.pagina %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= baptism_item.nombre %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= baptism_item.fecha_bautizo %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= baptism_item.celebrante %></center></td>
-    <td></td><td></td>
+    
     <!--td><%= baptism_item.lugar_nacimiento %></td>
     <td><%= baptism_item.fecha_nacimiento %></td>
     <td><%= baptism_item.tipo_hijo %></td>

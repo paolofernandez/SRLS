@@ -1,31 +1,30 @@
-<h1>Listing change_logs</h1>
+<h1>Logs de cambios</h1>
 
-<table>
+<table border="1">
   <tr>
     <th>Hora</th>
-    <th></th><th></th>
+    
     <th>Tabla</th>
-    <th></th><th></th>
-    <th>Id objeto</th><th></th><th></th>
-    <th>Usuario</th><th></th><th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    
+    <th>Id objeto</th>
+    <th>Usuario</th>
+ 
+ 
   </tr>
 
 <% @change_logs.each do |change_log| %>
   <tr>
     <td><center><%= change_log.hora %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= change_log.tabla %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= change_log.id_objeto %></center></td>
-    <td></td><td></td>
+    
     <td><center><%= change_log.user %></center></td>
-    <td></td><td></td>
+    
     <td><%= link_to 'Ver', change_log %></td>
     <td><%= link_to 'Editar', edit_change_log_path(change_log) %></td>
-    <td><%= link_to 'Eliminar', change_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <!--td><%= link_to 'Eliminar', change_log, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
   </tr>
 <% end %>
 </table>

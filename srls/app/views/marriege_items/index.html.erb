@@ -3,19 +3,19 @@
 <!--%= link_to 'Nueva Partida de Matrimonio', new_marriege_item_path %>-->
 <br>
 <CENTER>
-<table>
+<table border=1>
   <tr>
     <th>Nombre esposo</th>
-    <th></th><th></th>
+    
     <th>Nombre esposa</th>
-    <th></th><th></th>
+    
     <th>Fecha matrimonio</th>
-    <th></th><th></th>
+    
     <th>Libro de matrimonio</th>
-    <th></th><th></th>
+    
     <th>Numero</th>
-    <th></th><th></th>
-    <th>Pagina</th><th></th><th></th>
+    
+    <th>Pagina</th>
     
     <!--th>Celebrante</th>    
     <th>Edad esposo</th>
@@ -49,25 +49,23 @@
     <!--th>Validado</th>
     <th>User</th-->
     
-    <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 
 <% @marriege_items.each do |marriege_item| %>
   <tr>
     <td><CENTER><%= marriege_item.nombre_esposo %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= marriege_item.nombre_esposa %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= marriege_item.fecha_matrimonio %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= link_to marriege_item.marriege_book.codigo, marriege_item.marriege_book %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= marriege_item.numero %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= marriege_item.pagina %></CENTER></td>
-    <td></td><td></td>
+    
     <!--td><%= marriege_item.tomo_libro %></td>
       
     <td><%= marriege_item.celebrante %></td>

@@ -47,19 +47,19 @@
 <br>
 <CENTER>
 <h2>Partidas:</h2>
-<table>
+<table border=1>
   <tr>
     <th>Tomo libro</th>
-    <th></th><th></th>
+    
     <th>Numero</th>
-    <th></th><th></th>
+    
     <th>Pagina</th>
-    <th></th><th></th>
+    
     <th>Fecha matrimonio</th>
-    <th></th><th></th>
+    
     <!--th>Celebrante</th-->
     <th>Nombre esposo</th>
-    <th></th><th></th>
+    
     <!--th>Edad esposo</th>
     <th>Profesion esposo</th>
     <th>Tipo hijo esposo</th>
@@ -70,7 +70,7 @@
     <th>Parroquia bautizo esposo</th>
     <th>Fecha bautizo esposo</th-->
     <th>Nombre esposa</th>
-    <th></th><th></th>
+    
     <!--th>Edad esposa</th>
     <th>Profesion esposa</th>
     <th>Tipo hijo esposa</th>
@@ -92,24 +92,22 @@
     <!--th>Validado</th>
     <th>User</th-->
     <!--th>Marriege book</th-->
-    <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 
 <% @marriege_book.marriege_items.each do |marriege_item| %>
   <tr>
     <td><CENTER><%= marriege_item.tomo_libro %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= marriege_item.numero %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= marriege_item.pagina %></CENTER></td>
-    <td></td><td></td>
+    
     <td><CENTER><%= marriege_item.fecha_matrimonio %></CENTER></td>
-    <td></td><td></td>
+    
     <!--td><%= marriege_item.celebrante %></td-->
     <td><CENTER><%= marriege_item.nombre_esposo %></CENTER></td>
-    <td></td><td></td>
+    
     <!--td><%= marriege_item.edad_esposo %></td>
     <td><%= marriege_item.profesion_esposo %></td>
     <td><%= marriege_item.tipo_hijo_esposo %></td>
@@ -120,7 +118,7 @@
     <td><%= marriege_item.parroquia_bautizo_esposo %></td>
     <td><%= marriege_item.fecha_bautizo_esposo %></td-->
     <td><CENTER><%= marriege_item.nombre_esposa %></CENTER></td>
-    <td></td><td></td>
+    
     <!--td><%= marriege_item.edad_esposa %></td>
     <td><%= marriege_item.profesion_esposa %></td>
     <td><%= marriege_item.tipo_hijo_esposa %></td>
