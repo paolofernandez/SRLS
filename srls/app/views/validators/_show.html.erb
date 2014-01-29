@@ -1,68 +1,80 @@
-<% case @validator.tabla %>
-  <% when "Libro de Bautizo" %>
-    <% @baptism_book = BaptismBook.find(@validator.id_dato) %>
-    <%= render '/baptism_books/form' %>
-  <% when "Partida de Bautizo" %>
-    <% @baptism_item = BaptismItem.find(@validator.id_dato) %>
-    <%= render '/baptism_items/new_form' %>
-  <% when "Libro de Confirmacion" %>
-    <% @confirmation_book = ConfirmationBook.find(@validator.id_dato) %>
-    <%= render '/confirmation_books/form' %>
-  <% when "Partida de Confirmacion" %>
-    <% @confirmation_item = ConfirmationItem.find(@validator.id_dato) %>
-    <%= render '/confirmation_items/new_form' %>
-  <% when "Libro de Defuncion" %>
-    <% @death_record_book = DeathRecordBook.find(@validator.id_dato) %>
-    <%= render '/death_record_books/form' %>
-  <% when "Partida de Defuncion" %>
-    <% @death_record_item = DeathRecordItem.find(@validator.id_dato) %>
-    <%= render '/death_record_items/new_form' %>
-  <% when "Libro de Matrimonio" %>
-    <% @marriege_book = MarriegeBook.find(@validator.id_dato) %>
-    <%= render '/marriege_books/form' %>
-  <% when "Partida de Matrimonio" %>
-    <% @marriege_item = MarriegeItem.find(@validator.id_dato) %>
-    <%= render '/marriege_items/new_form' %>
+<h2>Ver Validacion</h2>
+
+<p id="notice"><%= notice %></p>
+<h2>Datos de Validacion</h2>
+<p>
+  <b>Comentario:</b>
+  <%= @validator.comentario %>
+</p>
+
+<p>
+  <b>Valido:</b>
+  <%= @validator.valido %>
+</p>
+
+<p>
+  <b>Tabla:</b>
+  <%= @validator.tabla %>
+</p>
+
+<p>
+  <b>Id dato:</b>
+  <%= @validator.id_dato %>
+</p>
+
+<p>
+  <b>Creador:</b>
+  <%= @validator.user.email %>
+</p>
+
+<% if current_user.rol != 2 %>
+<%= link_to 'Editar', edit_validator_path(@validator) %> |
 <% end %>
+<%= link_to 'Lista de Validaciones', validators_path %>
 
 <br><br>
 
-<% if current_user.rol != 2 %>
+<h2>Modificar datos</h2>
 
-  <h2>Validar</h2>
-
-  <%= form_for(@validator) do |f| %>
-    <% if @validator.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@validator.errors.count, "error") %> prohibited this validator from being saved:</h2>
-
-        <ul>
-        <% @validator.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+<% case @validator.tabla %>
+  <% when "Libro de Bautizo" %>
+    <% @baptism_book = BaptismBook.find(@validator.id_dato) %>
+    <% if !@baptism_book.validado %>
+    <%= render '/baptism_books/form' %>
     <% end %>
-
-    <div class="field">
-      <%= f.label :comentario, "Comentarios" %><br />
-      <%= f.text_area :comentario %>
-    </div>
-
-    <div class="field">
-      <%= f.check_box :valido %>
-      <%= f.label :valido, "Validado" %>
-    </div>
-    <br>
-
-    <div class="field">
-      <%= f.hidden_field :tabla %>
-    </div>
-    <div class="field">
-      <%= f.hidden_field :id_dato %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Validar" %>
-    </div>
-  <% end %>
+  <% when "Partida de Bautizo" %>
+    <% @baptism_item = BaptismItem.find(@validator.id_dato) %>
+    <% if !@baptism_item.validado %>
+    <%= render '/baptism_items/new_form' %>
+    <% end %>
+  <% when "Libro de Confirmacion" %>
+    <% @confirmation_book = ConfirmationBook.find(@validator.id_dato) %>
+    <% if !@confirmation_book.validado %>
+    <%= render '/confirmation_books/form' %>
+    <% end %>
+  <% when "Partida de Confirmacion" %>
+    <% @confirmation_item = ConfirmationItem.find(@validator.id_dato) %>
+    <% if !@confirmation_item.validado %>
+    <%= render '/confirmation_items/new_form' %>
+    <% end %>
+  <% when "Libro de Defuncion" %>
+    <% @death_record_book = DeathRecordBook.find(@validator.id_dato) %>
+    <% if !@death_record_book.validado %>
+    <%= render '/death_record_books/form' %>
+    <% end %>
+  <% when "Partida de Defuncion" %>
+    <% @death_record_item = DeathRecordItem.find(@validator.id_dato) %>
+    <% if !@death_record_item.validado %>
+    <%= render '/death_record_items/new_form' %>
+    <% end %>
+  <% when "Libro de Matrimonio" %>
+    <% @marriege_book = MarriegeBook.find(@validator.id_dato) %>
+    <% if !@marriege_book.validado %>
+    <%= render '/marriege_books/form' %>
+    <% end %>
+  <% when "Partida de Matrimonio" %>
+    <% @marriege_item = MarriegeItem.find(@validator.id_dato) %>
+    <% if !@marriege_item.validado %>
+    <%= render '/marriege_items/new_form' %>
+    <% end %>
 <% end %>

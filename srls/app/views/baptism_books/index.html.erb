@@ -58,10 +58,14 @@
 <% end %>
 </table>
 <br>
+<% if current_user.rol != 2 %>
 <%= link_to "Validar Libros", '/validators/pending_index/baptism_books'%> |
+<% end %>
 <%= link_to "Ver validaciones de Libros", '/validators/not_valid_index/Libro de Bautizo'%>
 <br><br>
+<% if current_user.rol != 2 %>
 <%= link_to "Validar Partidas", '/validators/pending_index/baptism_items'%> |
+<% end %>
 <%= link_to "Ver validaciones de Partidas", '/validators/not_valid_index/Partida de Bautizo'%>
 <br><br>
 <%= link_to "Ver Todas las Partidas", '/baptism_items'%>

@@ -32,8 +32,12 @@
     <td><Center><%= validator.user.email %></Center></td>
     <td></td><td></td>
     <td><%= link_to 'Mostrar', validator %></td>
-    <td><%= link_to 'Editar', edit_validator_path(validator) %></td>
-    <td><%= link_to 'Eliminar', validator, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+    <% if current_user.rol != 2 %> 
+        <td><%= link_to 'Editar', edit_validator_path(validator) %></td>
+        <td><%= link_to 'Eliminar', validator, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+    <% else %>
+        <td><%= link_to 'Editar', validator %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

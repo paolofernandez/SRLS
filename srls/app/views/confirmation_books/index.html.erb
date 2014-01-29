@@ -54,10 +54,14 @@
 
 </table>
 <br>
+<% if current_user.rol != 2 %>
 <%= link_to "Validar Libros", '/validators/pending_index/confirmation_books'%> |
+<% end %>
 <%= link_to "Ver validaciones de Libros", '/validators/not_valid_index/Libro de Confirmacion'%>
 <br><br>
+<% if current_user.rol != 2 %>
 <%= link_to "Validar Partidas", '/validators/pending_index/confirmation_items'%> |
+<% end %>
 <%= link_to "Ver validaciones de Partidas", '/validators/not_valid_index/Partida de Confirmacion'%>
 <br>
 <br>

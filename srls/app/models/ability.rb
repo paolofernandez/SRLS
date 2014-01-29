@@ -16,7 +16,7 @@ class Ability
           can :manage, DeathRecordBook
           can :manage, MarriegeItem
           can :manage, MarriegeBook
-          can [:index, :table_index, :not_valid_index, :show], Validator
+          can [:index, :table_index, :not_valid_index, :show, :edit], Validator
         else
           if user.rol == 3
             can :manage, BaptismItem
