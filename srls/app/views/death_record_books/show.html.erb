@@ -104,10 +104,14 @@
 </Center>
 <br><br>
 
-<h2>Agregar Partida:</h2>
-<Center><%= link_to_function "Formulario de Partidas", "$('#hide').toggle()" %></Center>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("button").click(function(){
+        $("#hide").toggle();
+    });
+});
+</script>
+<Center><button>Formulario de Partidas</button></Center>
 <div id="hide" style="display:none">
 <%= render "death_record_items/form" %>
 </div>
-
-

@@ -1,8 +1,7 @@
 <h1>Libros de Matrimonio</h1>
 <%= button_to 'Crear Nuevo Libro', new_marriege_book_path, :method => :get %>
 <br>
-<%= link_to_function "Busquedas", "$('#hide').toggle()" %><br>
-<div id="hide" style="display:none">
+<div id="hide">
 <br>
 <form method="GET" action="/marriege_books/search">
 	Codigo: <input type="text" name="codigo"> &nbsp;&nbsp;&nbsp; Parroquia: <input type="text" name="parroquia">
